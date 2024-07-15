@@ -6,6 +6,7 @@ DEBUG = False
 ALLOWED_HOSTS = ['159.89.11.142']
 
 # Production-specific security settings
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
 SECURE_SSL_REDIRECT = True
 SESSION_COOKIE_SECURE = True
 CSRF_COOKIE_SECURE = True
@@ -15,6 +16,7 @@ SECURE_HSTS_PRELOAD = True
 
 CORS_ALLOWED_ORIGINS = [
     "http://159.89.11.142",
+    
     # Add your frontend URL if different
 ]
 
@@ -32,3 +34,4 @@ DATABASES = {
 
 SECRET_KEY = config('DJANGO_SECRET_KEY')
 DJANGO_ENV = config("DJANGO_ENV")
+BASE_URL = 'http://159.89.11.142' 
