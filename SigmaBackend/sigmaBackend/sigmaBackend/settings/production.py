@@ -2,7 +2,7 @@ from .base import *
 
 DEBUG = False
 
-ALLOWED_HOSTS = ['sigma.me']
+ALLOWED_HOSTS = ['159.89.11.142']
 
 # Production-specific security settings
 SECURE_SSL_REDIRECT = True
@@ -12,10 +12,8 @@ SECURE_HSTS_SECONDS = 3600
 SECURE_HSTS_INCLUDE_SUBDOMAINS = True
 SECURE_HSTS_PRELOAD = True 
 
-
 CORS_ALLOWED_ORIGINS = [
-    "https://sigma.me", 
-
+    "http://159.89.11.142",
     # Add your frontend URL if different
 ]
 
@@ -23,10 +21,10 @@ CORS_ALLOWED_ORIGINS = [
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('DB_NAME'),
-        'USER': os.environ.get('DB_USER'),
-        'PASSWORD': os.environ.get('DB_PASSWORD'),
-        'HOST': os.environ.get('DB_HOST'),
-        'PORT': os.environ.get('DB_PORT'),
+        'NAME': 'sigma_db',
+        'USER': 'seid',
+        'PASSWORD': '123',
+        'HOST': 'localhost',  # Change this if your database is hosted elsewhere
+        'PORT': '5432',
     }
 }
