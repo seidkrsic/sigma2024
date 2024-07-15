@@ -23,10 +23,10 @@ CORS_ALLOWED_ORIGINS = [
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'sigma_db',
-        'USER': 'seid',
-        'PASSWORD': '123',
-        'HOST': 'localhost',  # Change this if your database is hosted elsewhere
-        'PORT': '5432',
+        'NAME': os.environ.get('DB_NAME', 'sigma_db'),
+        'USER': os.environ.get('DB_USER', 'seid'),
+        'PASSWORD': os.environ.get('DB_PASSWORD', '123'),
+        'HOST': os.environ.get('DB_HOST', 'localhost'),
+        'PORT': os.environ.get('DB_PORT', '5432'),
     }
 }
