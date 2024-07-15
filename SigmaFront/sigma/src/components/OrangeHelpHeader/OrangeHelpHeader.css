@@ -1,0 +1,36 @@
+
+.OrangeHelpHeader__container {
+    display: none;
+  }
+
+
+@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) { 
+
+    .OrangeHelpHeader__container { 
+        display: flex;
+        background-color: rgb(255, 142, 0);
+        display: flex;
+        position: relative; 
+        top: -15px;
+        height: 30px;
+        justify-content: flex-start;
+        align-items: center;
+    }
+
+    .play-icon { 
+        position: relative; 
+        left: 2.2rem !important; 
+        scale: 1 !important;
+        border: 0;
+        color: white;
+        transform: rotate(0deg);
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .icon_toggle { 
+        transform: rotate(90deg);
+        transition: transform 0.3s ease-in-out;
+    }
+
+
+}

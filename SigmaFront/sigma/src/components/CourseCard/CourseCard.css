@@ -1,0 +1,143 @@
+.CourseCard__container { 
+    display: flex; 
+    height: 450px;
+    width: 250px;
+    background-color: white;
+    margin: 1rem;
+    margin-left: 0;
+    flex-direction: column;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}  
+
+.CourseCard__container:hover { 
+    scale: 1.01;
+    transition: all ease-in .2s;
+    opacity: .9;
+}
+
+.CourseCard__container-img__container { 
+    width: 100%;
+    height: 45%;
+    max-height: 45%;
+    min-height: 45%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    position: relative;
+}
+
+.CourseCard__container img { 
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px 10px 0 0;
+    
+
+} 
+
+.CourseCard__container h3 { 
+    width: 90%;
+    height: fit-content;
+    max-height: 4rem;
+    margin: .5rem auto;
+}
+
+.CourseCard__container p { 
+    width: 90%;
+    margin: .2rem auto;
+    font-size: 14px;
+    margin-bottom: 0;
+    min-height: 5rem;
+    max-height: 5rem; 
+    overflow-y: hidden;
+    line-height: 20px;
+} 
+
+.CourseCard__container .CourseCard__container-info_container { 
+    width: 100% !important;
+    height: 55%; 
+    min-height: fit-content;
+    max-height: 55%;
+    margin: .5rem auto !important;
+    display: flex;
+    flex-direction: column;
+}
+ 
+.CourseCard__container-info_container div { 
+    height: 70%;
+    min-height: 70%;
+    max-height: 70%;
+}
+
+.CourseCard__container-info_container-button { 
+    width:  90%;
+    margin: .5rem auto;
+    text-decoration: none;
+    background-color: rgb(255, 142, 0);
+    border: none;
+    border-radius: 10px;
+    cursor: pointer; 
+    color: white;
+    font-weight: bold;
+    font-size: 16px;
+    text-transform: uppercase;
+
+
+} 
+
+.CourseCard__container-info_container-link { 
+    text-decoration: none !important;
+    font-weight: bold;
+    font-size: 16px;
+    border-radius: 10px;
+    text-transform: uppercase;
+    color: white; 
+    background-color: rgb(255, 142, 0);
+    width: 100% !important;
+    height: 100% !important;
+    padding: .5rem 0 !important;
+    border: none;
+    cursor: pointer;
+    position: relative !important; 
+    bottom: 0 !important;
+}
+
+.CourseCard__container-info_container-link:hover { 
+    background-color: #1a3a5b;
+    color:white;
+    transition: all ease-in .2s;
+} 
+
+
+.CourseCard__container-img__container .CourseCard__level { 
+    border: 1px solid #1a3a5b;
+    border-top: 2px solid white;
+    background-color: #1a3a5b;
+    width: 35%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    color: white;
+    padding: .2rem .3rem;
+    top: 90%;
+    text-transform: uppercase;
+    left: 65.3%;
+} 
+
+
+.CourseCard__container-info_container span { 
+    font-size: 12px; 
+    font-weight: 500;
+} 
+
+
+@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) { 
+
+    .CourseCard__container { 
+        width: 100% !important;
+        margin: 1rem auto;
+    }
+}

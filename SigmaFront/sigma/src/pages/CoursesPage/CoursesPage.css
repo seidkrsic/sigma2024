@@ -1,0 +1,193 @@
+.CoursesPage__container { 
+    width: 100%; 
+    display: flex;
+    flex-direction: row;
+    height: fit-content;
+    min-height: 100vh;
+    /* margin-top: 120px; */
+    background-repeat: repeat;
+} 
+
+.CoursePage__bg { 
+    position: absolute;
+    opacity: .0380;
+    top: 0;
+    left: 0;
+    z-index: -2;
+    object-fit: cover;
+    width: 100%;
+
+}
+
+.CoursesPage__container-left { 
+    width: 20%; 
+    height: fit-content;
+    margin-top: 2rem;
+    margin-left: 1rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+} 
+
+
+.CoursesPage__container-right { 
+    display: flex; 
+    flex-direction: column;
+    width: 69%;
+    margin: 0 auto;
+}
+
+.CoursesPage__container-right h1 { 
+    margin: 2rem 0; 
+    margin-bottom: 1rem;
+    color: #1a3a5b;
+    text-transform: uppercase;
+    width: 100%;
+    border-bottom: 2px solid gainsboro;
+
+}
+
+.CoursesPage__container-right p { 
+    margin-bottom: 1rem 0; 
+    color: black;
+    width: 100%;
+    line-height: 25px;
+
+} 
+
+.CoursesPage__filter-container { 
+    display: flex; 
+    background-color: #e0effd;
+    flex-wrap: wrap;
+    height: fit-content; 
+    border: 1px solid #e0effd;
+    border-top: 4px solid #1a3a5b;
+    width: 100%;
+    border-radius: 3px;
+    margin: 2rem 0;
+    justify-content: space-around;
+} 
+
+
+.filter-button { 
+    /* margin: 1rem; */
+    height: fit-content;
+    padding: .5rem;
+    text-transform: capitalize;
+
+} 
+
+
+
+input[type="checkbox"] {
+    margin: 0 0.5rem;
+    width: 20px; 
+    height: 20px;
+    accent-color: #1a3a5b;
+    border: 2px solid #1a3a5b; 
+    border-radius: 4px;
+}
+ 
+
+input[type="checkbox"]:checked {
+    margin: 0 0.5rem;
+    width: 20px; 
+    height: 20px;
+    accent-color: #1a3a5b;
+    border: 2px solid #1a3a5b; 
+    border-radius: 4px;
+    background-color: #1a3a5b; 
+    transform: rotate(0deg);
+  }
+
+
+
+
+.CoursesPage__filter-container span { 
+    /* margin: .5rem; */
+    color: #1a3a5b;
+}   
+
+.CoursesPage__filter-container label { 
+    margin: 0;
+}
+
+.CoursesPage__filter-column { 
+    display: flex; 
+    flex-direction: column; 
+    width: 40%;
+}
+
+.filter-button { 
+    display: flex;
+    align-items: center;
+}
+
+.CoursesPage__filter-column h3 { 
+    border-bottom: 1.5px solid rgba(26, 59, 91, 0.272);
+    margin: .5rem 0;
+    font-size: 14px;
+}
+
+.CourseDiv__container { 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+    justify-content: flex-start;
+    margin-bottom: 2rem;
+} 
+
+
+.CourseDiv__category-container { 
+    display: flex; 
+    width: 100%;
+    flex-direction: column;
+    margin: 2rem auto;
+
+}
+ 
+.CourseDiv__category-container h2 { 
+    width: 100%;
+    border-bottom: 3px solid gainsboro;
+    margin-bottom: 1rem;
+}
+
+
+.CourseDiv__CardContainer { 
+    display: flex; 
+    width: 100%;
+    flex-direction: row !important;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+} 
+
+
+@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) { 
+
+    .CoursesPage__container { 
+        width: 100%;
+    } 
+
+    .CoursesPage__container-right { 
+        width: 90%;
+    }
+
+    .filter-button input { 
+        width: 15px;
+        height: 15px;
+    } 
+
+    input[type="checkbox"]:checked { 
+        width: 15px;
+        height: 15px; 
+    }
+
+    .filter-button span { 
+        font-size: 13px;
+    } 
+
+    .CoursesPage__filter-column h3 { 
+        font-size: 15px !important; 
+    }
+
+
+}

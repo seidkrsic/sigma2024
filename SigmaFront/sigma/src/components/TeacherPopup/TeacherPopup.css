@@ -1,0 +1,134 @@
+/* TeacherPopup.css */
+.teacher-popup-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 3000;
+  }  
+
+
+  .teacher-popup-close svg {
+    width: 24px;
+    height: 24px;
+    fill: #333;
+    background-color: #333;
+    border-radius: 100%;
+    /* padding: 4px; */
+    transition: background-color 0.3s ease, fill 0.3s ease;
+  } 
+
+  .teacher-popup-close svg:hover { 
+    fill: rgb(255, 142, 0);
+  }
+  
+  .teacher-popup-close svg path {
+    stroke: #fff;
+    stroke-width: 2;
+  }
+
+
+  .teacher-popup-overlay p {
+      margin: auto 1rem;
+      line-height: 25px; 
+  }
+  .teacher-popup-overlay h2 { 
+    margin: 1rem 1rem;
+    color:rgb(255, 142, 0);
+  }
+
+
+  .teacher-popup {
+    background: white;
+    padding: 2rem;
+    border-radius: 10px;
+    max-width: 70%;
+    width: 70%;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .teacher-popup-close {
+    position: absolute;
+    display: flex;
+    top: 10px;
+    right: 10px;
+    background: transparent;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .teacher-popup-image {
+    width: 300px;
+    position: relative; 
+    height: 300px;
+    min-width: 300px;
+    min-height: 300px;
+    max-width: 300px;
+    max-height: 300px;
+    margin-bottom: 1rem;
+    object-fit: cover;
+    object-position: top center;
+  } 
+
+  .teacher-popup { 
+    display: flex; 
+
+  }
+
+
+@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) { 
+
+  .teacher-popup {
+    max-width: 90%;
+    width: 90%;
+    position: fixed; 
+    flex-direction: column; 
+    padding: 1rem; 
+    align-items: center;
+    overflow-y: scroll; 
+    height: 90%;
+    margin: 0 auto;
+}  
+
+.teacher-popup div { 
+  padding: 0;
+  width: 100%;
+  margin: .5rem auto;
+  height: 30%;
+  
+}
+
+.teacher-popup p { 
+  margin: 0.5rem auto;
+  padding-bottom: 1rem;
+  width: 100%;
+  height: fit-content;
+} 
+
+.teacher-popup h2 { 
+  width: 100%;
+  height: fit-content;
+}
+
+.teacher-popup-image {
+    width: 50px !important;
+    height: 50px !important;
+    margin-bottom: 1rem;
+    border-radius: 100%;
+    display: flex;
+} 
+
+
+
+
+}

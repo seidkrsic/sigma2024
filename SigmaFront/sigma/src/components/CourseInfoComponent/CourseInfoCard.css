@@ -1,0 +1,81 @@
+.course-info-card {
+    width: 35%;
+    /* border: 1px solid #ddd; */
+    border-radius: 5px;
+    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
+    overflow: hidden;
+    font-family: Arial, sans-serif;
+    margin: 3rem 0;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    font-size: 16px;
+    /* background-color: white; */
+  }
+
+  .course-info-card img { 
+    width: 100%;
+    height: 240px;
+    object-fit: cover;
+
+  }
+  
+  .course-tabs {
+    display: flex;
+    background-color: #f0f0f0;
+  }
+  
+  .course-tab {
+    flex: 1;
+    padding: 10px;
+    text-align: center;
+    background-color: #2a75bb;
+    color: white;
+    cursor: pointer;
+  }
+  
+  .course-tab + .course-tab {
+    background-color: #1c5d99;
+  }
+  
+  .course-details {
+    padding: 0px;
+
+  }
+  
+  .course-detail {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: .5rem 0;
+    padding: .7rem 0;
+    border: 1px solid rgba(220, 220, 220, 0.621);
+    border-left: none;
+    border-right:none;
+  }
+  
+  .course-detail .icon {
+    margin-right: 10px;
+  }
+  
+  .course-detail .label {
+    font-weight: bold;
+    flex: 1;
+  }
+  
+  .course-detail .value {
+    flex: 2;
+    text-align: right;
+  }
+   
+
+  @media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) { 
+
+    .course-info-card { 
+        width: 90%; 
+        margin: .5rem auto;
+        margin-top: 2rem;
+    } 
+
+
+  }

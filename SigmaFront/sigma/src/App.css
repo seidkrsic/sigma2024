@@ -1,0 +1,44 @@
+.App { 
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    align-items: center;
+    justify-content: flex-start;
+} 
+
+
+
+
+@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) {
+
+    /* settings for all text on mobile screen */
+    p { 
+        font-size: 15px !important;
+        width: 90%;
+        margin: 0.5rem auto !important;
+    } 
+    
+    a { 
+        font-size: 15px !important;
+        text-transform: uppercase;
+    } 
+
+    h1 { 
+        font-size: 25px !important;
+        margin: 0rem auto;
+        width: 90% !important;
+
+    }
+
+    h2, h3 { 
+        font-size: 20px !important;
+        width: 90%;
+        margin: 0.5rem auto !important;
+    }
+    
+
+    .HomePage__container { 
+        flex-direction: column;
+    }
+}

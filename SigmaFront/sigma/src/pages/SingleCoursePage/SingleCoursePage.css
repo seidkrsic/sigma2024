@@ -1,0 +1,123 @@
+
+
+.SingleCoursePage__container { 
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    height: fit-content;
+    min-height: 100vh;
+    /* margin-top: 120px; */
+
+
+}  
+
+.SingleCoursePage__container-bg { 
+    position: absolute;
+    width: 100%;
+    opacity: .0280;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
+
+.SingleCoursePage__container-right { 
+    display: flex;
+    flex-direction: column;
+    width: 50%;
+    margin: 3rem auto;
+    align-items: flex-start;
+    justify-content: flex-start;
+    min-height: 70vh;
+    height: fit-content;
+}
+
+.SingleCoursePage__container-right h2 { 
+    border-bottom: 2px solid gainsboro; 
+    color: #1a3a5b;
+    margin: 1rem 0;
+    margin-top: 0;
+    width: 100%;
+}  
+
+.SingleCoursePage__container-right h3 { 
+    color: #1a3a5b;
+}
+
+.SingleCoursePage__container-right p { 
+    margin: 1rem 0;
+    width: 100%;
+    height: fit-content;
+    line-height: 25px;
+} 
+
+
+
+
+.SingleCoursePage__link:hover { 
+    background-color: #1a3a5b;
+    color:white;
+    transition: all ease-in .2s;
+
+}
+
+
+
+.SingleCoursePage__link { 
+    text-decoration: none;
+    color: white;
+    width: 50% !important;
+    height: 100%;
+    padding: .5rem 2rem;
+    text-align: center;
+    width: 60%;
+    margin: 2rem 0;
+    font-size: 16px;
+    text-decoration: none;
+    background-color: rgb(255, 142, 0);
+    border: none;
+    cursor: pointer; 
+    font-weight: bold;
+    border-radius: 5px;
+    text-transform: uppercase;
+
+} 
+
+@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) { 
+
+    .SingleCoursePage__container { 
+        width: 100%; 
+        flex-direction: column;
+    }
+    
+    .SingleCoursePage__container-right { 
+        width: 100%;
+    }
+
+    .SingleCoursePage__container-right h2 { 
+        width: 90%;
+        margin: .5rem auto;
+    }
+    .SingleCoursePage__container-right p { 
+        width: 90%;
+        margin: .5rem auto;
+    }    
+
+
+    .SingleCoursePage__container-right .AboutPage__InstructorCard-circleContainer { 
+        /* width: 60% !important; */
+        margin: .5rem auto !important;
+    } 
+
+    .SingleCoursePage__container-right .AboutPage__InstructorCard-imgCircle { 
+        width: 90%;
+        margin: .5rem auto !important;
+    }
+
+    .SingleCoursePage__link { 
+        margin: 1rem auto;
+    }
+
+
+} 
+
