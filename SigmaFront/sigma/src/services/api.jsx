@@ -1,7 +1,9 @@
 import axios from 'axios';
 
 
-const API_URL = 'http://127.0.0.1:8000/api'; // Replace with your API URL
+// const API_URL = 'http://127.0.0.1:8000/api'; 
+
+const API_URL = 'http://159.89.11.142/api'
 
 
 const getToken = () => {
