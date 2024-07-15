@@ -17,6 +17,8 @@ CORS_ALLOWED_ORIGINS = [
     # Add your frontend URL if different
 ]
 
+
+
 # Use environment variables for sensitive settings
 DATABASES = {
     'default': {
