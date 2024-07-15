@@ -1,5 +1,6 @@
 from .base import *
-
+# Use environment variables for sensitive settings
+from decouple import config
 DEBUG = False
 
 ALLOWED_HOSTS = ['159.89.11.142']
@@ -18,15 +19,16 @@ CORS_ALLOWED_ORIGINS = [
 ]
 
 
-
-# Use environment variables for sensitive settings
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.environ.get('DB_NAME', 'sigma_db'),
-        'USER': os.environ.get('DB_USER', 'seid'),
-        'PASSWORD': os.environ.get('DB_PASSWORD', '123'),
-        'HOST': os.environ.get('DB_HOST', 'localhost'),
-        'PORT': os.environ.get('DB_PORT', '5432'),
+        'NAME': config('DB_NAME'),
+        'USER': config('DB_USER'),
+        'PASSWORD': config('DB_PASSWORD'),
+        'HOST': config('DB_HOST'),
+        'PORT': config('DB_PORT'),
     }
 }
+
+SECRET_KEY = config('DJANGO_SECRET_KEY')
+DJANGO_ENV = config("DJANGO_ENV")
