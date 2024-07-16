@@ -27,6 +27,7 @@ SECURE_HSTS_PRELOAD = True
 
 CORS_ALLOWED_ORIGINS = [
     "http://159.89.11.142",
+    "https://159.89.11.142",
     
     # Add your frontend URL if different
 ]
@@ -45,4 +46,4 @@ DATABASES = {
 
 SECRET_KEY = config('DJANGO_SECRET_KEY')
 DJANGO_ENV = config("DJANGO_ENV")
-BASE_URL = 'http://159.89.11.142' 
+BASE_URL = 'https://159.89.11.142' 
