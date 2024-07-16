@@ -28,7 +28,8 @@
     color: #ffffff;
     display: block;
     text-align: center;
-    transition: 0.3s;
+    transition: all ease-in-out 0.2s;
+    width: 100% !important;
 
   }
   
@@ -39,11 +40,21 @@
   .side-menu ul li a {
     color: #ffffff;
     text-decoration: none;
-  }
+    transition: all ease-in-out 0.3s;
+  
+  } 
+
+  #special__link { 
+    color: #ffffff;
+    text-decoration: none;
+    transition: all ease-in-out 0.3s;
+    width: 100% !important;
+    display: block;
+  } 
   
   .side-menu ul li a:hover {
     text-decoration: none;
-    color: #ffffff;
+    color: #e0effd;
   }
   
   .menu-icon {
@@ -88,6 +99,7 @@
     margin: 2rem auto !important;
     margin-bottom: 0rem !important;
     scale: .7;
+    transition: all ease-in-out 0.3s;
   } 
 
   .side-menu #side-menu__text { 
@@ -96,6 +108,7 @@
     position: relative; 
     top: -75px !important;
     text-align: center;
+    transition: all ease-in-out 0.3s;
     text-transform: uppercase;
     font-weight: bold;
   }

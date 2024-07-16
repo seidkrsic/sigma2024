@@ -9,11 +9,11 @@ const SideMenu = ({ isOpen, toggleMenu }) => {
     <div className={`side-menu ${isOpen ? 'open' : ''}`}>
       <ul>
         <li>
-          <Link to="/informacije" onClick={toggleMenu}>Informacije</Link>
+          <Link id="special__link" to="/informacije" onClick={toggleMenu}>Informacije</Link>
         </li>
         <div className='tapered-line'></div>
         <li>
-          <Link to="/kursevi" onClick={toggleMenu}>Kursevi</Link>
+          <Link id="special__link" to="/kursevi" onClick={toggleMenu}>Kursevi</Link>
         </li> 
         <div className='tapered-line'></div> 
         <img className='side-menu__img' src={sigma2} alt="" />

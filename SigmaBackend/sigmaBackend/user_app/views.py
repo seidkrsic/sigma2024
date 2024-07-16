@@ -41,7 +41,7 @@ def user_profile(request):
         return Response({'error': 'Profile does not exist'}, status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'GET':
-        serializer = ProfileSerializer(profile)
+        serializer = ProfileSerializer(profile, many=False) 
         return Response(serializer.data)
 
     elif request.method == 'PUT':
