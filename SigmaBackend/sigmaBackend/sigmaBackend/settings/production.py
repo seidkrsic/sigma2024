@@ -3,7 +3,7 @@ from .base import *
 from decouple import config
 DEBUG = False
 
-ALLOWED_HOSTS = ['159.89.11.142', "localhost"]
+ALLOWED_HOSTS = ['159.89.11.142', "localhost", "*"]
 
 # Production-specific security settings
 
