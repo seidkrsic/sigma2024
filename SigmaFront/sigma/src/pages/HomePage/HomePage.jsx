@@ -19,8 +19,8 @@ const HomePage = () => {
                 <Link to="/kursevi">Detaljnije</Link>
             </div>
 
-            <div className='HomePage__container-right'>
-                <img src={glavnaSlika} alt="" />
+            <div className='HomePage__container-right noSelect'>
+                <img className='noSelect' src={glavnaSlika} alt="" />
             </div>
 
             
