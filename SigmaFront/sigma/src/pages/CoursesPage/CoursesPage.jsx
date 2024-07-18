@@ -5,6 +5,7 @@ import pozadina from "../../images/pozadina.webp";
 import api from '../../services/api';
 
 const CoursesPage = () => {
+  window.scrollTo(0,0)
   const [courses, setCourses] = useState([]);
   const [selectedFilters, setSelectedFilters] = useState({
     course_type: [],
@@ -40,6 +41,7 @@ const CoursesPage = () => {
   };
 
   useEffect(() => {
+    window.scrollTo(0,0)
     const fetchFilteredCourses = async () => {
       try {
         const params = {
