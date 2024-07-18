@@ -3,7 +3,7 @@ import "./CoursesPage.css";
 import CourseCard from '../../components/CourseCard/CourseCard';
 import pozadina from "../../images/pozadina.webp";
 import api from '../../services/api';
-import { useLocation } from 'react-router-dom';
+import useScrollToTop from '../../components/useScrollToTop/useScrollToTop';
 
 const CoursesPage = () => {
 
@@ -15,8 +15,10 @@ const CoursesPage = () => {
   });
   const [error, setError] = useState('');
 
+  useScrollToTop();
+
   useEffect(() => {
-    window.scrollTo(0,0)
+
     const fetchCourses = async () => {
       try {
         const data = await api.getAllCourses();
@@ -27,15 +29,12 @@ const CoursesPage = () => {
     };
 
     fetchCourses();
+    window.scrollTo(0, 0);
   }, []); 
 
-  const { pathname } = useLocation(); 
-  console.log(pathname);
-  useEffect(() => { 
-    console.log(pathname);
-    window.scrollTo(0,0);
 
-  }, [pathname])
+  
+
 
 
 
@@ -52,7 +51,7 @@ const CoursesPage = () => {
   };
 
   useEffect(() => {
-    window.scrollTo(0,0)
+
     const fetchFilteredCourses = async () => {
       try {
         const params = {

@@ -2,15 +2,16 @@ import React, { useContext, useState, useEffect} from 'react';
 import "./AboutPage.css";
 import PageList from '../../components/PageList/PageList';
 import AuthContext from '../../components/AuthContext/AuthContext';
-import sigma from "../../images/sigma.png" 
+// import sigma from "../../images/sigma.png" 
 import pozadina from "../../images/pozadina.webp";
 import api from '../../services/api';
 import TeacherPopup from '../../components/TeacherPopup/TeacherPopup';
 import OrangeHelpHeader from '../../components/OrangeHelpHeader/OrangeHelpHeader';
-import { useLocation } from 'react-router-dom';
+
+import useScrollToTop from '../../components/useScrollToTop/useScrollToTop';
 
 const AboutPage = () => {
-  window.scrollTo(0,0)
+
   const menuItems = [
     {
       name: 'O Sigma Akademiji',
@@ -37,9 +38,9 @@ const AboutPage = () => {
   const [teachers, setTeachers] = useState([]);
   const [selectedTeacher, setSelectedTeacher] = useState(null);
   const { activeIndex, isPageListVisible } = useContext(AuthContext);
+  useScrollToTop();
 
   useEffect(() => {
-    
     const fetchTeachers = async () => {
 
       try {
@@ -51,9 +52,10 @@ const AboutPage = () => {
     };
 
     fetchTeachers();
-    
+    window.scrollTo(0, 0);
   }, [activeIndex]);
-  window.scrollTo(0,0)
+
+
   const handleTeacherClick = (teacher) => {
     setSelectedTeacher(teacher);
     
@@ -63,13 +65,8 @@ const AboutPage = () => {
     setSelectedTeacher(null);
   }; 
 
-  const { pathname } = useLocation(); 
+  
 
-  useEffect(() => { 
-    window.scrollTo(0,0);
-    console.log(pathname);
-    
-  }, [pathname])
 
   return (
     <div className='AboutPage__container'>
