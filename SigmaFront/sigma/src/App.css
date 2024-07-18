@@ -40,5 +40,10 @@
 
     .HomePage__container { 
         flex-direction: column;
-    }
+    } 
+
+    a:active,
+    button:active {
+        background-color: transparent; /* or any other background you prefer */
+}
 }
