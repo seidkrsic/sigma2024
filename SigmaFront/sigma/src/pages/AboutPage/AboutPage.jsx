@@ -134,7 +134,7 @@ const AboutPage = () => {
                     <p>Seid nam dolazi iz Podgorice. Rođen je u Beranama, a završio je Gimnaziju u Danilovgradu. Završio je specijalističke studije na Prirodno-matematičkom fakultetu Univerziteta Crne Gore u Podgorici. Kao predsjednik Studentskog Saveza Prirodno-matematičkog fakulteta organizovao je brojne edukativne programe poput kurseva za web programiranje i WordPress, IT konferencije na Žabljaku, kao i Webinar o Vještačkoj Inteligenciji za studente. Takođe, od 2017. godine radi u osnovnoj školi kao nastavnik matematike i informatike.
 
                       Kao Frilenser već par godina radi kao FullStack Developer, a omiljene frontend tehnologije su mu HTML, CSS i React JS, a na bekendu – Python (Django Framework). Veliki je entuzijasta matematičkih i programerskih izazovnih problema i uživa u njihvom rješavanju.</p>
-                    <img className='AboutPage__InstructorCard-img' src="http://127.0.0.1:8000/media/profile_pictures/seidkrsic.jpeg" alt="" />
+                    <img className='AboutPage__InstructorCard-img' src="https://159.89.11.142/media/profile_pictures/seidkrsic_PixH6sP.jpeg" alt="" />
 
                   </div>
 
@@ -148,7 +148,7 @@ const AboutPage = () => {
                     <p>Seid nam dolazi iz Podgorice. Rođen je u Beranama, a završio je Gimnaziju u Danilovgradu. Završio je specijalističke studije na Prirodno-matematičkom fakultetu Univerziteta Crne Gore u Podgorici. Kao predsjednik Studentskog Saveza Prirodno-matematičkog fakulteta organizovao je brojne edukativne programe poput kurseva za web programiranje i WordPress, IT konferencije na Žabljaku, kao i Webinar o Vještačkoj Inteligenciji za studente. Takođe, od 2017. godine radi u osnovnoj školi kao nastavnik matematike i informatike.
 
                       Kao Frilenser već par godina radi kao FullStack Developer, a omiljene frontend tehnologije su mu HTML, CSS i React JS, a na bekendu – Python (Django Framework). Veliki je entuzijasta matematičkih i programerskih izazovnih problema i uživa u njihvom rješavanju.</p>
-                    <img className='AboutPage__InstructorCard-img' src="https://www.ucg.ac.me/skladiste/blog_20372/objava_1//slikajeme.jpg" alt="" />
+                    <img className='AboutPage__InstructorCard-img' src="https://159.89.11.142/media/profile_pictures/antonDjokaj_40h0sT4.jpg" alt="" />
 
                   </div>
 
@@ -162,7 +162,7 @@ const AboutPage = () => {
                     <p>Seid nam dolazi iz Podgorice. Rođen je u Beranama, a završio je Gimnaziju u Danilovgradu. Završio je specijalističke studije na Prirodno-matematičkom fakultetu Univerziteta Crne Gore u Podgorici. Kao predsjednik Studentskog Saveza Prirodno-matematičkog fakulteta organizovao je brojne edukativne programe poput kurseva za web programiranje i WordPress, IT konferencije na Žabljaku, kao i Webinar o Vještačkoj Inteligenciji za studente. Takođe, od 2017. godine radi u osnovnoj školi kao nastavnik matematike i informatike.
 
                       Kao Frilenser već par godina radi kao FullStack Developer, a omiljene frontend tehnologije su mu HTML, CSS i React JS, a na bekendu – Python (Django Framework). Veliki je entuzijasta matematičkih i programerskih izazovnih problema i uživa u njihvom rješavanju.</p>
-                    <img className='AboutPage__InstructorCard-img' src="https://bestpodgorica.com/wp-content/uploads/2023/03/Vuk-Jovovic.jpg" alt="" />
+                    <img className='AboutPage__InstructorCard-img' src="https://159.89.11.142/media/profile_pictures/vukkkk.jpeg" alt="" />
 
                   </div>
 
