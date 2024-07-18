@@ -17,6 +17,7 @@ const LoginPage = () => {
     setError('');
     try {
       await login(username, password);
+
     } catch (err) {
       setError(err.message);
     }

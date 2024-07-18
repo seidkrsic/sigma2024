@@ -30,8 +30,8 @@ useEffect(() => {
 
 const login = async (username, password) => {
   try {
-    await api.login(username, password);
-    const userData = await api.getUserProfile(); // Fetch user profile
+    const userData = await api.login(username, password);
+    // const userData = await api.getUserProfile(); // Fetch user profile
     setUser(userData); // Set user data
     setIsAuthenticated(true);
     localStorage.setItem('user', JSON.stringify(userData)); // Store user data in localStorage

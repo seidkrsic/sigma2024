@@ -43,8 +43,12 @@ const login = async (username, password) => {
         });
         localStorage.setItem('access_token', response.data.access);
         localStorage.setItem('refresh_token', response.data.refresh);
+        const userData = await getUserProfile();
+        
         // Redirect to home or dashboard page
         window.location.href = '/'; // Change to your desired route
+        return userData;
+        
     } catch (error) {
         if (error.response) {
         // Server responded with a status other than 200 range
