@@ -60,7 +60,10 @@
     } 
 
     a:active,
-    button:active {
+    button:active,
+    svg:active, 
+    svg
+        {
         -webkit-tap-highlight-color: transparent;
         -webkit-touch-callout: none;
         -webkit-user-select: none;
@@ -70,7 +73,7 @@
         user-select: none;
     } 
 
-    .a:focus, button:focus {
+    .a:focus, button:focus, svg:focus {
         outline: none !important;
     } 
 
