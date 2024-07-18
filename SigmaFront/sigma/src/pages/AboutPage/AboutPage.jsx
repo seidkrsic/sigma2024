@@ -66,7 +66,9 @@ const AboutPage = () => {
   const { pathname } = useLocation(); 
 
   useEffect(() => { 
-    window.scrollTo(0,0)
+    window.scrollTo(0,0);
+    console.log(pathname);
+    
   }, [pathname])
 
   return (

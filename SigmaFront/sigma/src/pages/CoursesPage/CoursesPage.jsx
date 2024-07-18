@@ -30,9 +30,11 @@ const CoursesPage = () => {
   }, []); 
 
   const { pathname } = useLocation(); 
-
+  console.log(pathname);
   useEffect(() => { 
-    window.scrollTo(0,0)
+    console.log(pathname);
+    window.scrollTo(0,0);
+
   }, [pathname])
 
 
