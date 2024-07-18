@@ -1,8 +1,9 @@
-import React, { useState, useEffect, useLocation } from 'react';
+import React, { useState, useEffect } from 'react';
 import "./CoursesPage.css";
 import CourseCard from '../../components/CourseCard/CourseCard';
 import pozadina from "../../images/pozadina.webp";
 import api from '../../services/api';
+import { useLocation } from 'react-router-dom';
 
 const CoursesPage = () => {
 

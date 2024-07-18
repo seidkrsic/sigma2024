@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect, useLocation} from 'react';
+import React, { useContext, useState, useEffect} from 'react';
 import "./AboutPage.css";
 import PageList from '../../components/PageList/PageList';
 import AuthContext from '../../components/AuthContext/AuthContext';
@@ -7,7 +7,7 @@ import pozadina from "../../images/pozadina.webp";
 import api from '../../services/api';
 import TeacherPopup from '../../components/TeacherPopup/TeacherPopup';
 import OrangeHelpHeader from '../../components/OrangeHelpHeader/OrangeHelpHeader';
-
+import { useLocation } from 'react-router-dom';
 
 const AboutPage = () => {
   window.scrollTo(0,0)
