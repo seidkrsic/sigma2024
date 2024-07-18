@@ -7,7 +7,7 @@
     right: 0;
     background-color: #1a3a5b;
     overflow-x: hidden;
-    transition: 0.5s;
+    transition: 0.2s;
     padding-top: 60px;
     z-index: 999;
   }
@@ -50,6 +50,8 @@
     transition: all ease-in-out 0.3s;
     width: 100% !important;
     display: block;
+    text-align: center;
+    padding: 1rem 0;
   } 
   
   .side-menu ul li a:hover {

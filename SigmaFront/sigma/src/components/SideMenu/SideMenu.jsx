@@ -8,14 +8,15 @@ const SideMenu = ({ isOpen, toggleMenu }) => {
   return (
     <div className={`side-menu ${isOpen ? 'open' : ''}`}>
       <ul>
-        <li>
-          <Link id="special__link" to="/informacije" onClick={toggleMenu}>Informacije</Link>
-        </li>
+       
+        <Link id="special__link" to="/informacije" onClick={toggleMenu}>Informacije</Link>
+       
         <div className='tapered-line'></div>
-        <li>
-          <Link id="special__link" to="/kursevi" onClick={toggleMenu}>Kursevi</Link>
-        </li> 
+        
+        <Link id="special__link" to="/kursevi" onClick={toggleMenu}>Kursevi</Link>
+        
         <div className='tapered-line'></div> 
+        
         <img className='side-menu__img' src={sigma2} alt="" />
         <p id='side-menu__text'>Sigma Acamedy</p>
       </ul>

@@ -232,7 +232,9 @@
         display: none;
      }
 
-
+     .Header__loginBtn  { 
+        height: 100% !important;
+     }
 
 }
 
