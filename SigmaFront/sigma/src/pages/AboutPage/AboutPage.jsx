@@ -52,7 +52,7 @@ const AboutPage = () => {
     };
 
     fetchTeachers();
-    window.scrollTo(0, 0);
+    window.scrollTo(0, 10);
   }, [activeIndex]);
 
 
