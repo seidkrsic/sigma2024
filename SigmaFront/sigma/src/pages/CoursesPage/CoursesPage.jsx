@@ -1,11 +1,11 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useLocation } from 'react';
 import "./CoursesPage.css";
 import CourseCard from '../../components/CourseCard/CourseCard';
 import pozadina from "../../images/pozadina.webp";
 import api from '../../services/api';
 
 const CoursesPage = () => {
-  window.scrollTo(0,0)
+
   const [courses, setCourses] = useState([]);
   const [selectedFilters, setSelectedFilters] = useState({
     course_type: [],
@@ -26,7 +26,15 @@ const CoursesPage = () => {
     };
 
     fetchCourses();
-  }, []);
+  }, []); 
+
+  const { pathname } = useLocation(); 
+
+  useEffect(() => { 
+    window.scrollTo(0,0)
+  }, [pathname])
+
+
 
   const handleFilterChange = (event) => {
     const { name, value } = event.target;

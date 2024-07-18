@@ -1,4 +1,4 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useContext, useState, useEffect, useLocation} from 'react';
 import "./AboutPage.css";
 import PageList from '../../components/PageList/PageList';
 import AuthContext from '../../components/AuthContext/AuthContext';
@@ -39,8 +39,9 @@ const AboutPage = () => {
   const { activeIndex, isPageListVisible } = useContext(AuthContext);
 
   useEffect(() => {
-    window.scrollTo(0,0)
+    
     const fetchTeachers = async () => {
+
       try {
         const response = await api.getAllProfiles() 
         setTeachers(response);
@@ -50,16 +51,23 @@ const AboutPage = () => {
     };
 
     fetchTeachers();
+    
   }, [activeIndex]);
-
+  window.scrollTo(0,0)
   const handleTeacherClick = (teacher) => {
     setSelectedTeacher(teacher);
+    
   };
 
   const closePopup = () => {
     setSelectedTeacher(null);
-  };
+  }; 
 
+  const { pathname } = useLocation(); 
+
+  useEffect(() => { 
+    window.scrollTo(0,0)
+  }, [pathname])
 
   return (
     <div className='AboutPage__container'>
