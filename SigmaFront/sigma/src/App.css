@@ -45,5 +45,6 @@
     a:active,
     button:active {
         background-color: transparent; /* or any other background you prefer */
+        -webkit-tap-highlight-color: transparent;
 }
 }
