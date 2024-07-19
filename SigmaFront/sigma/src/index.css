@@ -32,9 +32,7 @@ code {
   /* color: black; */
 } 
 
-.scroll-container { 
-  display: none;
-}
+
 
 @media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) { 
   body, html {
@@ -48,7 +46,6 @@ code {
   
   .scroll-container {
     height: 100%;
-    display: block;
     overflow-y: auto; /* Dozvoli vertikalno skrolovanje unutar kontejnera */
     -webkit-overflow-scrolling: touch; /* Za glatko skrolovanje na iOS-u */
   } 
