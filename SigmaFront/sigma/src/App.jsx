@@ -44,8 +44,9 @@ function App() {
   return (
     <div className="App">
       <Router>
+      <div className="scroll-container"> 
         <Header />
-        <div className="scroll-container"> 
+     
           <Routes>
             <Route path={"/"} element={<HomePage />} /> 
             {isAuthenticated ?  <Route path={"/blog"} element={<BlogPage />} > </Route> : <Route path={"/login"} element={<LoginPage />} />}  
