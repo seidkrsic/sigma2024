@@ -14,6 +14,7 @@ const SingleCoursePage = () => {
   const [selectedTeacher, setSelectedTeacher] = useState(null);
 
   useScrollToTop();
+  document.querySelector(".SingleCoursePage__container").scrollTo(0, 0);
 
   useEffect(() => {
     document.querySelector(".SingleCoursePage__container").scrollTo(0, 0);
