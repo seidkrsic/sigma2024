@@ -2,9 +2,10 @@ import React, { useContext, useState } from 'react';
 import './LoginPage.css';
 import api from '../../services/api';
 import AuthContext from '../../components/AuthContext/AuthContext';
+import useScrollToTop from '../../components/useScrollToTop/useScrollToTop';
 
 const LoginPage = () => {
-  window.scrollTo(0, 0);
+  
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -36,7 +37,9 @@ const LoginPage = () => {
     } catch (err) {
       setError(err.message);
     }
-  };
+  }; 
+
+  useScrollToTop();
 
   return (
     <div className='LoginPage__container'>
