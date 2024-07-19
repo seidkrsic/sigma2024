@@ -29,7 +29,7 @@ const CoursesPage = () => {
     };
 
     fetchCourses();
-    window.scrollTo(0, 0);
+
   }, []); 
 
 

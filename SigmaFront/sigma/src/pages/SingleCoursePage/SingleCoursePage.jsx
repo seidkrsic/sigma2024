@@ -5,6 +5,7 @@ import { Link, useParams } from 'react-router-dom';
 import pozadina from "../../images/pozadina.webp";
 import api from '../../services/api';
 import TeacherPopup from '../../components/TeacherPopup/TeacherPopup';
+import useScrollToTop from '../../components/useScrollToTop/useScrollToTop';
 
 const SingleCoursePage = () => {
   const { id } = useParams();
@@ -12,8 +13,10 @@ const SingleCoursePage = () => {
   const [error, setError] = useState("");
   const [selectedTeacher, setSelectedTeacher] = useState(null);
 
+  useScrollToTop();
+
   useEffect(() => {
-    window.scrollTo(0,0)
+
     const fetchCourse = async () => {
       try {
         const response = await api.getCourse(id);

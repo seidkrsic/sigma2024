@@ -3,11 +3,12 @@ import "./HomePage.css"
 import { Link } from 'react-router-dom'
 import glavnaSlika from "../../images/glavnaSlika.webp"
 import AuthContext from '../../components/AuthContext/AuthContext'
+import useScrollToTop from '../../components/useScrollToTop/useScrollToTop'
 
 const HomePage = () => {
 
     const {setActiveIndex} = useContext(AuthContext);
-    window.scrollTo(0,0)
+    useScrollToTop();
 
 
   return (
