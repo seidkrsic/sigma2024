@@ -28,19 +28,23 @@ code {
   margin: 0;
   box-sizing: border-box;
   padding: 0;
-  /* border: 1px solid black; */
+  border: 1px solid black;
   /* color: black; */
 } 
-scroll-container { 
+
+.scroll-container { 
   display: none;
 }
 
 @media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) { 
   body, html {
     height: 100%;
+    
     overflow: hidden; /* Prevent scrolling */
     -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
-  } 
+  }  
+
+
   
   .scroll-container {
     height: 100%;

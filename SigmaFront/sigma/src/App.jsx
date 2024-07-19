@@ -22,7 +22,7 @@ function App() {
     const scrollContainer = document.querySelector('.scroll-container');
 
     function handleResize() {
-      scrollContainer.style.height = `${window.innerHeight - 45}px`;
+      scrollContainer.style.height = `${window.innerHeight}px`;
     }
 
     const mobileMediaQuery = window.matchMedia('(max-width: 812px)');
