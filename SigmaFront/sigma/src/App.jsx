@@ -18,16 +18,15 @@ function App() {
 
   const {isAuthenticated} = useContext(AuthContext);
 
-  useEffect(() => {
-    const scrollContainer = document.querySelector('.scroll-container');
-
-    function handleResize() {
-      scrollContainer.style.height = `${window.innerHeight}px`;
-    }
-
-    const mobileMediaQuery = window.matchMedia('(max-width: 812px)');
-
-    if (mobileMediaQuery.matches) {
+  const mobileMediaQuery = window.matchMedia('(max-width: 812px)');
+  if (mobileMediaQuery.matches) { 
+    useEffect(() => {
+      const scrollContainer = document.querySelector('.scroll-container');
+  
+      function handleResize() {
+        scrollContainer.style.height = `${window.innerHeight}px`;
+      }
+  
       handleResize(); // Podesi visinu pri prvom učitavanju
 
       window.addEventListener('resize', handleResize);
@@ -36,8 +35,10 @@ function App() {
       return () => {
         window.removeEventListener('resize', handleResize);
       };
-    }
-  }, []);
+      
+    }, []);
+  }
+
     
 
 
