@@ -15,10 +15,11 @@ const CoursesPage = () => {
   });
   const [error, setError] = useState('');
 
-  useScrollToTop();
+  useScrollToTop(); 
+
 
   useEffect(() => {
-
+    document.querySelector(".CoursesPage__container").scrollTo(0,0);
     const fetchCourses = async () => {
       try {
         const data = await api.getAllCourses();

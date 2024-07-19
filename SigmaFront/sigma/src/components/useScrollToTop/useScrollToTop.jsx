@@ -6,10 +6,18 @@ const useScrollToTop = () => {
   const { pathname } = useLocation();
 
   useEffect(() => {
+    document.querySelector(".scroll-container").scrollTo(0, 0);
     setTimeout(() => {
-        window.scrollTo(0, 0);
+        document.querySelector(".scroll-container").scrollTo(0, 0);
       }, 100);
-  }, [pathname]);
+  }, [pathname]); 
+
+  useEffect(() => { 
+    document.querySelector(".scroll-container").scrollTo(0, 0);
+    setTimeout(() => {
+      document.querySelector(".scroll-container").scrollTo(0, 0);
+    }, 100);
+  }, [])
 };
 
 export default useScrollToTop;

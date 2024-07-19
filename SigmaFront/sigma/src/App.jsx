@@ -1,5 +1,5 @@
 
-import { useContext } from 'react';
+import { useContext, useEffect } from 'react';
 import './App.css';
 import BlogPage from './pages/BlogPage/BlogPage';
 import HomePage from './pages/HomePage/HomePage';
@@ -18,10 +18,34 @@ function App() {
 
   const {isAuthenticated} = useContext(AuthContext);
 
+  useEffect(() => {
+    const scrollContainer = document.querySelector('.scroll-container');
+
+    function handleResize() {
+      scrollContainer.style.height = `${window.innerHeight - 45}px`;
+    }
+
+    const mobileMediaQuery = window.matchMedia('(max-width: 812px)');
+
+    if (mobileMediaQuery.matches) {
+      handleResize(); // Podesi visinu pri prvom učitavanju
+
+      window.addEventListener('resize', handleResize);
+
+      // Cleanup listener pri unmount-u komponenta
+      return () => {
+        window.removeEventListener('resize', handleResize);
+      };
+    }
+  }, []);
+    
+
+
   return (
     <div className="App">
       <Router>
         <Header />
+        <div className="scroll-container"> 
           <Routes>
             <Route path={"/"} element={<HomePage />} /> 
             {isAuthenticated ?  <Route path={"/blog"} element={<BlogPage />} > </Route> : <Route path={"/login"} element={<LoginPage />} />}  
@@ -31,7 +55,8 @@ function App() {
             <Route path={"/login"} element={<LoginPage />} />
           </Routes>
 
-        <Footer />
+          <Footer /> 
+        </div>
       </Router>
       
     </div>
