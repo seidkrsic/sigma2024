@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react';
 import "./SingleCoursePage.css";
 import CourseInfoCard from '../../components/CourseInfoComponent/CourseInfoCard';
 import { Link, useParams } from 'react-router-dom';
-import pozadina from "../../images/pozadina.jpg"; 
+import pozadina from "../../images/pozadina1.jpg"; 
 import api from '../../services/api';
 import TeacherPopup from '../../components/TeacherPopup/TeacherPopup';
 import useScrollToTop from '../../components/useScrollToTop/useScrollToTop';

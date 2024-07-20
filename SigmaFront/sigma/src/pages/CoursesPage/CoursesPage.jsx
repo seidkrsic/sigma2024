@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import "./CoursesPage.css";
 import CourseCard from '../../components/CourseCard/CourseCard';
-import pozadina from "../../images/pozadina.jpg";
+import pozadina from "../../images/pozadina1.jpg";
 import api from '../../services/api';
 import useScrollToTop from '../../components/useScrollToTop/useScrollToTop';
 

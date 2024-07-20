@@ -3,7 +3,7 @@ import "./AboutPage.css";
 import PageList from '../../components/PageList/PageList';
 import AuthContext from '../../components/AuthContext/AuthContext';
 // import sigma from "../../images/sigma.png" 
-import pozadina from "../../images/pozadina.jpg";
+import pozadina from "../../images/pozadina1.jpg";
 import api from '../../services/api';
 import TeacherPopup from '../../components/TeacherPopup/TeacherPopup';
 import OrangeHelpHeader from '../../components/OrangeHelpHeader/OrangeHelpHeader';
