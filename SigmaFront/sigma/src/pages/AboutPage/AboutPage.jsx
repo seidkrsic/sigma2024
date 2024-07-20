@@ -41,8 +41,8 @@ const AboutPage = () => {
   useScrollToTop();
 
   useEffect(() => {
+    window.scrollTo(0,0);
     const fetchTeachers = async () => {
-
       try {
         const response = await api.getAllProfiles() 
         setTeachers(response);

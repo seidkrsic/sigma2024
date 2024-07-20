@@ -19,7 +19,7 @@ const CoursesPage = () => {
 
 
   useEffect(() => {
-    document.querySelector(".CoursesPage__container").scrollTo(0,0);
+    window.scrollTo(0,0);
     const fetchCourses = async () => {
       try {
         const data = await api.getAllCourses();
@@ -30,7 +30,7 @@ const CoursesPage = () => {
     };
 
     fetchCourses();
-    
+
   }, []); 
 
 

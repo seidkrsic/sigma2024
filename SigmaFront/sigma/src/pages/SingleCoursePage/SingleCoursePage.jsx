@@ -16,7 +16,7 @@ const SingleCoursePage = () => {
   useScrollToTop();
 
   useEffect(() => {
-    document.querySelector(".SingleCoursePage__container").scrollTo(0, 0);
+    window.scrollTo(0,0);
     const fetchCourse = async () => {
       try {
         const response = await api.getCourse(id);

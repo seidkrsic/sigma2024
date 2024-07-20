@@ -40,6 +40,7 @@ const LoginPage = () => {
   }; 
 
   useScrollToTop();
+  window.scrollTo(0,0);
 
   return (
     <div className='LoginPage__container'>
