@@ -3,7 +3,7 @@ import "./AboutPage.css";
 import PageList from '../../components/PageList/PageList';
 import AuthContext from '../../components/AuthContext/AuthContext';
 // import sigma from "../../images/sigma.png" 
-import pozadina from "../../images/pozadina.webp";
+import pozadina from "../../images/pozadina.jpg";
 import api from '../../services/api';
 import TeacherPopup from '../../components/TeacherPopup/TeacherPopup';
 import OrangeHelpHeader from '../../components/OrangeHelpHeader/OrangeHelpHeader';
@@ -95,7 +95,7 @@ const AboutPage = () => {
           
               <div className='AboutPage__section-infoText'>
                   <h2>O Nama</h2>
-                  <p>Akademija Sigma je specijalizovana online platforma kreirana sa ciljem da podrži i unapredi matematičke veštine i znanje mladih entuzijasta širom sveta. Naša misija je da inspirišemo, obrazujemo i osnažimo nove generacije matematičara, pružajući im alate i resurse potrebne za uspeh na raznim matematičkim takmičenjima i u akademskim sferama.</p>
+                  <p>Akademija Sigma je specijalizovana online platforma kreirana sa ciljem da podrži i unaprijedi matematičke veštine i znanje mladih entuzijasta širom sveta. Naša misija je da inspirišemo, obrazujemo i osnažimo nove generacije matematičara i fizičara, pružajući im alate i resurse potrebne za uspeh na raznim matematičkim takmičenjima i u akademskim sferama.</p>
                   
                   <h2>Naši Programi</h2>
                   <p>Akademija Sigma nudi raznovrsne programe i kurseve prilagođene različitim nivoima znanja i interesovanjima:</p>
@@ -144,10 +144,15 @@ const AboutPage = () => {
               <div className='AboutPage__InstructorCard-container'>
                 <h3>Anton Djokaj</h3>
                   <div className='AboutPage__InstructorCard-textContainer'>
-                    
-                    <p>Seid nam dolazi iz Podgorice. Rođen je u Beranama, a završio je Gimnaziju u Danilovgradu. Završio je specijalističke studije na Prirodno-matematičkom fakultetu Univerziteta Crne Gore u Podgorici. Kao predsjednik Studentskog Saveza Prirodno-matematičkog fakulteta organizovao je brojne edukativne programe poput kurseva za web programiranje i WordPress, IT konferencije na Žabljaku, kao i Webinar o Vještačkoj Inteligenciji za studente. Takođe, od 2017. godine radi u osnovnoj školi kao nastavnik matematike i informatike.
+                    <p>Anton Gjokaj rođen je 13. juna 1994. godine u Podgorici. Osnovnu i srednju školu završio je u Tuzima. Tokom tog perioda učestvovao je na takmičenjima iz matematike i biologije i ostvario zapažene rezultate na državnom nivou i predstavljao Crnu Goru na balkanskim i internacionalnim olimpijadama iz matematike.
 
-                      Kao Frilenser već par godina radi kao FullStack Developer, a omiljene frontend tehnologije su mu HTML, CSS i React JS, a na bekendu – Python (Django Framework). Veliki je entuzijasta matematičkih i programerskih izazovnih problema i uživa u njihvom rješavanju.</p>
+                        Osnovne i specijalističke studije na Prirodno-matematičkom fakultetu, smjer Matematika, završio je 2017. godine sa prosječnom ocjenom 10. U martu 2019. godine završio je magistarske studije pri istom fakultetu, braneći rad “Konveksne i univalentne harmonijske funkcije u kompleksnoj ravni i njihova geometrija”, pod mentorstvom prof. dr Davida Kalaja.
+
+                        Doktorsku disertaciju pod nazivom “Granična svojstva kvazikonformnih harmonijskih preslikavanja u prostoru” odbranio je na Prirodno-matematičkom fakultetu u Podgorici, 07. novembra 2023. godine, pod mentorstvom prof. dr Davida Kalaja. Tokom doktorskih studija boravio je u Univerzitetu Camerino, u Italiji.
+
+                        Za postignute rezultate u toku studija dobitnik je Studentske nagrade Univerziteta Crne Gore za najboljeg studenta Prirodno-matematičkog fakulteta, Plakete Univerziteta Crne Gore, stipendije CANU-a za izuzetan uspjeh i nagrade Ministarstva nauke i tehnološkog razvoja Vlade Crne Gore za najuspješnijeg mladog naučnika do 30 godina života u 2022. godini.
+
+                        Od septembra 2017. godine angažovan je kao saradnik u nastavi na Prirodno-matematičkom fakultetu u Podgorici.</p>
                     <img className='AboutPage__InstructorCard-img' src="https://159.89.11.142/media/profile_pictures/antonDjokaj_40h0sT4.jpg" alt="" />
 
                   </div>
@@ -158,10 +163,15 @@ const AboutPage = () => {
               <div className='AboutPage__InstructorCard-container'>
                 <h3>Vuk Jovovic</h3>
                   <div className='AboutPage__InstructorCard-textContainer'>
-                    
-                    <p>Seid nam dolazi iz Podgorice. Rođen je u Beranama, a završio je Gimnaziju u Danilovgradu. Završio je specijalističke studije na Prirodno-matematičkom fakultetu Univerziteta Crne Gore u Podgorici. Kao predsjednik Studentskog Saveza Prirodno-matematičkog fakulteta organizovao je brojne edukativne programe poput kurseva za web programiranje i WordPress, IT konferencije na Žabljaku, kao i Webinar o Vještačkoj Inteligenciji za studente. Takođe, od 2017. godine radi u osnovnoj školi kao nastavnik matematike i informatike.
+                    <p>Vuk Jovović je rođen 12. marta 1998. godine u Nikšiću, gdje je završio osnovnu i srednju školu. Dobitnik je diplome Luča, a na završnoj godini srednje škole je ostvario prvo mjesto na Olimpijadi znanja iz Matematike.
 
-                      Kao Frilenser već par godina radi kao FullStack Developer, a omiljene frontend tehnologije su mu HTML, CSS i React JS, a na bekendu – Python (Django Framework). Veliki je entuzijasta matematičkih i programerskih izazovnih problema i uživa u njihvom rješavanju.</p>
+                      Školovanje 2017. godine nastavlja na Prirodno-matematičkom fakultetu u Podgorici, smjer Matematika i računarske nauke. Osnovne studije završava 2020. godine sa prosječnom ocjenom 9,66. Iste godine upisuje master studije, ovog puta na smjeru Matematika, a iste završava 2023. godine sa prosječnom ocjenom 9,71. Master tezu "Metod višestruke imputacije" je radio pod mentorstvom Prof. dr Božidara Popovića, a odbranio je 20. oktobra 2023. godine, sa ocjenom A.
+
+                      Tokom školovanja je bio stipendista Vlade Crne Gore i grada Nikšića, a bio je zaposlen u ulozi saradnika u nastavi na Univerzitetu Crne Gore, kao i Univerzitetu Donja Gorica. Dugogodišnji je član Fondacije za promovisanje nauke "PRONA" u svojstvu rukovodioca praktikuma matematike.
+
+                      Boravio je na nekoliko prestižnih, internacionalnih škola i seminara, kao što su CERN-ova Ljetnja škola za studente u Ženevi, Ljetnja škola matematike na Univerzitetu u Ljubljani, trening škola o matematici u genetskim kodovima u organizaciji Univerziteta u Manhajmu, ali i mnogim drugim.
+
+                      Trenutno živi u Nikšiću.</p>
                     <img className='AboutPage__InstructorCard-img' src="https://159.89.11.142/media/profile_pictures/vukkkk.jpeg" alt="" />
 
                   </div>

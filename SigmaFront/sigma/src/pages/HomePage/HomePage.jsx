@@ -1,7 +1,7 @@
 import {React, useContext} from 'react'
 import "./HomePage.css"  
 import { Link } from 'react-router-dom'
-import glavnaSlika from "../../images/glavnaSlika.webp"
+import glavnaSlika from "../../images/glavnaSlika.jpg" 
 import AuthContext from '../../components/AuthContext/AuthContext'
 import useScrollToTop from '../../components/useScrollToTop/useScrollToTop'
 
@@ -45,8 +45,8 @@ const HomePage = () => {
 
         <section className='HomePage__section-video'> 
                 <div className='HomePage__section-video__left'>
-                    <h1>Where Exploration Meets Challenge</h1>
-                    <p>Art of Problem Solving has been a leader in math education for high-performing students since 1993. We launched AoPS Academy in 2016 to bring our rigorous curriculum and expert instructors into classrooms around the United States.</p>
+                    <h1>Gdje učenje postaje zabava</h1>
+                    <p>Akademija Sigma je specijalizovana online platforma kreirana sa ciljem da podrži i unaprijedi matematičke veštine i znanje mladih entuzijasta širom Crne Gore. Naša misija je da inspirišemo, obrazujemo i osnažimo nove generacije matematičara i fizičara, pružajući im alate i resurse potrebne za uspeh na raznim matematičkim takmičenjima i u akademskim sferama.</p>
                 </div>
 
                 <div className='HomePage__section-video__right'>
