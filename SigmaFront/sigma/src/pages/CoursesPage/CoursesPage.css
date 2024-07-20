@@ -165,8 +165,7 @@ input[type="checkbox"]:checked {
 
     .CoursesPage__container { 
         width: 100%;
-        min-height: 100svh; 
-        min-height: -webkit-fill-available;
+    
     } 
 
     .CoursesPage__container-right { 
