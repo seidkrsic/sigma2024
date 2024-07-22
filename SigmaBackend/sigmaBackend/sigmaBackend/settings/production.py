@@ -3,7 +3,7 @@ from .base import *
 from decouple import config
 DEBUG = False
 
-ALLOWED_HOSTS = ['159.89.11.142', "localhost", "*"]
+ALLOWED_HOSTS = ['159.89.11.142', "localhost", "*", "sigma-academy.me", "www.sigma-academy.me"]
 
 # Production-specific security settings
 
@@ -28,6 +28,9 @@ SECURE_HSTS_PRELOAD = True
 CORS_ALLOWED_ORIGINS = [
     "http://159.89.11.142",
     "https://159.89.11.142",
+    "https://sigma-academy.me", 
+    "https://www.sigma-academy.me", 
+
     
     # Add your frontend URL if different
 ]
@@ -46,4 +49,4 @@ DATABASES = {
 
 SECRET_KEY = config('DJANGO_SECRET_KEY')
 DJANGO_ENV = config("DJANGO_ENV")
-BASE_URL = 'https://159.89.11.142' 
+BASE_URL = 'https://sigma-academy.me' 
