@@ -74,7 +74,7 @@ const LoginPage = () => {
           <p id="switch-form__text">
             Nemate nalog?{' '}
             <span onClick={() => setIsLogin(false)} className='switch-form'>
-              Registruj se
+              Registrujte se
             </span>
           </p>
         </form>
@@ -115,7 +115,7 @@ const LoginPage = () => {
             />
           </div>
           {error && <p>{error}</p>}
-          <button type='submit'>Registruj se</button>
+          <button type='submit'>Registrujte se</button>
           <p id='switch-form__text'>
             Već imate nalog?{' '}
             <span onClick={() => setIsLogin(true)} className='switch-form'>

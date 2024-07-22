@@ -234,6 +234,7 @@
 
      .Header__loginBtn  { 
         height: 100% !important;
+        font-size: 15px !important;
      }
 
 }

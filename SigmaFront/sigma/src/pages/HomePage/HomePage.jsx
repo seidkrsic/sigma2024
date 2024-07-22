@@ -17,7 +17,7 @@ const HomePage = () => {
             <div className='HomePage__container-left'>
                 <h1 className='HomePage__headingSize'>Treniramo umove za izazove budućnosti!</h1>
                 <p>"Naša Matematička Akademija za srednjoškolce koristi inovativne metode podučavanja kako bi učenicima pružila vještine potrebne za rješavanje kompleksnih matematičkih problema. Kroz našu virtualnu platformu, omogućavamo pristup kvalitetnom obrazovanju, uz podršku iskusnih instruktora. Naši učenici su pripremljeni da postanu lideri u oblasti matematike i nauke, spremni da se suoče s izazovima budućnosti."</p>
-                <Link to="/kursevi">Detaljnije</Link>
+                <Link to="/informacije">Detaljnije</Link>
             </div>
 
             <div className='HomePage__container-right noSelect'>
@@ -57,7 +57,8 @@ const HomePage = () => {
         <section className='HomePage__section-question'> 
                 <h2>Zainteresovani ste?</h2> 
                 <p>Pozovite nas da se informišete i saznate koji je pravi kurs za vaše dijete!</p> 
-                <Link>Pozovite nas</Link>
+                <Link to="" onClick={() => window.location.href = `tel: +38268619730}`}>Pozovite nas</Link>
+                
         </section>  
 
         

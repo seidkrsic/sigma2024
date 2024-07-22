@@ -251,8 +251,8 @@ const AboutPage = () => {
 
                     <div class="contact-details">
                         <h2>Informacije</h2>
-                        <p>Email: <a href="mailto:info@primjer.com">sigma@gmail.com</a></p>
-                        <p>Telefon: <a href="tel:+1234567890">+382 68/619-730</a></p>
+                        <p>Email: <a href="mailto:info@primjer.com">sigma-academy@gmail.com</a></p>
+                        <p>Telefon: <a href="tel:+38268619730">+382 68/619-730</a></p>
                     </div>
                 
                     <div class="contact-map">
