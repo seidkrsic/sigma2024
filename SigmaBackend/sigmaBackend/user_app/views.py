@@ -26,7 +26,7 @@ def register(request):
 
 @api_view(['GET'])
 def get_profiles(request):
-    teachers = Profile.objects.all()
+    teachers = Profile.objects.filter(is_professor=True)
     serializer = ProfileSerializer(teachers, many=True)
     return Response(serializer.data)
 
