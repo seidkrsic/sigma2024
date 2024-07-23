@@ -140,7 +140,7 @@ const AboutPage = () => {
                       <p>Seid nam dolazi iz Podgorice. Rođen je u Beranama, a završio je Gimnaziju u Danilovgradu. Završio je specijalističke studije na Prirodno-matematičkom fakultetu Univerziteta Crne Gore u Podgorici. Kao predsjednik Studentskog Saveza Prirodno-matematičkog fakulteta organizovao je brojne edukativne programe poput kurseva za web programiranje i WordPress, IT konferencije na Žabljaku, kao i Webinar o Vještačkoj Inteligenciji za studente. Takođe, od 2017. godine radi u osnovnoj školi kao nastavnik matematike i informatike.
 
                         Kao Frilenser već par godina radi kao FullStack Developer, a omiljene frontend tehnologije su mu HTML, CSS i React JS, a na bekendu – Python (Django Framework). Veliki je entuzijasta matematičkih i programerskih izazovnih problema i uživa u njihvom rješavanju.</p>
-                      <img className='AboutPage__InstructorCard-img' src="https://159.89.11.142/media/profile_pictures/seidkrsic_PixH6sP.jpeg" alt="" />
+                      <img className='AboutPage__InstructorCard-img' src="https://sigma-academy.me/media/profile_pictures/seidkrsic_PixH6sP.jpeg" alt="" />
 
                     </div>
 
@@ -159,7 +159,7 @@ const AboutPage = () => {
                           Za postignute rezultate u toku studija dobitnik je Studentske nagrade Univerziteta Crne Gore za najboljeg studenta Prirodno-matematičkog fakulteta, Plakete Univerziteta Crne Gore, stipendije CANU-a za izuzetan uspjeh i nagrade Ministarstva nauke i tehnološkog razvoja Vlade Crne Gore za najuspješnijeg mladog naučnika do 30 godina života u 2022. godini.
 
                           Od septembra 2017. godine angažovan je kao saradnik u nastavi na Prirodno-matematičkom fakultetu u Podgorici.</p>
-                      <img className='AboutPage__InstructorCard-img' src="https://159.89.11.142/media/profile_pictures/antonDjokaj_40h0sT4.jpg" alt="" />
+                      <img className='AboutPage__InstructorCard-img' src="https://sigma-academy.me/media/profile_pictures/antonDjokaj_40h0sT4.jpg" alt="" />
 
                     </div>
 
@@ -178,7 +178,7 @@ const AboutPage = () => {
                         Boravio je na nekoliko prestižnih, internacionalnih škola i seminara, kao što su CERN-ova Ljetnja škola za studente u Ženevi, Ljetnja škola matematike na Univerzitetu u Ljubljani, trening škola o matematici u genetskim kodovima u organizaciji Univerziteta u Manhajmu, ali i mnogim drugim.
 
                         Trenutno živi u Nikšiću.</p>
-                      <img className='AboutPage__InstructorCard-img' src="https://159.89.11.142/media/profile_pictures/vukkkk.jpeg" alt="" />
+                      <img className='AboutPage__InstructorCard-img' src="https://sigma-academy.me/media/profile_pictures/vukkkk.jpeg" alt="" />
 
                     </div>
 
