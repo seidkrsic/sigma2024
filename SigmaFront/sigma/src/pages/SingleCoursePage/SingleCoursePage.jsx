@@ -50,25 +50,27 @@ const SingleCoursePage = () => {
   }
 
   return (
-    <div className='SingleCoursePage__container'>
-      <img className='SingleCoursePage__container-bg' src={pozadina} alt="" />
-      <CourseInfoCard course={course} /> 
-      <OrangeHeader text={"Kursevi"} link_url={"/kursevi"} />
+    <div className='SingleCoursePage__container1'>
+       <OrangeHeader text={"Kursevi"} link_url={"/kursevi"} />
+       <div className='SingleCoursePage__container'>
+        <img className='SingleCoursePage__container-bg' src={pozadina} alt="" />
+        <CourseInfoCard course={course} /> 
 
-      <div className='SingleCoursePage__container-right'>
-        <h2>{course?.title}</h2>
-        <p>{course?.description}</p>
-        <h3>Predavač na ovom kursu</h3>
-        <div onClick={() =>{handleTeacherClick(course?.instructor)}} className='AboutPage__InstructorCard-circleContainer'>
-            <img className='AboutPage__InstructorCard-imgCircle' src={course?.instructor.image_url} alt="" />
-            <h3>{course?.instructor.name}</h3>
-        </div> 
-        <Link to="https://www.google.com" className='SingleCoursePage__link'>Prijavi Se</Link> 
-      </div>
 
-      {selectedTeacher && <TeacherPopup teacher={selectedTeacher} onClose={closePopup} /> }
-  
-      
+        <div className='SingleCoursePage__container-right'>
+          <h2>{course?.title}</h2>
+          <p>{course?.description}</p>
+          <h3>Predavač na ovom kursu</h3>
+          <div onClick={() =>{handleTeacherClick(course?.instructor)}} className='AboutPage__InstructorCard-circleContainer'>
+              <img className='AboutPage__InstructorCard-imgCircle' src={course?.instructor.image_url} alt="" />
+              <h3>{course?.instructor.name}</h3>
+          </div> 
+          <Link to="https://www.google.com" className='SingleCoursePage__link'>Prijavi Se</Link> 
+        </div>
+
+        {selectedTeacher && <TeacherPopup teacher={selectedTeacher} onClose={closePopup} /> }
+    
+        </div>
     </div>
   );
 }

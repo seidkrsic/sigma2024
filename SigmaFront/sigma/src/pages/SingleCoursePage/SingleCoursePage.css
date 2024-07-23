@@ -1,4 +1,12 @@
 
+.SingleCoursePage__container1 { 
+    display: flex;
+    width: 100%;
+    margin: 0 auto;
+    height: fit-content;
+    min-height: 100vh;
+
+}
 
 .SingleCoursePage__container { 
     display: flex;
