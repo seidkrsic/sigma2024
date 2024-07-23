@@ -10,11 +10,14 @@
         display: flex;
         background-color: rgb(255, 142, 0);
         display: flex;
-        position: relative; 
-        top: -15px;
+        position: absolute; 
+        top: 0px;
+        margin: 0;
+        left: 0;
         height: 30px;
         justify-content: flex-start;
         align-items: center;
+        width: 100% !important;
     }
 
     .play-icon { 

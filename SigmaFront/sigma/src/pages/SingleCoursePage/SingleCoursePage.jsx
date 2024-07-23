@@ -6,6 +6,7 @@ import pozadina from "../../images/pozadina1.jpg";
 import api from '../../services/api';
 import TeacherPopup from '../../components/TeacherPopup/TeacherPopup';
 import useScrollToTop from '../../components/useScrollToTop/useScrollToTop';
+import OrangeHeader from '../../OrangeHeader/OrangeHeader';
 
 const SingleCoursePage = () => {
   const { id } = useParams();
@@ -52,6 +53,7 @@ const SingleCoursePage = () => {
     <div className='SingleCoursePage__container'>
       <img className='SingleCoursePage__container-bg' src={pozadina} alt="" />
       <CourseInfoCard course={course} /> 
+      <OrangeHeader text={"Kursevi"} link_url={"/kursevi"} />
 
       <div className='SingleCoursePage__container-right'>
         <h2>{course?.title}</h2>

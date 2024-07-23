@@ -42,7 +42,7 @@ const Footer = () => {
 
         <div className="footer-section">
           <h4>PRATITE NAS</h4>
-          <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://www.instagram.com/nvu_sigma/" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-instagram"></i>
           </a>
         </div>

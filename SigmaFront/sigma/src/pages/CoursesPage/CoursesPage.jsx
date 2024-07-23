@@ -4,6 +4,7 @@ import CourseCard from '../../components/CourseCard/CourseCard';
 import pozadina from "../../images/pozadina1.jpg";
 import api from '../../services/api';
 import useScrollToTop from '../../components/useScrollToTop/useScrollToTop';
+import OrangeHeader from '../../OrangeHeader/OrangeHeader';
 
 const CoursesPage = () => {
 
@@ -84,6 +85,7 @@ const CoursesPage = () => {
 
   return (
     <div className='CoursesPage__container'>
+      <OrangeHeader text={"Informacije"} link_url={"/informacije"} />
       <img className='CoursePage__bg' src={pozadina} alt="" />
       <div className='CoursesPage__container-right'>
         <h1>Naši Kursevi</h1>
