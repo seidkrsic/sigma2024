@@ -1,10 +1,11 @@
 from django.contrib import admin
 from .models import Course
-from ckeditor.widgets import CKEditorWidget
-from django import forms
+from django_ckeditor_5.widgets import CKEditor5Widget
+from django import forms 
+
 
 class CourseAdminForm(forms.ModelForm):
-    description = forms.CharField(widget=CKEditorWidget())
+    description = forms.CharField(widget=CKEditor5Widget(config_name='extends'))
 
     class Meta:
         model = Course
