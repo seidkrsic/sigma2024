@@ -11,7 +11,7 @@ const CourseCard = ({item}) => {
     <div className='CourseCard__container'>
         <div className='CourseCard__container-img__container'>
             {item.image && <img src={item.image_url} />}
-            <div className='CourseCard__level'>{item.level}</div>
+            {/* <div className='CourseCard__level'>{item.level}</div> */}
         </div>
 
         <div className='CourseCard__container-info_container'>
