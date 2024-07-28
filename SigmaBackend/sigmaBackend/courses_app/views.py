@@ -24,8 +24,8 @@ def get_course(request, id):
 @api_view(['GET'])
 def search_courses_by_category(request):
     course_types = request.query_params.getlist('course_type')
-    school_types = request.query_params.getlist('school_type')
-    if not course_types and not school_types:
+    terms = request.query_params.getlist('term')
+    if not course_types and not terms:
         return Response({"detail": "Category query parameters are required."}, status=status.HTTP_400_BAD_REQUEST)
 
     query = Q()
@@ -35,11 +35,11 @@ def search_courses_by_category(request):
             course_type_query |= Q(course_type__iexact=course_type)
         query &= course_type_query
 
-    if school_types:
-        school_type_query = Q()
-        for school_type in school_types:
-            school_type_query |= Q(school_type__iexact=school_type)
-        query &= school_type_query
+    if terms:
+        terms_query = Q()
+        for term in terms:
+            terms_query |= Q(term__iexact=term)
+        query &= terms_query
 
     courses = Course.objects.filter(query)
     serializer = CourseSerializer(courses, many=True)

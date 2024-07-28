@@ -105,11 +105,11 @@ const CoursesPage = () => {
           <div className='CoursesPage__filter-column'>
             <h3>Početak nastave</h3>
             <label className="filter-button">
-              <input type="checkbox" name="school_type" value="I polugođe" onChange={handleFilterChange} />
+              <input type="checkbox" name="term" value="I polugođe" onChange={handleFilterChange} />
               <span>Septembar</span>
             </label>
             <label className="filter-button">
-              <input type="checkbox" name="school_type" value="II polugođe" onChange={handleFilterChange} />
+              <input type="checkbox" name="term" value="II polugođe" onChange={handleFilterChange} />
               <span>Januar</span>
             </label>
      
