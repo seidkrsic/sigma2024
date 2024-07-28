@@ -1,12 +1,10 @@
 from django.contrib import admin
 from .models import Course
-from djrichtextfield.widgets import RichTextWidget
-
-
+from ckeditor.widgets import CKEditorWidget
 from django import forms
 
 class CourseAdminForm(forms.ModelForm):
-    description = forms.CharField(widget=RichTextWidget())
+    description = forms.CharField(widget=CKEditorWidget())
 
     class Meta:
         model = Course

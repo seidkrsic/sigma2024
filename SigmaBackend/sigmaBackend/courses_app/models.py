@@ -1,6 +1,6 @@
 from django.db import models
 from user_app.models import Profile 
-from djrichtextfield.models import RichTextField
+from ckeditor.fields import RichTextField
 
 class Course(models.Model):
     title = models.CharField(max_length=255)
