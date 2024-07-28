@@ -7,7 +7,7 @@ from .serializers import CourseSerializer
 
 @api_view(['GET'])
 def get_all_courses(request):
-    courses = Course.objects.all()
+    courses = Course.objects.filter(is_active=True) 
     serializer = CourseSerializer(courses, many=True)
     return Response(serializer.data)
 
@@ -24,9 +24,8 @@ def get_course(request, id):
 @api_view(['GET'])
 def search_courses_by_category(request):
     course_types = request.query_params.getlist('course_type')
-    levels = request.query_params.getlist('level')
     school_types = request.query_params.getlist('school_type')
-    if not course_types and not levels and not school_types:
+    if not course_types and not school_types:
         return Response({"detail": "Category query parameters are required."}, status=status.HTTP_400_BAD_REQUEST)
 
     query = Q()
@@ -35,12 +34,6 @@ def search_courses_by_category(request):
         for course_type in course_types:
             course_type_query |= Q(course_type__iexact=course_type)
         query &= course_type_query
-
-    if levels:
-        level_query = Q()
-        for level in levels:
-            level_query |= Q(level__iexact=level)
-        query &= level_query
 
     if school_types:
         school_type_query = Q()

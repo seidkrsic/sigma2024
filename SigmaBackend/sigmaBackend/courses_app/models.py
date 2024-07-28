@@ -1,33 +1,28 @@
 from django.db import models
 from user_app.models import Profile 
+from djrichtextfield.models import RichTextField
 
 class Course(models.Model):
     title = models.CharField(max_length=255)
-    description = models.TextField()
+    description = RichTextField()
     instructor = models.ForeignKey(Profile, on_delete=models.SET_NULL, null=True, related_name='courses')
-    grade_choices = [ 
-        ('6-7', "6-7"), 
-        ('6-8', "6-8"), 
-        ('7-9', "7-9"),
-        ("srednja škola", "Srednja Škola") 
-    ]
     term_choices = [
-        ("zimski", "Zimski"), 
-        ("ljetnji", "Ljetnji")
+        ("I polugođe", "I polugođe"), 
+        ("II polugođe", "II polugođe")
     ]
-    grade = models.CharField(max_length=99, choices=grade_choices, default="6-7") 
-    term = models.CharField(max_length=99, choices=term_choices, default="zimski") 
+
+    term = models.CharField(max_length=99, choices=term_choices, default="I polugođe") 
     price = models.DecimalField(max_digits=10, decimal_places=2)
     image = models.ImageField(upload_to='course_images/', null=True, blank=True, default="seid.webp")
     length = models.CharField(max_length=99, default="12 nedelja")  
-    weekly_hours = models.CharField(max_length=99, default="3 sata nedeljno")  
+    weekly_hours = models.CharField(max_length=99, default="2x90 min nedeljno")  
     is_active = models.BooleanField(default=True) 
-    level_choices = [
-        ('osnovni', 'Osnovni'), 
-        ('Srednji', 'Srednji'),
-        ('Napredni', 'Napredni'),
-    ] 
-    level = models.CharField(max_length=20, choices=level_choices, default="osnovni")  
+    # level_choices = [
+    #     ('osnovni', 'Osnovni'), 
+    #     ('Srednji', 'Srednji'),
+    #     ('Napredni', 'Napredni'),
+    # ] 
+    # level = models.CharField(max_length=20, choices=level_choices, default="osnovni")  
 
     course_type_choices = [
         ('matematika', 'Matematika'), 

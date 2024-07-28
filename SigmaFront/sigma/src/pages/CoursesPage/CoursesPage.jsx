@@ -58,7 +58,6 @@ const CoursesPage = () => {
       try {
         const params = {
           course_type: selectedFilters.course_type,
-          level: selectedFilters.level,
           school_type: selectedFilters.school_type
         };
         const data = await api.searchCourses(params);
@@ -104,19 +103,16 @@ const CoursesPage = () => {
           </div>
 
           <div className='CoursesPage__filter-column'>
-            <h3>Nivo</h3>
+            <h3>Početak nastave</h3>
             <label className="filter-button">
-              <input type="checkbox" name="level" value="osnovni" onChange={handleFilterChange} />
-              <span>Osnovni</span>
+              <input type="checkbox" name="school_type" value="I polugođe" onChange={handleFilterChange} />
+              <span>Septembar</span>
             </label>
             <label className="filter-button">
-              <input type="checkbox" name="level" value="Srednji" onChange={handleFilterChange} />
-              <span>Srednji</span>
+              <input type="checkbox" name="school_type" value="II polugođe" onChange={handleFilterChange} />
+              <span>Januar</span>
             </label>
-            <label className="filter-button">
-              <input type="checkbox" name="level" value="Napredni" onChange={handleFilterChange} />
-              <span>Napredni</span>
-            </label>
+     
           </div>
         </div>
 

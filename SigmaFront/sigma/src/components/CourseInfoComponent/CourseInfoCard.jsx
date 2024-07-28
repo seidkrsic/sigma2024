@@ -9,11 +9,11 @@ const CourseInfoCard = ({ course }) => {
       <img src={course?.image_url || "https://via.placeholder.com/150"} alt={course?.title} />
       <div className="course-details">
         <div className="course-detail">
-          <FontAwesomeIcon icon={faChartBar} className="icon" /> <span className="label">Razred</span>
-          <span className="value">{course?.grade}</span>
+          <FontAwesomeIcon icon={faChartBar} className="icon" /> <span className="label">Uzrast</span>
+          <span className="value">{course?.school_type}</span>
         </div>
         <div className="course-detail">
-          <FontAwesomeIcon icon={faSchool} className="icon" /> <span className="label">Semestar</span>
+          <FontAwesomeIcon icon={faSchool} className="icon" /> <span className="label">Polugođe</span>
           <span className="value">{course?.term}</span>
         </div>
         <div className="course-detail">
@@ -24,13 +24,13 @@ const CourseInfoCard = ({ course }) => {
           <FontAwesomeIcon icon={faClock} className="icon" /> <span className="label">Predavanja</span>
           <span className="value">{course?.weekly_hours}</span>
         </div>
-        <div className="course-detail">
+        {/* <div className="course-detail">
           <FontAwesomeIcon icon={faCogs} className="icon" /> <span className="label">Nivo</span>
           <span className="value">{course?.level}</span>
-        </div>
+        </div> */}
         <div className="course-detail">
           <FontAwesomeIcon icon={faMoneyBillWave} className="icon" /> <span className="label">Cijena</span>
-          <span className="value">{`${course?.price} EUR (${course?.price_per_hour} EUR mjesečno)`}</span>
+          <span className="value">{`${course?.price} € (${course?.price_per_hour} € mjesečno)`}</span>
         </div>
       </div>
     </div>
