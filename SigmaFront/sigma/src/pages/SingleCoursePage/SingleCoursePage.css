@@ -94,6 +94,7 @@
 
 .SingleCoursePage__container-right strong { 
     font-weight: 500; 
+    color: black;
 }
 
 @media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) { 
