@@ -5,12 +5,14 @@ from django import forms
 
 
 class CourseAdminForm(forms.ModelForm):
-    description = forms.CharField(widget=CKEditor5Widget(config_name='extends'))
-
     class Meta:
         model = Course
         fields = '__all__'
-
+        widgets = {
+                    "description": CKEditor5Widget(
+                        attrs={"class": "django_ckeditor_5"}, config_name="extends"
+                    )
+                }
 
 
 @admin.register(Course)
