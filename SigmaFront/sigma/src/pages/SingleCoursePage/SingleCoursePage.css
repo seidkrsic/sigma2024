@@ -92,8 +92,8 @@
 }  
 
 
-.SingleCoursePage__container-right strong { 
-    font-weight: 500; 
+.SingleCoursePage__container-right p strong { 
+    font-weight: bold;  
     color: black;
 }
 
@@ -130,6 +130,11 @@
 
     .SingleCoursePage__link { 
         margin: 1rem auto;
+    } 
+
+    .SingleCoursePage__container-right p strong { 
+        font-weight: bold;  
+        color: black;
     }
 
 
