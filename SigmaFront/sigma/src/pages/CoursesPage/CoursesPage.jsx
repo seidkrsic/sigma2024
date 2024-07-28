@@ -11,8 +11,7 @@ const CoursesPage = () => {
   const [courses, setCourses] = useState([]);
   const [selectedFilters, setSelectedFilters] = useState({
     course_type: [],
-    level: [],
-    school_type: []
+    term: [],
   });
   const [error, setError] = useState('');
 
@@ -58,7 +57,7 @@ const CoursesPage = () => {
       try {
         const params = {
           course_type: selectedFilters.course_type,
-          school_type: selectedFilters.school_type
+          term: selectedFilters.term,
         };
         const data = await api.searchCourses(params);
         setCourses(data);
@@ -67,7 +66,7 @@ const CoursesPage = () => {
       }
     };
 
-    if (selectedFilters.course_type.length > 0 || selectedFilters.level.length > 0 || selectedFilters.school_type.length > 0) {
+    if (selectedFilters.course_type.length > 0 || selectedFilters.term.length > 0) {
       fetchFilteredCourses();
     } else {
       const fetchCourses = async () => {
