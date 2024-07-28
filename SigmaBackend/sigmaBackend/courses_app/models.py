@@ -1,10 +1,10 @@
 from django.db import models
 from user_app.models import Profile 
-from ckeditor.fields import RichTextField
+from django_ckeditor_5.fields import CKEditor5Field
 
 class Course(models.Model):
     title = models.CharField(max_length=255)
-    description = RichTextField()
+    description = CKEditor5Field('Text', config_name='extends')
     instructor = models.ForeignKey(Profile, on_delete=models.SET_NULL, null=True, related_name='courses')
     term_choices = [
         ("I polugođe", "I polugođe"), 
