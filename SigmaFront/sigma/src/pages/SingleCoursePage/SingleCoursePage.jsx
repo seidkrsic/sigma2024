@@ -60,7 +60,7 @@ const SingleCoursePage = () => {
 
         <div className='SingleCoursePage__container-right'>
           <h2>{course?.title}</h2>
-          <p>{parse(course?.description)}</p>
+          <p>{parse(String(course?.description))}</p>
           <h3>Predavač na ovom kursu</h3>
           <div onClick={() =>{handleTeacherClick(course?.instructor)}} className='AboutPage__InstructorCard-circleContainer'>
               <img className='AboutPage__InstructorCard-imgCircle' src={course?.instructor.image_url} alt="" />
