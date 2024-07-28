@@ -1,5 +1,16 @@
 from django.contrib import admin
 from .models import Course
+from djrichtextfield.widgets import RichTextWidget
+
+
+from django import forms
+
+class CourseAdminForm(forms.ModelForm):
+    description = forms.CharField(widget=RichTextWidget())
+
+    class Meta:
+        model = Course
+        fields = '__all__'
 
 
 
