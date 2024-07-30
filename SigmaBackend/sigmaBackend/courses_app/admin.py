@@ -18,6 +18,6 @@ class CourseAdminForm(forms.ModelForm):
 @admin.register(Course)
 class CourseAdmin(admin.ModelAdmin):
     list_display = ('title','price', 'is_active')
-    search_fields = ('title', 'instructor__profile', 'description')
+    search_fields = ('title','description')
     list_filter = ('is_active',) 
-    filter_horizontal = ('instructor',)
+  
