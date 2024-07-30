@@ -21,5 +21,5 @@ class CourseSerializer(serializers.ModelSerializer):
 
     def get_price_per_hour(self, obj): 
         if obj.price: 
-            return f"{round(obj.price/3, 2)}" 
+            return f"7.50" 
         return None 

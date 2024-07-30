@@ -13,7 +13,7 @@ const CourseInfoCard = ({ course }) => {
           <span className="value">{course?.school_type}</span>
         </div>
         <div className="course-detail">
-          <FontAwesomeIcon icon={faSchool} className="icon" /> <span className="label">Polugođe</span>
+          <FontAwesomeIcon icon={faSchool} className="icon" /> <span className="label">Početak</span>
           <span className="value">{course?.term}</span>
         </div>
         <div className="course-detail">

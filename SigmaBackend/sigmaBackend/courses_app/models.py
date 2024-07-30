@@ -4,8 +4,9 @@ from django_ckeditor_5.fields import CKEditor5Field
 
 class Course(models.Model):
     title = models.CharField(max_length=255)
+    short_description = models.CharField(max_length=999) 
     description = CKEditor5Field('Description', config_name='extends')
-    instructor = models.ForeignKey(Profile, on_delete=models.SET_NULL, null=True, related_name='courses')
+    instructor = models.ManyToManyField(Profile, null=True, related_name='courses')
     term_choices = [
         ("I polugođe", "I polugođe"), 
         ("II polugođe", "II polugođe")
@@ -14,8 +15,8 @@ class Course(models.Model):
     term = models.CharField(max_length=99, choices=term_choices, default="I polugođe") 
     price = models.DecimalField(max_digits=10, decimal_places=2)
     image = models.ImageField(upload_to='course_images/', null=True, blank=True, default="seid.webp")
-    length = models.CharField(max_length=99, default="12 nedelja")  
-    weekly_hours = models.CharField(max_length=99, default="2x90 min nedeljno")  
+    length = models.CharField(max_length=99, default="12 nedjelja")  
+    weekly_hours = models.CharField(max_length=99, default="2x90 min nedjeljno")  
     is_active = models.BooleanField(default=True) 
     # level_choices = [
     #     ('osnovni', 'Osnovni'), 
