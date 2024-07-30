@@ -6,7 +6,7 @@ class Course(models.Model):
     title = models.CharField(max_length=255)
     short_description = models.CharField(max_length=999) 
     description = CKEditor5Field('Description', config_name='extends')
-    instructor = models.ManyToManyField(Profile, null=True, related_name='courses')
+    instructor = models.ManyToManyField(Profile, related_name='courses')
     term_choices = [
         ("I polugođe", "I polugođe"), 
         ("II polugođe", "II polugođe")
