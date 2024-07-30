@@ -1,7 +1,7 @@
 from .base import *
 # Use environment variables for sensitive settings
 from decouple import config
-DEBUG = False
+DEBUG = True
 
 ALLOWED_HOSTS = ['159.89.11.142', "localhost", "*", "sigma-academy.me", "www.sigma-academy.me"]
 
