@@ -3,7 +3,7 @@ from rest_framework.response import Response
 from rest_framework import status
 # from .models import Course
 from django.db.models import Q
-from .serializers import CourseSerializer
+# from .serializers import CourseSerializer
 
 # @api_view(['GET'])
 # def get_all_courses(request):

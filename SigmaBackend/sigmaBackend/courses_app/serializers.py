@@ -1,9 +1,9 @@
 
 
-from rest_framework import serializers
+# from rest_framework import serializers
 # from .models import Course 
-from user_app.serializers import ProfileSerializer 
-from django.conf import settings
+# from user_app.serializers import ProfileSerializer 
+# from django.conf import settings
 
 # class CourseSerializer(serializers.ModelSerializer):
 #     instructor = ProfileSerializer(many=True)
