@@ -4,7 +4,7 @@ from django_ckeditor_5.fields import CKEditor5Field
 
 class Course(models.Model):
     title = models.CharField(max_length=255)
-    # short_description = models.CharField(max_length=999) 
+    short_description = models.CharField(max_length=999) 
     description = CKEditor5Field('Description', config_name='extends')
     instructor = models.ManyToManyField(Profile, related_name='courses')
     term_choices = [
