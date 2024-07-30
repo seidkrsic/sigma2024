@@ -6,7 +6,7 @@ from user_app.serializers import ProfileSerializer
 from django.conf import settings
 
 class CourseSerializer(serializers.ModelSerializer):
-    instructor = ProfileSerializer()
+    instructor = ProfileSerializer(many=True)
     image_url = serializers.SerializerMethodField() 
     price_per_hour = serializers.SerializerMethodField() 
     class Meta:
