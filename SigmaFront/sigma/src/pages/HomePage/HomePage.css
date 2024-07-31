@@ -343,8 +343,8 @@
 
     } 
     .HomePage__section-video__left p { 
-        font-size: 13px !important;
-        font-weight: bold;
+        font-size: 14.3px !important;
+        font-weight: 400;
         position: relative; 
         width: 70%;
         color: #1a3a5b;
