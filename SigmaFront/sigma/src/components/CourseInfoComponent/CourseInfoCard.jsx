@@ -30,7 +30,7 @@ const CourseInfoCard = ({ course }) => {
         </div> */}
         <div className="course-detail">
           <FontAwesomeIcon icon={faMoneyBillWave} className="icon" /> <span className="label">Cijena</span>
-          <span className="value">{`${course?.price} € (${course?.price_per_hour} € mjesečno)`}</span>
+          <span className="value">{`${course?.price} € (${course?.price_per_hour} € sat)`}</span>
         </div>
       </div>
     </div>

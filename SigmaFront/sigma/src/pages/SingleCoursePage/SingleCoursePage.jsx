@@ -61,7 +61,7 @@ const SingleCoursePage = () => {
         <div className='SingleCoursePage__container-right'>
           <h2>{course?.title}</h2>
           <p>{parse(String(course?.description))}</p>
-          <h3>Predavač na ovom kursu</h3>
+          <h3>Predavači na ovom kursu</h3>
           <div className='SingleCoursePage__teachers-container'>
             {course?.instructor.map((teacher, index)=> ( 
               <div key={teacher?.id} onClick={() =>{handleTeacherClick(teacher)}} className='AboutPage__InstructorCard-circleContainer'>
