@@ -46,7 +46,7 @@ const HomePage = () => {
         <section className='HomePage__section-video'> 
                 <div className='HomePage__section-video__left'>
                     <h1>Gdje učenje postaje zabava</h1>
-                    <p>Akademija Sigma je specijalizovana online platforma kreirana sa ciljem da podrži i unaprijedi matematičke veštine i znanje mladih entuzijasta širom Crne Gore. Naša misija je da inspirišemo, obrazujemo i osnažimo nove generacije matematičara i fizičara, pružajući im alate i resurse potrebne za uspeh na raznim matematičkim takmičenjima i u akademskim sferama.</p>
+                    <p>Akademija Sigma je specijalizovana online platforma kreirana sa ciljem da podrži i unaprijedi matematičke vještine i znanje mladih entuzijasta širom Crne Gore. Naša misija je da inspirišemo, obrazujemo i osnažimo nove generacije matematičara i fizičara, pružajući im alate i resurse potrebne za uspeh na raznim matematičkim takmičenjima i u akademskim sferama.</p>
                 </div>
 
                 <div className='HomePage__section-video__right'>
