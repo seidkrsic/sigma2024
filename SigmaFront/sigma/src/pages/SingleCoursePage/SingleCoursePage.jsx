@@ -72,7 +72,7 @@ const SingleCoursePage = () => {
           
           </div>
           
-          <Link to="https://www.google.com" className='SingleCoursePage__link'>Prijavi Se</Link> 
+          <Link to={course?.course_url} className='SingleCoursePage__link'>Prijavi Se</Link> 
         </div>
 
         {selectedTeacher && <TeacherPopup teacher={selectedTeacher} onClose={closePopup} /> }
