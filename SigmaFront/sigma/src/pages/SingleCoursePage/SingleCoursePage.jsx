@@ -62,10 +62,14 @@ const SingleCoursePage = () => {
           <h2>{course?.title}</h2>
           <p>{parse(String(course?.description))}</p>
           <h3>Predavač na ovom kursu</h3>
-          <div onClick={() =>{handleTeacherClick(course?.instructor)}} className='AboutPage__InstructorCard-circleContainer'>
-              <img className='AboutPage__InstructorCard-imgCircle' src={course?.instructor.image_url} alt="" />
-              <h3>{course?.instructor.name}</h3>
-          </div> 
+          {course?.instructor.map((teacher, index)=> { 
+             <div key={teacher?.id} onClick={() =>{handleTeacherClick(teacher)}} className='AboutPage__InstructorCard-circleContainer'>
+                <img className='AboutPage__InstructorCard-imgCircle' src={teacher?.image_url} alt="" />
+                <h3>{teacher?.name}</h3>
+             </div> 
+          })}
+         
+          
           <Link to="https://www.google.com" className='SingleCoursePage__link'>Prijavi Se</Link> 
         </div>
 
