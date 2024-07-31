@@ -10,7 +10,7 @@ export const AuthProvider = ({ children }) => {
   const [scrolled, setScrolled] = useState(false);
   const [activeIndex, setActiveIndex] = useState(0); 
   const [user, setUser] = useState(null);
-  const [isPageListVisible, setIsPageListVisible] = useState(true);
+  const [isPageListVisible, setIsPageListVisible] = useState(false);
 
   const togglePageListVisibility = () => {
     setIsPageListVisible(!isPageListVisible);
