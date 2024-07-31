@@ -62,7 +62,7 @@ const SingleCoursePage = () => {
           <h2>{course?.title}</h2>
           <p>{parse(String(course?.description))}</p>
           <h3>Predavač na ovom kursu</h3>
-          <div>
+          <div className='SingleCoursePage__teachers-container'>
             {course?.instructor.map((teacher, index)=> ( 
               <div key={teacher?.id} onClick={() =>{handleTeacherClick(teacher)}} className='AboutPage__InstructorCard-circleContainer'>
                   <img className='AboutPage__InstructorCard-imgCircle' src={teacher?.image_url} alt="" />
