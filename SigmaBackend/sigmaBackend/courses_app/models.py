@@ -36,6 +36,7 @@ class Course(models.Model):
     ] 
 
     school_type = models.CharField(max_length=20, choices=school_choices, default="osnovna škola")  
+    course_url = models.URLField(max_length=200, null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True) 
 
