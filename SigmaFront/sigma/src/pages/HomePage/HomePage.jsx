@@ -50,7 +50,7 @@ const HomePage = () => {
                 </div>
 
                 <div className='HomePage__section-video__right'>
-                    <iframe width="" height="" src="https://www.youtube.com/embed/WUvTyaaNkzM?si=aSVzs0a1xenkewnu" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
+                    <iframe width="" height="" src="https://youtu.be/OmJ-4B-mS-Y?si=fQVjG5N8jwdDOOt5" title="YouTube video player"  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>
                 </div>
         </section> 
 
