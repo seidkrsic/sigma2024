@@ -1,3 +1,5 @@
+// LoginPage.js
+
 import React, { useContext, useState } from 'react';
 import './LoginPage.css';
 import api from '../../services/api';
@@ -5,7 +7,6 @@ import AuthContext from '../../components/AuthContext/AuthContext';
 import useScrollToTop from '../../components/useScrollToTop/useScrollToTop';
 
 const LoginPage = () => {
-  
   const [username, setUsername] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -18,7 +19,6 @@ const LoginPage = () => {
     setError('');
     try {
       await login(username, password);
-
     } catch (err) {
       setError(err.message);
     }
@@ -29,10 +29,12 @@ const LoginPage = () => {
     setError('');
     try {
       const response = await api.register(username, email, password);
-      console.log(response);
       if (response) {
         setIsLogin(true);
-        setError(response.message);
+        setUsername('');
+        setEmail('');
+        setPassword('');
+        setError('Registracija uspešna. Proverite svoj email da biste aktivirali nalog.');
       }
     } catch (err) {
       setError(err.message);
@@ -47,10 +49,8 @@ const LoginPage = () => {
       {isLogin ? (
         <form onSubmit={handleLogin} className='LoginPage__form'>
           <div className='LoginPage__input-container'>
-            {/* <label>Korisničko ime:</label> */}
             <input
-              
-              placeholder='unesi korisničko ime'
+              placeholder='Unesi korisničko ime'
               type='text'
               name='username'
               value={username}
@@ -59,17 +59,16 @@ const LoginPage = () => {
             />
           </div>
           <div className='LoginPage__input-container'>
-            {/* <label>Lozinka:</label> */}
             <input
               type='password'
-              placeholder='unesi lozinku'
+              placeholder='Unesi lozinku'
               value={password}
               name='password'
               onChange={(e) => setPassword(e.target.value)}
               required
             />
           </div>
-          {error && <p>{error}</p>}
+          {error && <p className="error-message">{error}</p>}
           <button type='submit'>Uloguj se</button>
           <p id="switch-form__text">
             Nemate nalog?{' '}
@@ -81,10 +80,8 @@ const LoginPage = () => {
       ) : (
         <form onSubmit={handleRegister} className='LoginPage__form'>
           <div className='LoginPage__input-container'>
-            {/* <label>Korisničko ime:</label> */}
             <input
-              
-              placeholder='unesi korisničko ime'
+              placeholder='Unesi korisničko ime'
               type='text'
               name='username'
               value={username}
@@ -93,9 +90,8 @@ const LoginPage = () => {
             />
           </div>
           <div className='LoginPage__input-container'>
-            {/* <label>Email:</label> */}
             <input
-              placeholder='unesi email'
+              placeholder='Unesi email'
               type='email'
               name='email'
               value={email}
@@ -104,17 +100,16 @@ const LoginPage = () => {
             />
           </div>
           <div className='LoginPage__input-container'>
-            {/* <label>Lozinka:</label> */}
             <input
               type='password'
-              placeholder='unesi lozinku'
+              placeholder='Unesi lozinku'
               value={password}
               name='password'
               onChange={(e) => setPassword(e.target.value)}
               required
             />
           </div>
-          {error && <p>{error}</p>}
+          {error && <p className="error-message">{error}</p>}
           <button type='submit'>Registrujte se</button>
           <p id='switch-form__text'>
             Već imate nalog?{' '}

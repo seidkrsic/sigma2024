@@ -7,20 +7,49 @@ from rest_framework_simplejwt.tokens import RefreshToken
 from .models import Profile
 from .serializers import ProfileSerializer, RegisterSerializer
 from django.db import IntegrityError
+from rest_framework.views import APIView
+from rest_framework.response import Response
+from rest_framework import status
+from django.contrib.auth.tokens import PasswordResetTokenGenerator
+from django.utils.encoding import force_str
+from django.utils.http import urlsafe_base64_decode
+from .models import CustomUser
+from rest_framework_simplejwt.views import TokenObtainPairView
+from .serializers import CustomTokenObtainPairSerializer
 # my user views are here ... 
+
+
+
+class ActivateUserView(APIView):
+    def get(self, request, uidb64, token, format=None):
+        try:
+            uid = force_str(urlsafe_base64_decode(uidb64))
+            user = CustomUser.objects.get(pk=uid)
+        except (TypeError, ValueError, OverflowError, CustomUser.DoesNotExist):
+            user = None
+
+        token_generator = PasswordResetTokenGenerator()
+        if user is not None and token_generator.check_token(user, token):
+            user.is_active = True
+            user.save()
+            return Response({'message': 'Vaš nalog je uspešno aktiviran.'}, status=status.HTTP_200_OK)
+        else:
+            return Response({'error': 'Link za aktivaciju je nevažeći ili je istekao.'}, status=status.HTTP_400_BAD_REQUEST)
+
+
+class CustomTokenObtainPairView(TokenObtainPairView):
+    serializer_class = CustomTokenObtainPairSerializer
+
+
 
 @api_view(['POST'])
 @permission_classes([AllowAny])
 def register(request):
-    if request.method == "POST":
-        serializer = RegisterSerializer(data=request.data)
-        if serializer.is_valid():
-            try:
-                serializer.save()
-                return Response({'message': 'Korisnik uspješno kreiran. Sada se možete ulogovati.'}, status=status.HTTP_201_CREATED)
-            except IntegrityError:
-                return Response({'error': 'Username already exists'}, status=status.HTTP_400_BAD_REQUEST)
-
+    serializer = RegisterSerializer(data=request.data)
+    if serializer.is_valid():
+        user = serializer.save()
+        return Response({'message': 'Registracija uspešna. Proverite svoj email da biste aktivirali nalog.'}, status=status.HTTP_201_CREATED)
+    else:
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
 
 

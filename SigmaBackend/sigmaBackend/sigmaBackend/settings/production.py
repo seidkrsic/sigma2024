@@ -50,3 +50,5 @@ DATABASES = {
 SECRET_KEY = config('DJANGO_SECRET_KEY')
 DJANGO_ENV = config("DJANGO_ENV")
 BASE_URL = 'https://sigma-academy.me' 
+
+FRONTEND_URL = "https://www.sigma-academy.me" 

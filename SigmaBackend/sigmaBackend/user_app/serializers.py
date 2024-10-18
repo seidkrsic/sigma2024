@@ -1,8 +1,24 @@
 
 
-from rest_framework import serializers
+
 from .models import Profile, CustomUser
-from django.conf import settings 
+from rest_framework import serializers
+from .models import CustomUser
+from django.conf import settings
+from django.contrib.auth.tokens import PasswordResetTokenGenerator
+from django.utils.encoding import force_bytes
+from django.utils.http import urlsafe_base64_encode
+from django.urls import reverse
+from rest_framework_simplejwt.serializers import TokenObtainPairSerializer
+
+class CustomTokenObtainPairSerializer(TokenObtainPairSerializer):
+    def validate(self, attrs):
+        data = super().validate(attrs)
+        if not self.user.is_active:
+            raise serializers.ValidationError('Vaš nalog nije aktiviran. Proverite svoj email.')
+        return data
+    
+
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:
@@ -32,6 +48,19 @@ class RegisterSerializer(serializers.ModelSerializer):
         user = CustomUser.objects.create_user(
             username=validated_data['username'],
             email=validated_data['email'],
-            password=validated_data['password']
+            password=validated_data['password'], 
+            is_active=False  # Korisnik je neaktivan dok ne potvrdi email
         )
+        # Slanje emaila za aktivaciju
+        self.send_activation_email(user)
         return user
+
+    def send_activation_email(self, user):
+        token_generator = PasswordResetTokenGenerator()
+        uid = urlsafe_base64_encode(force_bytes(user.pk))
+        token = token_generator.make_token(user)
+        activation_link = f"{settings.FRONTEND_URL}/api/activate/{uid}/{token}/"
+
+        subject = 'Aktivirajte svoj nalog'
+        message = f'Pozdrav {user.username},\n\nMolimo vas da kliknete na sledeći link da biste aktivirali svoj nalog:\n{activation_link}\n\nHvala!'
+        user.email_user(subject, message)
