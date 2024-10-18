@@ -50,5 +50,6 @@ DATABASES = {
 SECRET_KEY = config('DJANGO_SECRET_KEY')
 DJANGO_ENV = config("DJANGO_ENV")
 BASE_URL = 'https://sigma-academy.me' 
-
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
 FRONTEND_URL = "https://www.sigma-academy.me" 
