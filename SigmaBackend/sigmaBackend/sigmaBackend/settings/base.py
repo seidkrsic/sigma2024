@@ -241,5 +241,5 @@ EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 DEFAULT_FROM_EMAIL = 'seid.krsic@gmail.com'
 EMAIL_HOST_USER = "seid.krsic@gmail.com"
-EMAIL_HOST_PASSWORD = "Seidkrsic@33"
+EMAIL_HOST_PASSWORD = "dems zvrw dueu vwpv"
 
