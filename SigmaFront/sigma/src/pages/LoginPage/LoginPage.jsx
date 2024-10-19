@@ -5,6 +5,7 @@ import './LoginPage.css';
 import api from '../../services/api';
 import AuthContext from '../../components/AuthContext/AuthContext';
 import useScrollToTop from '../../components/useScrollToTop/useScrollToTop';
+import { Link } from 'react-router-dom';
 
 const LoginPage = () => {
   const [username, setUsername] = useState('');
