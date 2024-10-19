@@ -5,6 +5,7 @@ import axios from 'axios';
 // const API_URL = 'http://127.0.0.1:8000/api'; 
 const API_URL = 'https://sigma-academy.me/api';
 
+
 const getToken = () => {
   return localStorage.getItem('access_token');
 };
@@ -200,4 +201,5 @@ export default {
   register,
   get,
   resendActivationEmail,
+  API_URL,
 };

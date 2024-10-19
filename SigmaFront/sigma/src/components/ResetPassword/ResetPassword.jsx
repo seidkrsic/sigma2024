@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { API_URL } from './api';
+
 
 const ResetPassword = () => {
   const { uid, token } = useParams();
@@ -8,7 +10,7 @@ const ResetPassword = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`/api/password-reset-confirm/${uid}/${token}/`, {
+    fetch(`${API_URL}/api/password-reset-confirm/${uid}/${token}/`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ password }),

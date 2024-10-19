@@ -1,4 +1,6 @@
 import React, { useState } from 'react';
+import { API_URL } from './api';
+
 
 const PasswordResetRequest = () => {
   const [email, setEmail] = useState('');
@@ -6,7 +8,7 @@ const PasswordResetRequest = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch('/api/password-reset/', {
+    fetch(`${API_URL}/api/password-reset/`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email }),
