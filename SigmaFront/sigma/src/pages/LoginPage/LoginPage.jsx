@@ -118,7 +118,8 @@ const LoginPage = () => {
             </span>
           </p>
         </form>
-      )}
+      )} 
+      <Link to="/password-reset">Zaboravili ste lozinku?</Link>
     </div>
   );
 };
