@@ -13,7 +13,7 @@ import SingleCoursePage from './pages/SingleCoursePage/SingleCoursePage';
 import LoginPage from './pages/LoginPage/LoginPage';
 import ActivateAccount from './components/ActivateAccount/ActivateAccount';
 import ResetPassword from './components/ResetPassword/ResetPassword';
-
+import PasswordResetRequest from './components/PasswordResetRequest/PasswordResetRequest';
 function App() {
 
   const {isAuthenticated} = useContext(AuthContext);
@@ -57,6 +57,7 @@ function App() {
             <Route path={"/login"} element={<LoginPage />} />
             <Route path="/activate/:uid/:token" element={<ActivateAccount />} />
             <Route path="/reset-password/:uid/:token/" element={<ResetPassword />} />
+            <Route path="/password-reset" element={<PasswordResetRequest />} />
 
           </Routes>
 
