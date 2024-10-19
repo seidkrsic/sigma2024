@@ -6,4 +6,12 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+} 
+
+.green { 
+    color: green !important;
+}
+
+.red { 
+    color: darkred !important;
 }
