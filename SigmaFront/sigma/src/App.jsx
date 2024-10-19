@@ -11,7 +11,7 @@ import CoursesPage from './pages/CoursesPage/CoursesPage';
 import AboutPage from './pages/AboutPage/AboutPage';
 import SingleCoursePage from './pages/SingleCoursePage/SingleCoursePage';
 import LoginPage from './pages/LoginPage/LoginPage';
-import ActivateAccount from './components/ActivateAccount/ActivateAccount';
+// import ActivateAccount from './components/ActivateAccount/ActivateAccount';
 
 
 function App() {
@@ -55,7 +55,7 @@ function App() {
             <Route path={"/informacije"} element={<AboutPage />} /> 
             <Route path={"/kurs/:id"} element={<SingleCoursePage />} />
             <Route path={"/login"} element={<LoginPage />} />
-            <Route path="/activate/:uid/:token" element={<ActivateAccount />} />
+            {/* <Route path="/activate/:uid/:token" element={<ActivateAccount />} /> */}
           </Routes>
 
           <Footer /> 
