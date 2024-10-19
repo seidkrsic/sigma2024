@@ -98,7 +98,7 @@ def register(request):
         user = serializer.save()
         return Response({'message': 'Registracija uspešna. Proverite svoj email da biste aktivirali nalog.'}, status=status.HTTP_201_CREATED)
     else:
-        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+        return Response({"error" : "Podaci nisu ispravni."})
 
 
 @api_view(['GET'])
