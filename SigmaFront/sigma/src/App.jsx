@@ -12,7 +12,7 @@ import AboutPage from './pages/AboutPage/AboutPage';
 import SingleCoursePage from './pages/SingleCoursePage/SingleCoursePage';
 import LoginPage from './pages/LoginPage/LoginPage';
 import ActivateAccount from './components/ActivateAccount/ActivateAccount';
-
+import ResetPassword from './components/ResetPassword/ResetPassword';
 
 function App() {
 
@@ -56,6 +56,8 @@ function App() {
             <Route path={"/kurs/:id"} element={<SingleCoursePage />} />
             <Route path={"/login"} element={<LoginPage />} />
             <Route path="/activate/:uid/:token" element={<ActivateAccount />} />
+            <Route path="/reset-password/:uid/:token/" element={<ResetPassword />} />
+
           </Routes>
 
           <Footer /> 
