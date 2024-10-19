@@ -98,7 +98,7 @@ def register(request):
         user = serializer.save()
         return Response({'message': 'Registracija uspešna. Proverite svoj email da biste aktivirali nalog.'}, status=status.HTTP_201_CREATED)
     else:
-        return Response({"error" : "Podaci nisu ispravni."})
+        return Response({"error" : "Podaci nisu ispravni."}, status=status.HTTP_400_BAD_REQUEST)
 
 
 @api_view(['GET'])
@@ -115,7 +115,7 @@ def user_profile(request):
     try:
         profile = request.user.profile
     except Profile.DoesNotExist:
-        return Response({'error': 'Profile does not exist'}, status=status.HTTP_404_NOT_FOUND)
+        return Response({'error': 'Profil ne postoji.'}, status=status.HTTP_404_NOT_FOUND)
 
     if request.method == 'GET':
         serializer = ProfileSerializer(profile, many=False) 
