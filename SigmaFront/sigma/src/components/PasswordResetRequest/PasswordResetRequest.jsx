@@ -8,7 +8,7 @@ const PasswordResetRequest = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    fetch(`${API_URL}/api/password-reset/`, {
+    fetch(`${API_URL}/password-reset/`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ email }),
