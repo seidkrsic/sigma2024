@@ -45,6 +45,11 @@ class RegisterSerializer(serializers.ModelSerializer):
         extra_kwargs = {'password': {'write_only': True}}
 
     def create(self, validated_data):
+        email = validated_data.get('email')
+        # Provera da li email već postoji
+        if CustomUser.objects.filter(email=email).exists():
+            raise serializers.ValidationError({'email': 'Ovaj email je već u upotrebi.'})
+
         user = CustomUser.objects.create_user(
             username=validated_data['username'],
             email=validated_data['email'],
