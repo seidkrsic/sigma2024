@@ -59,7 +59,7 @@ class RegisterSerializer(serializers.ModelSerializer):
         token_generator = PasswordResetTokenGenerator()
         uid = urlsafe_base64_encode(force_bytes(user.pk))
         token = token_generator.make_token(user)
-        activation_link = f"{settings.FRONTEND_URL}/api/activate/{uid}/{token}/"
+        activation_link = f"{settings.FRONTEND_URL}/activate/{uid}/{token}/"
 
         subject = 'Aktivirajte svoj nalog'
         message = f'Pozdrav {user.username},\n\nMolimo vas da kliknete na sledeći link da biste aktivirali svoj nalog:\n{activation_link}\n\nHvala!'
