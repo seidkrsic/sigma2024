@@ -1,40 +1,33 @@
-// ActivateAccount.js
-
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
-import api from '../../services/api';
-import "./ActivateAccount.css"  
-
 
 const ActivateAccount = () => {
   const { uid, token } = useParams();
-  const [message, setMessage] = useState('');
-  const [error, setError] = useState('');
+  const [status, setStatus] = useState('loading');
 
   useEffect(() => {
-    const activateAccount = async () => {
-      try {
-        const response = await api.get(`/activate/${uid}/${token}/`);
-        setMessage(response.data.message);
-      } catch (err) {
-        if (err.response && err.response.data) {
-          setError(err.response.data.error);
+    fetch(`/api/activate/${uid}/${token}/`, {
+      method: 'GET',
+    })
+      .then(response => {
+        if (response.ok) {
+          setStatus('success');
         } else {
-          setError('Greška pri aktivaciji naloga. Pokušajte ponovo.');
+          setStatus('error');
         }
-      }
-    };
-
-    activateAccount();
+      })
+      .catch(error => {
+        setStatus('error');
+      });
   }, [uid, token]);
 
-  return (
-    <div className="ActivateAccount">
-      {message && <p>{message}</p>}
-      {error && <p>{error}</p>}
-      {/* Optionally, add a link to the login page */}
-    </div>
-  );
+  if (status === 'loading') {
+    return <p>Aktivacija naloga je u toku...</p>;
+  } else if (status === 'success') {
+    return <p>Vaš nalog je uspešno aktiviran!</p>;
+  } else {
+    return <p>Došlo je do greške prilikom aktivacije naloga.</p>;
+  }
 };
 
 export default ActivateAccount;
