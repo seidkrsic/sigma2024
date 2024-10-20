@@ -36,7 +36,7 @@ class PasswordResetRequestView(APIView):
             token_generator = PasswordResetTokenGenerator()
             uid = urlsafe_base64_encode(force_bytes(user.pk))
             token = token_generator.make_token(user)
-            reset_link = f"{settings.FRONTEND_URL}/api/reset-password/{uid}/{token}/"
+            reset_link = f"{settings.FRONTEND_URL}/reset-password/{uid}/{token}/"
 
             subject = 'Resetovanje lozinke'
             message = f'Pozdrav,\n\nKliknite na sledeći link da resetujete svoju lozinku:\n{reset_link}\n\nHvala!'
