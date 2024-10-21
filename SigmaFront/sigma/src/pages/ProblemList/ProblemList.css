@@ -39,22 +39,43 @@
     text-decoration: underline;
   }
   
-  .pagination-buttons {
+ /* ProblemList.css */
+
+.pagination-buttons {
     display: flex;
+    align-items: center;
     justify-content: center;
-    gap: 10px;
+    margin-top: 20px;
   }
   
   .pagination-buttons button {
-    padding: .5rem 0;
-    margin: 1rem auto;
-    color: white;
-    text-transform: uppercase;
-    background-color: #1a3a5b;
+    width: 40px;
+    height: 40px;
+    margin: 0 5px;
+    padding: 0;
+    border: none;
+    background-color: #f0f0f0;
+    color: #333;
     font-size: 16px;
-    border-radius: 3px;
-    font-weight: bold;
     cursor: pointer;
+    border-radius: 3px;
+    transition: background-color 0.3s;
+  }
+  
+  .pagination-buttons button:hover {
+    background-color: #e0e0e0;
+  }
+  
+  .pagination-buttons button.active {
+    background-color: #1a3a5b;
+    color: #fff;
+  }
+  
+  .pagination-buttons .dots {
+    display: inline-block;
+    width: 40px;
+    text-align: center;
+    font-size: 16px;
   }
   
   .pagination-buttons button:disabled {
@@ -62,14 +83,8 @@
     cursor: not-allowed;
   }
   
-  .pagination-buttons button.active {
-    font-weight: bold;
-    color: white;
-    text-decoration: none;
-    width: fit-content;
-    height: fit-content;
-    padding: .5rem;
-  }
+  
+
 
 @media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) { 
 
