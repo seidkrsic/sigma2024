@@ -70,10 +70,13 @@
     color: rgb(255, 142, 0);
 }
 
-LoginPage__form a { 
+.LoginPage__form a { 
     text-transform: lowercase;
     text-transform: capitalize; 
     color: black;
+    width: 100%; 
+    margin: 0 auto;
+    text-align: center;
 }
 
 
