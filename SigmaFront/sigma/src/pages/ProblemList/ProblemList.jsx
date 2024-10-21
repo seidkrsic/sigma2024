@@ -4,8 +4,6 @@ import "./ProblemList.css";
 
 const ProblemList = () => {
   const [problems, setProblems] = useState([]);
-  const [nextPageUrl, setNextPageUrl] = useState(`${API_URL}/problems/`);
-  const [prevPageUrl, setPrevPageUrl] = useState(null);
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
@@ -19,7 +17,6 @@ const ProblemList = () => {
         setProblems(data.results);
         setCount(data.count);
         setCurrentPage(page);
-  
         const total = Math.ceil(data.count / 10);
         setTotalPages(total);
   
