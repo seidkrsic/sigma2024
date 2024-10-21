@@ -70,7 +70,7 @@ const ProblemList = () => {
                   </td>
                   <td>
                     {problem.solution_file_url && (
-                      <a href={problem.solution_file_url} rel="noopener noreferrer" className="download-btn">
+                      <a href={problem.solution_file_url} rel="noopener noreferrer" className="download-btn1">
                         Rješenje
                       </a>
                     )}

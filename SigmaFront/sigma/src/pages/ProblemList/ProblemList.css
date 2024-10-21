@@ -34,8 +34,7 @@
   }
   
   .problem-list-table td a {
-    /* color: #007bff; */
-    color: white;
+    color: #1a3a5b;
     text-decoration: none;
   }
   
@@ -43,20 +42,6 @@
     text-decoration: underline;
   }
   
-  .download-btn {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007bff;
-    color: white;
-    text-transform: uppercase;
-    font-weight: bold;
-    border-radius: 5px;
-    text-decoration: none;
-  }
-  
-  .download-btn:hover {
-    background-color: #0056b3;
-  }
   
   .pagination-buttons {
     display: flex;
