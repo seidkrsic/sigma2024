@@ -24,7 +24,7 @@ class ProblemSerializer(serializers.ModelSerializer):
     def get_solution_file_url(self, obj):
         request = self.context.get('request')
         if obj.solution_file:
-            file_url = reverse('solution_file', args=[obj.pk])
+            file_url = reverse('problem_solution_file', args=[obj.pk])
             return request.build_absolute_uri(file_url)
         return None
 
