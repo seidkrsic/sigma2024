@@ -43,7 +43,7 @@ const ProblemList = () => {
   };
 
   return (
-    <div>
+    <div className='ProblemList__container'>
       <h1>Arhiva Problema</h1>
       {loading ? (
         <p>Učitavanje...</p>

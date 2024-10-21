@@ -1,0 +1,26 @@
+
+
+.ProblemList__container { 
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 1rem auto;
+} 
+
+.ProblemList__container ul  { 
+    list-style: none; 
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.ProblemList__container ul li { 
+    width: 100%; 
+    height: 50px;
+    border: 1px solid gray;
+    border-radius: 5px; 
+    display: flex;
+    flex-direction: row;
+    background-color: lightblue;
+}
