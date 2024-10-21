@@ -1,9 +1,15 @@
 .ProblemList__container {
     width: 90%;
     margin: 0 auto;
-    padding: 20px;
+    padding: 2rem 0;
   }
   
+
+  .ProblemList__container h1 { 
+    margin: 1rem 0;
+    font-size: 15px;
+    text-transform: uppercase;
+  }
   .problem-list-table {
     width: 100%;
     border-collapse: collapse;
@@ -17,7 +23,7 @@
   
   .problem-list-table th, 
   .problem-list-table td {
-    padding: 12px 15px;
+    padding: 6px 8px;
     border: 1px solid #ddd;
     text-align: left;
   }
@@ -28,7 +34,8 @@
   }
   
   .problem-list-table td a {
-    color: #007bff;
+    /* color: #007bff; */
+    color: white;
     text-decoration: none;
   }
   

@@ -52,10 +52,10 @@ const ProblemList = () => {
           <table className="problem-list-table">
             <thead>
               <tr>
-                <th>Date of the Problem</th>
-                <th>Title</th>
-                <th>View</th>
-                <th>Download</th>
+                <th>Datum objave</th>
+                <th>Naziv</th>
+                <th>Postavka (PDF)</th>
+                <th>Rješenje (PDF)</th>
               </tr>
             </thead>
             <tbody>
@@ -64,14 +64,14 @@ const ProblemList = () => {
                   <td>{problem.published_date}</td>
                   <td>{problem.title}</td>
                   <td>
-                    <a href={problem.problem_file_url} target="_blank" rel="noopener noreferrer">
-                      View Problem
+                    <a href={problem.problem_file_url}  rel="noopener noreferrer">
+                      Vidi Problem
                     </a>
                   </td>
                   <td>
                     {problem.solution_file_url && (
-                      <a href={problem.solution_file_url} target="_blank" rel="noopener noreferrer" className="download-btn">
-                        DOWNLOAD PROBLEM
+                      <a href={problem.solution_file_url} rel="noopener noreferrer" className="download-btn">
+                        Rješenje
                       </a>
                     )}
                   </td>
