@@ -16,7 +16,7 @@ const ProblemList = () => {
       .then(data => {
         setProblems(data.results);
         setCurrentPage(page);
-        const total = Math.ceil(data.count / 10);
+        const total = Math.ceil(data.count / 3);
         setTotalPages(total);
   
         setLoading(false);
