@@ -50,6 +50,7 @@ class Problem(models.Model):
     problem_file = models.FileField(upload_to='problems/')
     published_date = models.DateField()
     is_active = models.BooleanField(default=False)
+    solution_file = models.FileField(upload_to='solutions/', blank=True, null=True)  # Dodato polje
     solution = models.IntegerField(blank=True, null=True)  # Tačno rešenje (integer)
 
     def __str__(self):
@@ -62,7 +63,6 @@ class Solution(models.Model):
     submitted_solution = models.IntegerField()
     submission_date = models.DateTimeField(auto_now_add=True)
     is_correct = models.BooleanField(default=False)
-    solution_file = models.FileField(upload_to='solutions/', blank=True, null=True)  # Detaljno rješenje
 
     def __str__(self):
         return f'Rešenje od {self.profile.user.username} za {self.problem.title}'

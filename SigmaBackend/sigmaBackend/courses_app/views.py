@@ -41,19 +41,6 @@ def problem_solution_file(request, pk):
     return response
 
 
-@api_view(['GET'])
-@permission_classes([IsAuthenticated])
-def solution_file(request, pk):
-    solution = get_object_or_404(Solution, pk=pk)
-
-    if not solution.solution_file:
-        raise Http404('Detaljno rješenje nije dostupno.')
-
-    response = FileResponse(solution.solution_file.open('rb'), content_type='application/pdf')
-    response['Content-Disposition'] = f'inline; filename="{solution.solution_file.name}"'
-    return response
-
-
 
 
 @api_view(['GET'])
