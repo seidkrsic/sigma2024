@@ -58,7 +58,7 @@ class Problem(models.Model):
 
 class Solution(models.Model):
     profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
-    problem = models.ForeignKey(Problem, on_delete=models.CASCADE)
+    problem = models.ForeignKey(Problem, on_delete=models.CASCADE, related_name='solutions' )
     submitted_solution = models.IntegerField()
     submission_date = models.DateTimeField(auto_now_add=True)
     is_correct = models.BooleanField(default=False)
