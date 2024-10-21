@@ -12,7 +12,7 @@ class ProblemSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Problem
-        fields = ['id', 'title', 'problem_file_url', 'published_date' ]
+        fields = ['id', 'title', 'problem_file_url', 'published_date', "solution_file_url" ]
 
     def get_problem_file_url(self, obj):
         request = self.context.get('request')
