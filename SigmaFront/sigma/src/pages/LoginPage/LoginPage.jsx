@@ -76,7 +76,8 @@ const LoginPage = () => {
             <span onClick={() => setIsLogin(false)} className='switch-form'>
               Registrujte se
             </span>
-          </p>
+          </p> 
+          <Link to="/password-reset">Zaboravili ste lozinku?</Link>
         </form>
       ) : (
         <form onSubmit={handleRegister} className='LoginPage__form'>
@@ -120,7 +121,7 @@ const LoginPage = () => {
           </p>
         </form>
       )} 
-      <Link to="/password-reset">Zaboravili ste lozinku?</Link>
+
     </div>
   );
 };

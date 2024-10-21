@@ -70,6 +70,11 @@
     color: rgb(255, 142, 0);
 }
 
+LoginPage__form a { 
+    text-transform: lowercase;
+    text-transform: capitalize; 
+    color: black;
+}
 
 
 @media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) { 
