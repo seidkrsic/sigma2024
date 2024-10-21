@@ -33,7 +33,7 @@ const PasswordResetRequest = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className='PasswordResetForm' onSubmit={handleSubmit}>
       <label>
         Unesite vašu email adresu:
         <input
