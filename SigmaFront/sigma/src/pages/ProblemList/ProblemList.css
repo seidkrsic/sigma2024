@@ -59,3 +59,7 @@
     cursor: not-allowed;
   }
   
+  .pagination-buttons button.active {
+    font-weight: bold;
+    text-decoration: underline;
+  }
