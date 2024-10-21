@@ -48,7 +48,7 @@ class RegisterSerializer(serializers.ModelSerializer):
         email = validated_data.get('email')
         # Provera da li email već postoji
         if CustomUser.objects.filter(email=email).exists():
-            raise serializers.ValidationError({'email': 'Ovaj email je već u upotrebi.'})
+            raise serializers.ValidationError({'error': 'Ovaj email je već u upotrebi.'})
 
         user = CustomUser.objects.create_user(
             username=validated_data['username'],

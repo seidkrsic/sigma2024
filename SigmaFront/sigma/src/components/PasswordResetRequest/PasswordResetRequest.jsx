@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { API_URL } from '../../services/api.jsx';
-
+import "./PasswordResetRequest.css" 
 
 const PasswordResetRequest = () => {
   const [email, setEmail] = useState('');

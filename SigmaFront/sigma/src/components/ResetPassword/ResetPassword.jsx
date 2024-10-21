@@ -35,7 +35,7 @@ const ResetPassword = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}>
+    <form className='PasswordResetForm2' onSubmit={handleSubmit}>
       <label>
         Nova lozinka:
         <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} required />
