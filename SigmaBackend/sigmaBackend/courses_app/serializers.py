@@ -1,9 +1,66 @@
 
 
 from rest_framework import serializers
-from .models import Course 
+from .models import Course, Problem, Solution 
 from user_app.serializers import ProfileSerializer 
 from django.conf import settings
+from django.urls import reverse
+
+class ProblemSerializer(serializers.ModelSerializer):
+    problem_file_url = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Problem
+        fields = ['id', 'title', 'problem_file_url', 'published_date' ]
+
+    def get_problem_file_url(self, obj):
+        request = self.context.get('request')
+        if obj.problem_file:
+            file_url = reverse('problem_file', args=[obj.pk])
+            return request.build_absolute_uri(file_url)
+        return None
+
+
+# serializers.py
+
+class SolutionSerializer(serializers.ModelSerializer):
+    solution_file_url = serializers.SerializerMethodField()
+
+    class Meta:
+        model = Solution
+        fields = [
+            'id', 'profile', 'problem', 'submitted_solution',
+            'submission_date', 'is_correct', 'solution_file_url'
+        ]
+        read_only_fields = ['profile', 'submission_date', 'is_correct', 'solution_file_url']
+
+    def get_solution_file_url(self, obj):
+        request = self.context.get('request')
+        if obj.solution_file:
+            file_url = reverse('solution_file', args=[obj.pk])
+            return request.build_absolute_uri(file_url)
+        return None
+
+    def create(self, validated_data):
+        profile = self.context['request'].user.profile  
+        problem = validated_data['problem']
+        submitted_solution = validated_data['submitted_solution']
+
+        # Provera da li je rešenje tačno
+        is_correct = False
+        if problem.solution is not None:
+            is_correct = (submitted_solution == problem.solution)
+
+        solution = Solution.objects.create(
+            profile=profile,
+            problem=problem,
+            submitted_solution=submitted_solution,
+            is_correct=is_correct
+        )
+        return solution
+
+
+
 
 class CourseSerializer(serializers.ModelSerializer):
     instructor = ProfileSerializer(many=True)

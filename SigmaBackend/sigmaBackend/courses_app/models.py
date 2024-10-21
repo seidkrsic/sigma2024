@@ -44,3 +44,25 @@ class Course(models.Model):
         return self.title
 
     
+
+class Problem(models.Model):
+    title = models.CharField(max_length=255)
+    problem_file = models.FileField(upload_to='problems/')
+    published_date = models.DateField()
+    is_active = models.BooleanField(default=False)
+    solution = models.IntegerField(blank=True, null=True)  # Tačno rešenje (integer)
+
+    def __str__(self):
+        return self.title
+    
+
+class Solution(models.Model):
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    problem = models.ForeignKey(Problem, on_delete=models.CASCADE)
+    submitted_solution = models.IntegerField()
+    submission_date = models.DateTimeField(auto_now_add=True)
+    is_correct = models.BooleanField(default=False)
+    solution_file = models.FileField(upload_to='solutions/', blank=True, null=True)  # Detaljno rješenje
+
+    def __str__(self):
+        return f'Rešenje od {self.profile.user.username} za {self.problem.title}'
