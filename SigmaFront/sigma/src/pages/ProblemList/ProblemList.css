@@ -65,4 +65,18 @@
   .pagination-buttons button.active {
     font-weight: bold;
     text-decoration: underline;
+    width: 50px;
+    height: 3rem;
   }
+
+@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) { 
+
+  .ProblemList__container h1 { 
+    font-size: 15px;
+  } 
+
+  .problem-list-table td a { 
+    font-size: 12px;
+  }
+
+}
