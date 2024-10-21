@@ -1,26 +1,73 @@
-
-
-.ProblemList__container { 
-    display: flex;
-    flex-direction: column;
-    width: 80%;
-    margin: 1rem auto;
-} 
-
-.ProblemList__container ul  { 
-    list-style: none; 
-    height: fit-content;
+.ProblemList__container {
+    width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .problem-list-table {
     width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+    font-family: Arial, sans-serif;
+  }
+  
+  .problem-list-table thead {
+    background-color: #f0f0f0;
+  }
+  
+  .problem-list-table th, 
+  .problem-list-table td {
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    text-align: left;
+  }
+  
+  .problem-list-table th {
+    font-weight: bold;
+    text-transform: uppercase;
+  }
+  
+  .problem-list-table td a {
+    color: #007bff;
+    text-decoration: none;
+  }
+  
+  .problem-list-table td a:hover {
+    text-decoration: underline;
+  }
+  
+  .download-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+    border-radius: 5px;
+    text-decoration: none;
+  }
+  
+  .download-btn:hover {
+    background-color: #0056b3;
+  }
+  
+  .pagination-buttons {
     display: flex;
-    flex-direction: column;
-}
-
-.ProblemList__container ul li { 
-    width: 100%; 
-    height: 50px;
-    border: 1px solid gray;
-    border-radius: 5px; 
-    display: flex;
-    flex-direction: row;
-    background-color: lightblue;
-}
+    justify-content: center;
+    gap: 10px;
+  }
+  
+  .pagination-buttons button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .pagination-buttons button:disabled {
+    background-color: #ccc;
+    cursor: not-allowed;
+  }
+  

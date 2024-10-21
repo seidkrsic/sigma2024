@@ -49,27 +49,37 @@ const ProblemList = () => {
         <p>Učitavanje...</p>
       ) : (
         <>
-          <ul>
-            {problems.map(problem => (
-              <li key={problem.id}>
-                <h2>{problem.title}</h2>
-                <p>Objavljeno: {problem.published_date}</p>
-                <div>
-                  <a href={problem.problem_file_url}  rel="noopener noreferrer">
-                    Pogledaj problem
-                  </a>
-                </div>
-                {problem.solution_file_url && (
-                  <div>
-                    <a href={problem.solution_file_url}  rel="noopener noreferrer">
-                      Pogledaj rešenje
+          <table className="problem-list-table">
+            <thead>
+              <tr>
+                <th>Date of the Problem</th>
+                <th>Title</th>
+                <th>View</th>
+                <th>Download</th>
+              </tr>
+            </thead>
+            <tbody>
+              {problems.map(problem => (
+                <tr key={problem.id}>
+                  <td>{problem.published_date}</td>
+                  <td>{problem.title}</td>
+                  <td>
+                    <a href={problem.problem_file_url} target="_blank" rel="noopener noreferrer">
+                      View Problem
                     </a>
-                  </div>
-                )}
-              </li>
-            ))}
-          </ul>
-          <div>
+                  </td>
+                  <td>
+                    {problem.solution_file_url && (
+                      <a href={problem.solution_file_url} target="_blank" rel="noopener noreferrer" className="download-btn">
+                        DOWNLOAD PROBLEM
+                      </a>
+                    )}
+                  </td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+          <div className="pagination-buttons">
             <button onClick={handlePrevPage} disabled={!prevPageUrl}>
               Prethodna
             </button>
