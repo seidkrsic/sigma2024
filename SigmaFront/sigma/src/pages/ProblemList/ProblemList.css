@@ -64,9 +64,11 @@
   
   .pagination-buttons button.active {
     font-weight: bold;
-    text-decoration: underline;
-    width: 50px;
-    height: 3rem;
+    color: white;
+    text-decoration: none;
+    width: fit-content;
+    height: fit-content;
+    padding: .5rem;
   }
 
 @media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) { 
