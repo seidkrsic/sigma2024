@@ -62,6 +62,9 @@ function App() {
             <Route path="/reset-password/:uid/:token/" element={<ResetPassword />} />
             <Route path="/password-reset" element={<PasswordResetRequest />} />
             <Route path="/problems" element={<ProblemList />} />
+            <Route path="/problem-of-the-week" element={<ProblemOfTheWeek />} />
+
+
 
           </Routes>
 

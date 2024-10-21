@@ -190,6 +190,48 @@ const resendActivationEmail = async (email) => {
   }
 };
 
+
+const getCurrentProblem = async () => {
+  try {
+    const response = await axios.get(`${API_URL}/problem-of-the-week/`);
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+}; 
+
+const submitSolution = async (problemId, submittedSolution) => {
+  const token = localStorage.getItem('access_token');
+  if (!token) {
+    throw new Error('Morate biti ulogovani da biste poslali rešenje.');
+  }
+
+  try {
+    const response = await axios.post(
+      `${API_URL}/submit-solution/`,
+      {
+        problem: problemId,
+        submitted_solution: submittedSolution,
+      },
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+          'Content-Type': 'application/json',
+        },
+      }
+    );
+    return response.data;
+  } catch (error) {
+    if (error.response && error.response.data) {
+      throw new Error(error.response.data.detail || 'Došlo je do greške pri slanju rešenja.');
+    } else {
+      throw new Error('Greška na mreži, pokušajte ponovo kasnije.');
+    }
+  }
+};
+
+
+
 export default {
   getUserProfile,
   login,
@@ -201,4 +243,6 @@ export default {
   register,
   get,
   resendActivationEmail,
+  getCurrentProblem,
+  submitSolution,
 };
