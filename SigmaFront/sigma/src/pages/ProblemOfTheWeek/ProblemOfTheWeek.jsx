@@ -49,7 +49,7 @@ const ProblemOfTheWeek = () => {
         {problem.problem_file_url ? (
           <div>
             <p>Pogledajte problem ovde:</p>
-            <a href={problem.problem_file_url} target="_blank" rel="noopener noreferrer">
+            <a href={problem.problem_file_url}  rel="noopener noreferrer">
               {problem.title}
             </a>
           </div>
