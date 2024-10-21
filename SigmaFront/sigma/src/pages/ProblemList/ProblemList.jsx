@@ -7,7 +7,7 @@ const ProblemList = () => {
   const [loading, setLoading] = useState(false);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
-
+  
   const fetchProblems = (page = 1) => {
     setLoading(true);
     const url = `${API_URL}/problems/?page=${page}`;
@@ -15,7 +15,6 @@ const ProblemList = () => {
       .then(response => response.json())
       .then(data => {
         setProblems(data.results);
-        setCount(data.count);
         setCurrentPage(page);
         const total = Math.ceil(data.count / 10);
         setTotalPages(total);
