@@ -65,12 +65,12 @@ const ProblemList = () => {
                   <td>{problem.title}</td>
                   <td>
                     <a href={problem.problem_file_url}  rel="noopener noreferrer">
-                      Vidi Problem
+                      Problem
                     </a>
                   </td>
                   <td>
                     {problem.solution_file_url && (
-                      <a href={problem.solution_file_url} rel="noopener noreferrer" className="download-btn1">
+                      <a href={problem.solution_file_url} rel="noopener noreferrer">
                         Rješenje
                       </a>
                     )}
@@ -87,7 +87,7 @@ const ProblemList = () => {
               Sledeća
             </button>
           </div>
-          <p>Ukupno problema: {count}</p>
+          {/* <p>Ukupno problema: {count}</p> */}
         </>
       )}
     </div>

@@ -12,8 +12,8 @@
   }
   .problem-list-table {
     width: 100%;
+    margin: 1rem auto;
     border-collapse: collapse;
-    margin-bottom: 20px;
     font-family: Arial, sans-serif;
   }
   
@@ -26,6 +26,7 @@
     padding: 6px 8px;
     border: 1px solid #ddd;
     text-align: left;
+    font-size: 13px;
   }
   
   .problem-list-table th {
@@ -35,13 +36,8 @@
   
   .problem-list-table td a {
     color: #1a3a5b;
-    text-decoration: none;
-  }
-  
-  .problem-list-table td a:hover {
     text-decoration: underline;
   }
-  
   
   .pagination-buttons {
     display: flex;
