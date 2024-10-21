@@ -27,9 +27,9 @@ const PasswordResetRequest = () => {
   };
 
   if (status === 'success') {
-    return <p>Email za resetovanje lozinke je poslat.</p>;
+    return <p className='PasswordResetForm'>Email za resetovanje lozinke je poslat.</p>;
   } else if (status === 'error') {
-    return <p>Došlo je do greške. Pokušajte ponovo.</p>;
+    return <p className='PasswordResetForm'>Došlo je do greške. Pokušajte ponovo.</p>;
   }
 
   return (

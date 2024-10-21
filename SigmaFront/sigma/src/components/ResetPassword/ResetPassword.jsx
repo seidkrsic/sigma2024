@@ -30,9 +30,9 @@ const ResetPassword = () => {
   };
 
   if (status === 'success') {
-    return <p>Lozinka je uspešno resetovana.</p>;
+    return <p className='PasswordResetForm2'>Lozinka je uspešno resetovana.</p>;
   } else if (status === 'error') {
-    return <p>Došlo je do greške prilikom resetovanja lozinke.</p>;
+    return <p className='PasswordResetForm2'>Došlo je do greške prilikom resetovanja lozinke.</p>;
   }
 
   return (
