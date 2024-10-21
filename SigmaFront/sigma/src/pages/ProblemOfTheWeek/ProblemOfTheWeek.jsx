@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import SolutionForm from './SolutionForm'; // Komponenta za slanje rešenja (kreiraćemo je uskoro)
+import SolutionForm from '../../components/SolutionForm';
 import api from '../../services/api.jsx';
 import "./ProblemOfTheWeek.css" 
 
