@@ -15,7 +15,7 @@ import ActivateAccount from './components/ActivateAccount/ActivateAccount';
 import ResetPassword from './components/ResetPassword/ResetPassword';
 import PasswordResetRequest from './components/PasswordResetRequest/PasswordResetRequest';
 import ProblemList from './pages/ProblemList/ProblemList';
-
+import ProblemOfTheWeek from './pages/ProblemOfTheWeek/ProblemOfTheWeek';
 
 function App() {
 
