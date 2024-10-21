@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { API_URL } from '../../services/api.jsx'
-import "./ProblemList.css" 
+import { API_URL } from '../../services/api.jsx';
+import "./ProblemList.css";
 
 const ProblemList = () => {
   const [problems, setProblems] = useState([]);
@@ -54,9 +54,18 @@ const ProblemList = () => {
               <li key={problem.id}>
                 <h2>{problem.title}</h2>
                 <p>Objavljeno: {problem.published_date}</p>
-                <a href={problem.problem_file_url} target="_blank" rel="noopener noreferrer">
-                  Pogledaj problem
-                </a>
+                <div>
+                  <a href={problem.problem_file_url} target="_blank" rel="noopener noreferrer">
+                    Pogledaj problem
+                  </a>
+                </div>
+                {problem.solution_file_url && (
+                  <div>
+                    <a href={problem.solution_file_url} target="_blank" rel="noopener noreferrer">
+                      Pogledaj rešenje
+                    </a>
+                  </div>
+                )}
               </li>
             ))}
           </ul>

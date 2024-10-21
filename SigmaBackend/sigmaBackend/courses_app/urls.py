@@ -11,5 +11,7 @@ urlpatterns = [
     path('api/problem-file/<int:pk>/', views.problem_file, name='problem_file'),
     path('api/solution-file/<int:pk>/', views.solution_file, name='solution_file'),
     path('api/problems/', views.problem_list, name='problem_list'),
+    path('api/problem-solution-file/<int:pk>/', views.problem_solution_file, name='problem_solution_file'),
+
 
 ]

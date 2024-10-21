@@ -28,6 +28,17 @@ def problem_list(request):
 
     return paginator.get_paginated_response(serializer.data)
 
+@api_view(['GET'])
+@permission_classes([AllowAny])
+def problem_solution_file(request, pk):
+    problem = get_object_or_404(Problem, pk=pk)
+
+    if not problem.solution_file:
+        raise Http404('Problem nema priloženo rešenje.')
+
+    response = FileResponse(problem.solution_file.open('rb'), content_type='application/pdf')
+    response['Content-Disposition'] = f'inline; filename="{problem.solution_file.name}"'
+    return response
 
 
 @api_view(['GET'])

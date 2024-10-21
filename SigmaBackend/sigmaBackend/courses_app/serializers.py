@@ -8,6 +8,7 @@ from django.urls import reverse
 
 class ProblemSerializer(serializers.ModelSerializer):
     problem_file_url = serializers.SerializerMethodField()
+    solution_file_url = serializers.SerializerMethodField()  # Dodato polje
 
     class Meta:
         model = Problem
@@ -17,6 +18,13 @@ class ProblemSerializer(serializers.ModelSerializer):
         request = self.context.get('request')
         if obj.problem_file:
             file_url = reverse('problem_file', args=[obj.pk])
+            return request.build_absolute_uri(file_url)
+        return None
+    
+    def get_solution_file_url(self, obj):
+        request = self.context.get('request')
+        if obj.solution_file:
+            file_url = reverse('problem_solution_file', args=[obj.pk])
             return request.build_absolute_uri(file_url)
         return None
 
