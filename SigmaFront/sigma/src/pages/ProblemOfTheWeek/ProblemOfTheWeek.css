@@ -41,7 +41,7 @@
   .ProblemOfTheWeek__link {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #4CAF50;
+    background-color: rgb(244, 138, 7);
     color: #ffffff;
     text-decoration: none;
     border-radius: 6px;
@@ -49,7 +49,7 @@
   }
   
   .ProblemOfTheWeek__link:hover {
-    background-color: #45a049;
+    background-color: #C67006;
   }
   
   /* Sekcija za rješenje */
@@ -60,14 +60,14 @@
   
   /* Link za login */
   .ProblemOfTheWeek__login-link {
-    color: #4CAF50;
+    color: rgb(244, 138, 7);
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
   }
   
   .ProblemOfTheWeek__login-link:hover {
-    color: #388e3c;
+    color: #C67006;
   }
   
   /* Stilovi za učitavanje */
@@ -88,7 +88,7 @@
   /* Spinner */
   .spinner {
     border: 8px solid #f3f3f3;
-    border-top: 8px solid #4CAF50;
+    border-top: 8px solid rgb(244, 138, 7);
     border-radius: 50%;
     width: 60px;
     height: 60px;
