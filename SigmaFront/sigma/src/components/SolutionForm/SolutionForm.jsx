@@ -1,6 +1,7 @@
+// SolutionForm.jsx
 import React, { useState } from 'react';
 import api from '../../services/api.jsx';
-import "./SolutionForm.css"
+import "./SolutionForm.css";
 
 const SolutionForm = ({ problemId }) => {
   const [submittedSolution, setSubmittedSolution] = useState('');
@@ -18,25 +19,29 @@ const SolutionForm = ({ problemId }) => {
       }
       setSubmittedSolution('');
     } catch (error) {
-      setMessage(error.message);
+      setMessage(error.message || 'Došlo je do greške pri slanju rešenja.');
     }
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <label>
-          Vaše rešenje:
+    <div className="SolutionForm__container">
+      <h2 className="SolutionForm__title">Pošalji svoje rešenje</h2>
+      <form onSubmit={handleSubmit} className="SolutionForm__form">
+        <div className="SolutionForm__field">
+          <label htmlFor="solution" className="SolutionForm__label">Vaše rešenje:</label>
           <input
             type="number"
+            id="solution"
             value={submittedSolution}
             onChange={(e) => setSubmittedSolution(e.target.value)}
             required
+            className="SolutionForm__input"
+            placeholder="Unesi svoje rešenje ovdje..."
           />
-        </label>
-        <button type="submit">Pošalji rešenje</button>
+        </div>
+        <button type="submit" className="SolutionForm__button">Pošalji rešenje</button>
       </form>
-      {message && <p>{message}</p>}
+      {message && <p className="SolutionForm__message">{message}</p>}
     </div>
   );
 };
