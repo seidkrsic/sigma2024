@@ -443,8 +443,28 @@
         margin: .5rem auto;
     }
 
-    /* .HomePage__headingSize { 
-        font-size: 30px !important;
-    } */
+    .Problem_of_the_Week__container { 
+        display: flex;
+        width: 90%;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin: auto;
+        align-items: center;
+        
+    }   
+    
+    .Problem_of_the_Week__container .Problem_of_the_Week__link-container:nth-of-type(1) { 
+        border-bottom: 2px solid white;
+        width: 100%;
+        
+    }
+    
+    .Problem_of_the_Week__link-container { 
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        flex-direction: column;
+        margin: 1rem 0rem;
+    } 
 
 }
