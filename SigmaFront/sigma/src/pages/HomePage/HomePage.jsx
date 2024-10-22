@@ -5,7 +5,7 @@ import glavnaSlika from "../../images/glavnaSlika1.jpg"
 import AuthContext from '../../components/AuthContext/AuthContext'
 import useScrollToTop from '../../components/useScrollToTop/useScrollToTop'
 import WavyDiv from '../../components/WavyDiv/WavyDiv'
-import {slika1} from "../../images/SeidPic.png" 
+import slika1 from "../../images/SeidPic.png" 
 
 const HomePage = () => {
 
