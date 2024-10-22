@@ -249,13 +249,22 @@
     color: white; 
     border: 1px solid #1a3a5b;
 
-} 
+}  
+
+.Problem_of_the_Week__container { 
+    display: flex;
+    width: 80%;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2rem;
+    align-items: center;
+}   
 
 .Problem_of_the_Week__link-container { 
     display: flex;
-    width: 100%;
+    width: 50%;
     justify-content: center;
-    flex-direction: row;
+    flex-direction: column;
 } 
 
 

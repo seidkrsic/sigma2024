@@ -30,11 +30,18 @@ const HomePage = () => {
         </div> 
 
         <WavyDiv title="Problem Nedelje">
-            <img src={slika1} alt="" />
-            <div className='Problem_of_the_Week__link-container'>
-                <Link id="problem_of_the_week__problem-btn" to={"/problem-of-the-week"}>Vidi Problem</Link>
-                <Link id='problem_of_the_week__archive-btn' to={"/problems"}>Arhiva Problema</Link>
+            <div className='Problem_of_the_Week__container'>
+                <div className='Problem_of_the_Week__link-container'>
+                    <img src={slika1} alt="" />
+                    <Link id="problem_of_the_week__problem-btn" to={"/problem-of-the-week"}>Vidi Problem</Link>
+                    <Link id='problem_of_the_week__archive-btn' to={"/problems"}>Arhiva Problema</Link>
+                </div>
+                <div className='Problem_of_the_Week__link-container'>
+                    <p>Svake sedmice objavljujemo novi problem koji se sastoji iz više delova, a koji je povezan s praznikom, godišnjim dobom, posebnim događajem ili zanimljivom STEM temom... potpuno besplatno!
+                    Rešenje za svaki "Problem nedelje" objavljuje se ovdje naredne sedmice</p>
+                </div>
             </div>
+            
 
         </WavyDiv>
 
