@@ -1,3 +1,4 @@
+// ProblemList.jsx
 import React, { useState, useEffect } from 'react';
 import { API_URL } from '../../services/api.jsx';
 import "./ProblemList.css";
@@ -67,9 +68,12 @@ const ProblemList = () => {
 
   return (
     <div className='ProblemList__container'>
-      <h1>Arhiva Problema</h1>
+      <h1 className="ProblemList__title">Arhiva Problema</h1>
       {loading ? (
-        <p>Učitavanje...</p>
+        <div className="ProblemList__loading">
+          <div className="spinner"></div>
+          <p>Učitavanje...</p>
+        </div>
       ) : (
         <>
           <table className="problem-list-table">
@@ -84,18 +88,20 @@ const ProblemList = () => {
             <tbody>
               {problems.map(problem => (
                 <tr key={problem.id}>
-                  <td>{problem.published_date}</td>
+                  <td>{new Date(problem.published_date).toLocaleDateString()}</td>
                   <td>{problem.title}</td>
                   <td>
-                    <a href={problem.problem_file_url}  rel="noopener noreferrer">
+                    <a href={problem.problem_file_url} target="_blank" rel="noopener noreferrer" className="problem-link">
                       Problem
                     </a>
                   </td>
                   <td>
-                    {problem.solution_file_url && (
-                      <a href={problem.solution_file_url} rel="noopener noreferrer">
+                    {problem.solution_file_url ? (
+                      <a href={problem.solution_file_url} target="_blank" rel="noopener noreferrer" className="problem-link">
                         Rješenje
                       </a>
+                    ) : (
+                      <span className="no-solution">Nije dostupno</span>
                     )}
                   </td>
                 </tr>
@@ -104,17 +110,19 @@ const ProblemList = () => {
           </table>
           <div className="pagination-buttons">
             {currentPage > 1 && (
-              <button onClick={handlePrevPage}>Prethodna</button>
+              <button onClick={handlePrevPage} className="pagination-button">
+                Prethodna
+              </button>
             )}
 
             {pagesToShow.map((page, index) => (
               page === '...' ? (
-                <span key={index} className="dots">...</span>
+                <span key={index} className="pagination-dots">...</span>
               ) : (
                 <button
                   key={page}
                   onClick={() => fetchProblems(page)}
-                  className={page === currentPage ? 'active' : ''}
+                  className={`pagination-button ${page === currentPage ? 'active' : ''}`}
                 >
                   {page}
                 </button>
@@ -122,7 +130,9 @@ const ProblemList = () => {
             ))}
 
             {currentPage < totalPages && (
-              <button onClick={handleNextPage}>Sledeća</button>
+              <button onClick={handleNextPage} className="pagination-button">
+                Sledeća
+              </button>
             )}
           </div>
         </>
