@@ -1,7 +1,8 @@
+// ProblemOfTheWeek.jsx
 import React, { useState, useEffect } from 'react';
 import SolutionForm from '../../components/SolutionForm/SolutionForm.jsx';
 import api from '../../services/api.jsx';
-import "./ProblemOfTheWeek.css" 
+import "./ProblemOfTheWeek.css";
 
 const ProblemOfTheWeek = () => {
   const [problem, setProblem] = useState(null);
@@ -31,25 +32,35 @@ const ProblemOfTheWeek = () => {
   }, []);
 
   if (loading) {
-    return <p>Učitavanje...</p>;
+    return (
+      <div className="ProblemOfTheWeek__loading">
+        <div className="spinner"></div>
+        <p>Učitavanje...</p>
+      </div>
+    );
   }
 
   if (error) {
-    return <p>{error}</p>;
+    return <div className="ProblemOfTheWeek__error"><p>{error}</p></div>;
   }
 
   if (!problem) {
-    return <p>Trenutno nema aktivnog problema.</p>;
+    return <div className="ProblemOfTheWeek__no-problem"><p>Trenutno nema aktivnog problema.</p></div>;
   }
 
   return (
-    <div>
-      <h1>{problem.title}</h1>
-      <div>
+    <div className='ProblemOfTheWeek__container'>
+      <h1 className='ProblemOfTheWeek__title'>{problem.title}</h1>
+      <div className='ProblemOfTheWeek__content'>
         {problem.problem_file_url ? (
-          <div>
-            <p>Pogledajte problem ovde:</p>
-            <a href={problem.problem_file_url}  rel="noopener noreferrer">
+          <div className='ProblemOfTheWeek__problem-file'>
+            <p>Pogledajte problem ovdje:</p>
+            <a 
+              href={problem.problem_file_url} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className='ProblemOfTheWeek__link'
+            >
               {problem.title}
             </a>
           </div>
@@ -57,13 +68,15 @@ const ProblemOfTheWeek = () => {
           <p>Problem nije dostupan.</p>
         )}
       </div>
-      {isAuthenticated ? (
-        <SolutionForm problemId={problem.id} />
-      ) : (
-        <p>
-          Morate biti <a href="/login">ulogovani</a> da biste poslali rešenje.
-        </p>
-      )}
+      <div className='ProblemOfTheWeek__solution-section'>
+        {isAuthenticated ? (
+          <SolutionForm problemId={problem.id} />
+        ) : (
+          <p>
+            Morate biti <a href="/login" className='ProblemOfTheWeek__login-link'>ulogovani</a> da biste poslali rešenje.
+          </p>
+        )}
+      </div>
     </div>
   );
 };

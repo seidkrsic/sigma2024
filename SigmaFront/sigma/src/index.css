@@ -1,7 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&display=swap');
+
+
 body {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
     'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
     sans-serif;
+  font-family: 'Baloo 2', cursive;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   display: flex;
@@ -19,8 +23,8 @@ body {
 
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+  font-family: 'Baloo 2', cursive;
+  
 } 
 
 
@@ -28,6 +32,7 @@ code {
   margin: 0;
   box-sizing: border-box;
   padding: 0;
+  font-family: 'Baloo 2', cursive;
   /* border: 1px solid black; */
   /* color: black; */
 } 

@@ -1,4 +1,7 @@
 /* WavyDiv.css */
+
+
+
 .wavy-div {
     width: 100%;
     background-color: #06588e;
@@ -23,6 +26,7 @@
     align-items: center;
     width: 100%;
     margin: 1rem auto;
+    margin-bottom: 0;
   }
   .wavy-div img { 
     width: 220px;
@@ -34,7 +38,13 @@
     padding-top: 3rem;
     font-size: 50px;
     text-transform: uppercase;
-  } 
+
+
+  }   
+
+
+
+
 
  
 
