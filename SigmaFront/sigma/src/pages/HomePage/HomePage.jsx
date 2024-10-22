@@ -5,7 +5,7 @@ import glavnaSlika from "../../images/glavnaSlika1.jpg"
 import AuthContext from '../../components/AuthContext/AuthContext'
 import useScrollToTop from '../../components/useScrollToTop/useScrollToTop'
 import WavyDiv from '../../components/WavyDiv/WavyDiv'
-
+import {slika1} from "../../images/SeidPic.png" 
 
 const HomePage = () => {
 
@@ -30,7 +30,9 @@ const HomePage = () => {
         </div> 
 
         <WavyDiv title="Problem of The Week">
-            <p>Ovo je neki tekst.</p>
+            <img src={slika1} alt="" />
+            <Link to={"/problem-of-the-week"}>Vidi Problem</Link>
+            <Link to={"/problems"}>Arhiva Problema</Link>
         </WavyDiv>
 
         <section className='HomePage__section-info'> 

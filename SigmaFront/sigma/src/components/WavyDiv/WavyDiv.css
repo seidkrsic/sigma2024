@@ -12,17 +12,25 @@
   .wavy-div__Wavy_svg { 
     position: relative; 
     top: 225px;
+  } 
+
+  .wavy-div img { 
+    width: 50%;
+    margin: .5rem auto; 
+    
   }
   
-  @media (max-width: 802px) {
+
+  
+@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) { 
+
     .wavy-div {
-      width: 95%;
-      padding: 30px 15px;
+      width: 100%;
     }
   }
   
   .wavy-div h1 {
-    margin-top: 0;
+    margin-top: 1rem;
     font-size: 2em;
   }
   
