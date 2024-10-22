@@ -10,8 +10,10 @@
   }
   
   .wavy-div__Wavy_svg { 
-    position: relative; 
-    top: 265px;
+    position: absolute;
+    width: 100%;
+    left: 0;
+    margin: -20px 0;
   } 
 
   .content { 
@@ -19,7 +21,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    width: 50%;
+    width: 70%;
     margin: 1rem auto;
   }
   .wavy-div img { 
@@ -29,10 +31,19 @@
   }
 
   .wavy-div h1 { 
-    margin-top: 3rem;
+    padding-top: 3rem;
   } 
 
-  .wavy-div a { 
+ 
+
+  .Problem_of_the_Week__link-container { 
+        display: flex;
+        width: 100%;
+        justify-content: center;
+        flex-direction: row;
+  }
+  
+  .Problem_of_the_Week__link-container-div a { 
     color: white;
     border: none;
     background-color: rgb(255, 142, 0);
@@ -47,15 +58,7 @@
     background-color: white; 
     color: #003F7D;
     text-transform: uppercase;
-  } 
-
-  .Problem_of_the_Week__link-container { 
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        flex-direction: row;
   }
-  
 
   
 @media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) { 
