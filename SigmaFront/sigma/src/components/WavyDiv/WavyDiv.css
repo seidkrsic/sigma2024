@@ -1,9 +1,8 @@
 /* WavyDiv.css */
 .wavy-div {
     position: relative;
-    width: 80%;
-    max-width: 600px;
-    background-color: #0099ff;
+    width: 100%;
+    background-color: #06588e;
     color: white;
     padding: 50px 20px;
     text-align: center;
