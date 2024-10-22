@@ -17,15 +17,10 @@ const ProblemList = () => {
     fetch(url)
       .then(response => response.json())
       .then(data => {
-        console.log('data.count:', data.count);
-        console.log('currentPage:', page);
-
         setProblems(data.results);
         setCurrentPage(page);
         const total = Math.ceil(data.count / pageSize);
-        console.log('totalPages:', total);
         setTotalPages(total);
-
         setLoading(false);
       })
       .catch(error => {
@@ -88,14 +83,14 @@ const ProblemList = () => {
             <tbody>
               {problems.map(problem => (
                 <tr key={problem.id}>
-                  <td>{new Date(problem.published_date).toLocaleDateString()}</td>
-                  <td>{problem.title}</td>
-                  <td>
+                  <td data-label="Datum objave">{new Date(problem.published_date).toLocaleDateString()}</td>
+                  <td data-label="Naziv">{problem.title}</td>
+                  <td data-label="Postavka (PDF)">
                     <a href={problem.problem_file_url} target="_blank" rel="noopener noreferrer" className="problem-link">
                       Problem
                     </a>
                   </td>
-                  <td>
+                  <td data-label="Rješenje (PDF)">
                     {problem.solution_file_url ? (
                       <a href={problem.solution_file_url} target="_blank" rel="noopener noreferrer" className="problem-link">
                         Rješenje

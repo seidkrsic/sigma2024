@@ -12,8 +12,8 @@
   --link-color: var(--primary-color);
   --link-hover-color: var(--primary-hover);
   --button-text-color: #ffffff;
-  --button-background: var(--primary-color);
-  --button-hover-background: var(--primary-hover);
+  --button-background: #1a3a5b; /* Boja paginacionih dugmadi */
+  --button-hover-background: #13314f; /* Tamnija nijansa za hover */
   --table-header-background: var(--secondary-color);
   --border-color: #ddd;
 }
@@ -24,6 +24,7 @@
   margin: 0 auto;
   padding: 2rem 0;
   font-family: 'Poppins', sans-serif;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Naslov */
@@ -43,7 +44,6 @@
   border-collapse: collapse;
   font-family: 'Poppins', sans-serif;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  border-radius: 8px;
   overflow: hidden;
 }
 
@@ -59,12 +59,14 @@
   font-size: 1em;
 }
 
+/* Stilizacija zaglavlja tabele */
 .problem-list-table th {
   font-weight: 600;
   text-transform: uppercase;
   color: var(--text-color);
 }
 
+/* Stilizacija redova tabele */
 .problem-list-table tbody tr {
   transition: background-color 0.3s;
 }
@@ -77,6 +79,7 @@
   background-color: rgba(244, 138, 7, 0.1);
 }
 
+/* Stilizacija linkova u tabeli */
 .problem-list-table td a.problem-link {
   color: var(--link-color);
   text-decoration: none;
@@ -87,6 +90,7 @@
   color: var(--link-hover-color);
 }
 
+/* Stil za poruke kada rešenje nije dostupno */
 .no-solution {
   color: #888;
   font-style: italic;
@@ -125,7 +129,6 @@
   text-align: center;
   padding: 2rem;
   background-color: #fff;
-  border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   font-family: 'Poppins', sans-serif;
   color: var(--text-color);
@@ -144,23 +147,21 @@
 
 .pagination-button {
   border: none;
-  background-color: var(--secondary-color);
-  color: var(--text-color);
-  padding: 8px 12px;
+  background-color: var(--button-background); /* #1a3a5b */
+  color: var(--button-text-color); /* Bijeli tekst */
+  padding: 6px 12px; /* Smanjena veličina */
   margin: 5px;
-  font-size: 1em;
+  font-size: 0.9em; /* Smanjena veličina fonta */
   cursor: pointer;
-  border-radius: 4px;
   transition: background-color 0.3s, color 0.3s;
 }
 
 .pagination-button:hover {
-  background-color: var(--primary-hover);
-  color: var(--button-text-color);
+  background-color: var(--button-hover-background); /* #13314f */
 }
 
 .pagination-button.active {
-  background-color: var(--primary-color);
+  background-color: var(--button-background);
   color: var(--button-text-color);
 }
 
@@ -172,6 +173,7 @@
   color: var(--text-color);
 }
 
+/* Onemogućena dugmad */
 .pagination-button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
@@ -211,7 +213,6 @@
   .problem-list-table tr {
     margin-bottom: 15px;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
     overflow: hidden;
   }
 
