@@ -36,29 +36,7 @@
 
  
 
-  .Problem_of_the_Week__link-container { 
-        display: flex;
-        width: 100%;
-        justify-content: center;
-        flex-direction: row;
-  }
-  
-  .Problem_of_the_Week__link-container-div a { 
-    color: white;
-    border: none;
-    background-color: rgb(255, 142, 0);
-    padding: 1rem;
-    margin: .5rem auto;
-    min-width: 30%;
-    width: fit-content;
-    display: flex;
-    text-decoration: none;
-    font-weight: bold;
-    justify-content: center;
-    background-color: white; 
-    color: #003F7D;
-    text-transform: uppercase;
-  }
+
 
   
 @media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) { 
@@ -79,7 +57,7 @@
 
   .wavy-div__Wavy_svg { 
     position: relative; 
-    top: 85px;
+    margin: -80px 0;
   }  
 
   .Problem_of_the_Week__link-container { 
