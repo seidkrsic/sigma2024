@@ -4,6 +4,8 @@ import { Link } from 'react-router-dom'
 import glavnaSlika from "../../images/glavnaSlika1.jpg" 
 import AuthContext from '../../components/AuthContext/AuthContext'
 import useScrollToTop from '../../components/useScrollToTop/useScrollToTop'
+import WavyDiv from '../../components/WavyDiv/WavyDiv'
+
 
 const HomePage = () => {
 
@@ -25,7 +27,11 @@ const HomePage = () => {
             </div>
 
             
-        </div>
+        </div> 
+
+        <WavyDiv title="Problem of The Week">
+            <p>Ovo je neki tekst.</p>
+        </WavyDiv>
 
         <section className='HomePage__section-info'> 
                 <div className='HomePage__section-info__left'>
@@ -40,10 +46,10 @@ const HomePage = () => {
                     <p>Na Akademiji Sigma ponosimo se našim timom stručnjaka i entuzijasta, koji uključuje priznate profesore matematike, bivše takmičare i stručnjake iz oblasti obrazovanja. </p>
                     <Link onClick={()=> { setActiveIndex(2)}} to={"/informacije"}>Predavači</Link>
                 </div>
-        </section> 
+        </section>  
 
 
-        <section className='HomePage__section-video'> 
+        {/* <section className='HomePage__section-video'> 
                 <div className='HomePage__section-video__left'>
                     <h1>Gdje učenje postaje zabava</h1>
                     <p>Akademija Sigma je specijalizovana online platforma kreirana sa ciljem da podrži i unaprijedi matematičke vještine i znanje mladih entuzijasta širom Crne Gore. Naša misija je da inspirišemo, obrazujemo i osnažimo nove generacije matematičara i fizičara, pružajući im alate i resurse potrebne za uspeh na raznim matematičkim takmičenjima i u akademskim sferama.</p>
@@ -51,14 +57,14 @@ const HomePage = () => {
 
                 <div className='HomePage__section-video__right'>
                 <iframe width="" height="" src="https://www.youtube.com/embed/OmJ-4B-mS-Y?si=dToi6rp038n49Fvp" title="YouTube video player" frameBorder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture;" referrerPolicy="strict-origin-when-cross-origin" allowFullScreen></iframe>                </div>
-        </section> 
+        </section>  */}
 
-        <section className='HomePage__section-question'> 
+        {/* <section className='HomePage__section-question'> 
                 <h2>Zainteresovani ste?</h2> 
                 <p>Pozovite nas da se informišete i saznate koji je pravi kurs za vaše dijete!</p> 
                 <Link to="" onClick={() => window.location.href = `tel: +38268619730}`}>Pozovite nas</Link>
                 
-        </section>  
+        </section>   */}
 
         
         
