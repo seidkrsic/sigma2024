@@ -29,7 +29,7 @@ const HomePage = () => {
             
         </div> 
 
-        <WavyDiv title="Problem Nedelje">
+        <WavyDiv title="Problem Nedjelje">
             <div className='Problem_of_the_Week__container'>
                 <div className='Problem_of_the_Week__link-container'>
                     <img src={slika1} alt="" />
