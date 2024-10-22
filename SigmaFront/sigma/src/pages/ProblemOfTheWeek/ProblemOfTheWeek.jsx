@@ -57,7 +57,6 @@ const ProblemOfTheWeek = () => {
             <p>Pogledajte problem ovdje:</p>
             <a 
               href={problem.problem_file_url} 
-              target="_blank" 
               rel="noopener noreferrer"
               className='ProblemOfTheWeek__link'
             >

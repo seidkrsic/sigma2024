@@ -86,13 +86,13 @@ const ProblemList = () => {
                   <td data-label="Datum objave">{new Date(problem.published_date).toLocaleDateString()}</td>
                   <td data-label="Naziv">{problem.title}</td>
                   <td data-label="Postavka (PDF)">
-                    <a href={problem.problem_file_url} target="_blank" rel="noopener noreferrer" className="problem-link">
+                    <a href={problem.problem_file_url} rel="noopener noreferrer" className="problem-link">
                       Problem
                     </a>
                   </td>
                   <td data-label="Rješenje (PDF)">
                     {problem.solution_file_url ? (
-                      <a href={problem.solution_file_url} target="_blank" rel="noopener noreferrer" className="problem-link">
+                      <a href={problem.solution_file_url} rel="noopener noreferrer" className="problem-link">
                         Rješenje
                       </a>
                     ) : (
