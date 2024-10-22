@@ -29,10 +29,13 @@ const HomePage = () => {
             
         </div> 
 
-        <WavyDiv title="Problem of The Week">
+        <WavyDiv title="Problem Nedelje">
             <img src={slika1} alt="" />
-            <Link to={"/problem-of-the-week"}>Vidi Problem</Link>
-            <Link to={"/problems"}>Arhiva Problema</Link>
+            <div className='Problem_of_the_Week__link-container'>
+                <Link to={"/problem-of-the-week"}>Vidi Problem</Link>
+                <Link id='problem_of_the_week__archive-btn' to={"/problems"}>Arhiva Problema</Link>
+            </div>
+
         </WavyDiv>
 
         <section className='HomePage__section-info'> 

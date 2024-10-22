@@ -274,6 +274,21 @@
     background-color: white; 
     color: #003F7D;
     text-transform: uppercase;
+  } 
+
+  #problem_of_the_week__archive-btn { 
+    color: white;
+    border: none;
+    padding: 1rem;
+    margin: .5rem auto;
+    min-width: 30%;
+    width: fit-content;
+    display: flex;
+    text-decoration: underline;
+    font-weight: bold;
+    justify-content: center;
+    text-transform: uppercase;
+
   }
 
 
