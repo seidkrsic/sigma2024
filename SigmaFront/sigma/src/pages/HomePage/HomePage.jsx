@@ -32,7 +32,7 @@ const HomePage = () => {
         <WavyDiv title="Problem Nedelje">
             <img src={slika1} alt="" />
             <div className='Problem_of_the_Week__link-container'>
-                <Link to={"/problem-of-the-week"}>Vidi Problem</Link>
+                <Link id="problem_of_the_week__problem-btn " to={"/problem-of-the-week"}>Vidi Problem</Link>
                 <Link id='problem_of_the_week__archive-btn' to={"/problems"}>Arhiva Problema</Link>
             </div>
 

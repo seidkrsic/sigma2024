@@ -259,7 +259,7 @@
 } 
 
 
-.Problem_of_the_Week__link-container-div a { 
+#problem_of_the_week__problem-btn  { 
     color: white;
     border: none;
     background-color: rgb(255, 142, 0);
