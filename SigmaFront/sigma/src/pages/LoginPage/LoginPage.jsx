@@ -1,4 +1,5 @@
-// LoginPage.jsx
+// LoginPage.js
+
 import React, { useContext, useState } from 'react';
 import './LoginPage.css';
 import api from '../../services/api';
@@ -68,15 +69,15 @@ const LoginPage = () => {
               required
             />
           </div>
-          {error && <p className="LoginPage__error-message">{error}</p>}
-          <button type='submit' className='LoginPage__button'>Uloguj se</button>
-          <p className="LoginPage__switch-text">
+          {error && <p className="error-message">{error}</p>}
+          <button type='submit'>Uloguj se</button>
+          <p id="switch-form__text">
             Nemate nalog?{' '}
-            <span onClick={() => setIsLogin(false)} className='LoginPage__switch-form'>
+            <span onClick={() => setIsLogin(false)} className='switch-form'>
               Registrujte se
             </span>
           </p> 
-          <Link to="/password-reset" className='LoginPage__link'>Zaboravili ste lozinku?</Link>
+          <Link to="/password-reset">Zaboravili ste lozinku?</Link>
         </form>
       ) : (
         <form onSubmit={handleRegister} className='LoginPage__form'>
@@ -110,11 +111,11 @@ const LoginPage = () => {
               required
             />
           </div>
-          {error && <p className="LoginPage__error-message">{error}</p>}
-          <button type='submit' className='LoginPage__button'>Registrujte se</button>
-          <p className="LoginPage__switch-text">
+          {error && <p className="error-message">{error}</p>}
+          <button type='submit'>Registrujte se</button>
+          <p id='switch-form__text'>
             Već imate nalog?{' '}
-            <span onClick={() => setIsLogin(true)} className='LoginPage__switch-form'>
+            <span onClick={() => setIsLogin(true)} className='switch-form'>
               Prijavite se
             </span>
           </p>
