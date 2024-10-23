@@ -26,7 +26,7 @@ const PasswordResetRequest = () => {
       setStatus('error');
     }
   };
-
+  window.scrollTo(0,0);
   return (
     <div className='PasswordResetRequest__container'>
       {status === 'success' ? (

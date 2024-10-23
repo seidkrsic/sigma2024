@@ -26,7 +26,7 @@ const ProblemOfTheWeek = () => {
         setLoading(false);
       }
     };
-
+    window.scrollTo(0,0);
     checkAuthentication();
     fetchProblem();
   }, []);
@@ -57,6 +57,7 @@ const ProblemOfTheWeek = () => {
             <p>Pogledajte problem ovdje:</p>
             <a 
               href={problem.problem_file_url} 
+              target="_blank" 
               rel="noopener noreferrer"
               className='ProblemOfTheWeek__link'
             >
