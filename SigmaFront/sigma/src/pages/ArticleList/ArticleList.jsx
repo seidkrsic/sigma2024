@@ -30,7 +30,7 @@ const ArticleList = () => {
   };
 
   useEffect(() => {
-    window.scrollTo(0,0);
+    useScrollToTop(); 
     fetchPosts(currentPage);
   }, [currentPage]);
 

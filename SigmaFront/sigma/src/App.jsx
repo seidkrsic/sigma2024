@@ -18,7 +18,7 @@ import ProblemList from './pages/ProblemList/ProblemList';
 import ProblemOfTheWeek from './pages/ProblemOfTheWeek/ProblemOfTheWeek';
 import ArticleDetail from './pages/ArticleDetail/ArticleDetail';
 import ArticleList from './pages/ArticleList/ArticleList';
-import ScrollToTop from './components/ScrollToTop/ScrollToTop';
+
 
 function App() {
 
@@ -55,7 +55,6 @@ function App() {
         <Header />
      
           <Routes>
-            <ScrollToTop /> 
 
             <Route path={"/"} element={<HomePage />} /> 
             {/* {isAuthenticated ?  <Route path={"/posts"} element={<BlogPage />} > </Route> : <Route path={"/login"} element={<LoginPage />} />}   */}

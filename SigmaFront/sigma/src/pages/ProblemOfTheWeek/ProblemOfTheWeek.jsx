@@ -26,7 +26,7 @@ const ProblemOfTheWeek = () => {
         setLoading(false);
       }
     };
-    window.scrollTo(0,0);
+    useScrollToTop(); 
     checkAuthentication();
     fetchProblem();
   }, []);

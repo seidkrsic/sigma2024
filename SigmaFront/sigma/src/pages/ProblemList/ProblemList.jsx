@@ -30,7 +30,7 @@ const ProblemList = () => {
   };
   
   useEffect(() => {
-    window.scrollTo(0,0);
+    useScrollToTop(); 
     fetchProblems();
   }, []);
 
