@@ -17,7 +17,7 @@ const SideMenu = ({ isOpen, toggleMenu }) => {
         
         <div className='tapered-line'></div>  
 
-        <Link id="special__link" to="/blog" onClick={toggleMenu}>Blog</Link>
+        <Link id="special__link" to="/posts" onClick={toggleMenu}>Blog</Link>
         
         <div className='tapered-line'></div> 
 
