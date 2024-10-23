@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import SolutionForm from '../../components/SolutionForm/SolutionForm.jsx';
 import api from '../../services/api.jsx';
 import "./ProblemOfTheWeek.css";
+import useScrollToTop from '../../components/useScrollToTop/useScrollToTop.jsx';
+
 
 const ProblemOfTheWeek = () => {
   const [problem, setProblem] = useState(null);

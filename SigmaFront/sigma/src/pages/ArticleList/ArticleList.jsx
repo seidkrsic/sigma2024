@@ -4,6 +4,8 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import './ArticleList.css';
 import { API_URL } from '../../services/api.jsx'; // Uveri se da imaš API_URL definisan
+import useScrollToTop from '../../components/useScrollToTop/useScrollToTop.jsx';
+
 
 const ArticleList = () => {
   const [posts, setPosts] = useState([]);

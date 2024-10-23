@@ -2,6 +2,8 @@
 import React, { useState, useEffect } from 'react';
 import { API_URL } from '../../services/api.jsx';
 import "./ProblemList.css";
+import useScrollToTop from '../../components/useScrollToTop/useScrollToTop.jsx';
+
 
 const ProblemList = () => {
   const [problems, setProblems] = useState([]);

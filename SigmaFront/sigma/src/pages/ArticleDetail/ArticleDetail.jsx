@@ -5,6 +5,8 @@ import { useParams, Link } from 'react-router-dom';
 import MathJax from 'react-mathjax2';
 import './ArticleDetail.css';
 import { API_URL } from '../../services/api.jsx';
+import useScrollToTop from '../../components/useScrollToTop/useScrollToTop.jsx';
+
 
 const ArticleDetail = () => {
   const { slug } = useParams();
