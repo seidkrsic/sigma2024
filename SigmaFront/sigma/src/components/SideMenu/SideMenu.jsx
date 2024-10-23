@@ -13,11 +13,11 @@ const SideMenu = ({ isOpen, toggleMenu }) => {
        
         <div className='tapered-line'></div>
         
-        <Link id="special__link" to="/kursevi" onClick={toggleMenu}>Kursevi</Link>
+        {/* <Link id="special__link" to="/kursevi" onClick={toggleMenu}>Kursevi</Link>
         
-        <div className='tapered-line'></div>  
+        <div className='tapered-line'></div>   */} 
 
-        <Link id="special__link" to="/posts" onClick={toggleMenu}>Blog</Link>
+        <Link id="special__link" to="/posts" onClick={toggleMenu}>Matematički Članci</Link>
         
         <div className='tapered-line'></div> 
 
