@@ -16,19 +16,39 @@ from django.http import FileResponse, Http404
 from rest_framework.pagination import PageNumberPagination
 from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
+
+
+
+class PostPagination(PageNumberPagination):
+    page_size = 10
+    page_size_query_param = 'page_size'
+    max_page_size = 100
+
 @api_view(['GET', 'POST'])
 @permission_classes([IsAuthenticatedOrReadOnly])
 def post_list_create(request):
     if request.method == 'GET':
         posts = Post.objects.all().order_by('-published_date')
-        serializer = PostSerializer(posts, many=True)
-        return Response(serializer.data)
+        paginator = PostPagination()
+        page = paginator.paginate_queryset(posts, request)
+        
+        # Ako postoji 'exclude' parametar, isključi taj članak
+        exclude_id = request.query_params.get('exclude', None)
+        if exclude_id:
+            page = page.exclude(id=exclude_id)
+            paginator.page_size = int(request.query_params.get('page_size', 10))
+
+        serializer = PostSerializer(page, many=True)
+        return paginator.get_paginated_response(serializer.data)
     elif request.method == 'POST':
         serializer = PostSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save(author=request.user.profile)
             return Response(serializer.data, status=201)
         return Response(serializer.errors, status=400)
+
+
+
 
 @api_view(['GET', 'PUT', 'DELETE'])
 @permission_classes([IsAuthenticatedOrReadOnly])
