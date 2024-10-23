@@ -1,0 +1,26 @@
+.article-detail {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .article-title {
+    font-size: 2em;
+    margin-bottom: 20px;
+  }
+  
+  .article-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 0;
+  }
+  
+  .article-content {
+    font-size: 1em;
+    line-height: 1.6;
+  }
+  
+  .article-content .MathJax {
+    font-size: 1em;
+  }
+  

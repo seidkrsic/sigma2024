@@ -1,0 +1,23 @@
+.article-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+  
+  .article-card {
+    width: 30%;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    text-align: center;
+  }
+  
+  .article-image {
+    width: 100%;
+    height: auto;
+  }
+  
+  .article-title {
+    font-size: 1.2em;
+    margin: 10px 0;
+  }
+  

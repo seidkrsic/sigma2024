@@ -12,5 +12,8 @@ urlpatterns = [
     path('api/problems/', views.problem_list, name='problem_list'),
     path('api/problem-solution-file/<int:pk>/', views.problem_solution_file, name='problem_solution_file'),
 
+    path('api/posts/', views.post_list_create, name='post-list-create'),
+    path('api/posts/<slug:slug>/', views.post_detail, name='post-detail'),
+
 
 ]

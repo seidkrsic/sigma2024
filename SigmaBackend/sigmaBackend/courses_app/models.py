@@ -1,6 +1,8 @@
 from django.db import models
 from user_app.models import Profile 
 from django_ckeditor_5.fields import CKEditor5Field
+from django.utils import timezone 
+
 
 class Course(models.Model):
     title = models.CharField(max_length=255)
@@ -66,3 +68,22 @@ class Solution(models.Model):
 
     def __str__(self):
         return f'Rešenje od {self.profile.user.username} za {self.problem.title}'
+    
+
+
+
+class Post(models.Model):
+    title = models.CharField(max_length=200)
+    author = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    content = models.TextField()
+    main_image = models.ImageField(upload_to='blog_images/', null=True, blank=True)
+    created_date = models.DateTimeField(default=timezone.now)
+    published_date = models.DateTimeField(blank=True, null=True)
+    slug = models.SlugField(unique=True, max_length=200)
+
+    def publish(self):
+        self.published_date = timezone.now()
+        self.save()
+
+    def __str__(self):
+        return self.title

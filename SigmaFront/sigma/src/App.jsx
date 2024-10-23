@@ -16,6 +16,8 @@ import ResetPassword from './components/ResetPassword/ResetPassword';
 import PasswordResetRequest from './components/PasswordResetRequest/PasswordResetRequest';
 import ProblemList from './pages/ProblemList/ProblemList';
 import ProblemOfTheWeek from './pages/ProblemOfTheWeek/ProblemOfTheWeek';
+import ArticleDetail from './pages/ArticleDetail/ArticleDetail';
+import ArticleList from './pages/ArticleList/ArticleList';
 
 function App() {
 
@@ -63,8 +65,8 @@ function App() {
             <Route path="/password-reset" element={<PasswordResetRequest />} />
             <Route path="/problems" element={<ProblemList />} />
             <Route path="/problem-of-the-week" element={<ProblemOfTheWeek />} />
-
-
+            <Route exact path="/" element={<ArticleList />} />
+            <Route path="/post/:slug" component={<ArticleDetail />} />
 
           </Routes>
 

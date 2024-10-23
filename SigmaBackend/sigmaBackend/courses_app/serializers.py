@@ -4,7 +4,19 @@ from rest_framework import serializers
 from .models import Course, Problem, Solution 
 from user_app.serializers import ProfileSerializer 
 from django.conf import settings
-from django.urls import reverse
+from django.urls import reverse 
+from .models import Post
+
+
+
+class PostSerializer(serializers.ModelSerializer):
+    author = serializers.ReadOnlyField(source='author.user.username')
+
+    class Meta:
+        model = Post
+        fields = ['id', 'title', 'author', 'content', 'main_image', 'created_date', 'published_date', 'slug']
+
+
 
 class ProblemSerializer(serializers.ModelSerializer):
     problem_file_url = serializers.SerializerMethodField()
