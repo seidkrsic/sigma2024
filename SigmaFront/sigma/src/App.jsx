@@ -55,7 +55,7 @@ function App() {
      
           <Routes>
             <Route path={"/"} element={<HomePage />} /> 
-            {isAuthenticated ?  <Route path={"/posts"} element={<BlogPage />} > </Route> : <Route path={"/login"} element={<LoginPage />} />}  
+            {/* {isAuthenticated ?  <Route path={"/posts"} element={<BlogPage />} > </Route> : <Route path={"/login"} element={<LoginPage />} />}   */}
             <Route path={"/kursevi"} element={<CoursesPage />} />
             <Route path={"/informacije"} element={<AboutPage />} /> 
             <Route path={"/kurs/:id"} element={<SingleCoursePage />} />
