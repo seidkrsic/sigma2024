@@ -80,7 +80,7 @@ const ArticleDetail = () => {
         ) : (
           <div className="ArticleDetail__recommended-list">
             {recommendedPosts.map((recPost) => (
-              <Link to={`/posts/${recPost.slug}/`} key={recPost.id} className="ArticleDetail__recommended-card">
+              <Link to={`/posts/${recPost.slug}`} key={recPost.id} className="ArticleDetail__recommended-card">
                 {recPost.main_image && (
                   <img src={recPost.main_image} alt={recPost.title} className="ArticleDetail__recommended-image" />
                 )}
@@ -93,7 +93,7 @@ const ArticleDetail = () => {
 
       {/* Link ka svim člancima */}
       <div className="ArticleDetail__all-link">
-        <Link to="/posts/" className="ArticleDetail__all-link-button">
+        <Link to="/posts" className="ArticleDetail__all-link-button">
           Prikaži sve članke
         </Link>
       </div>

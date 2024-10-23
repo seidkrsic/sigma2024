@@ -81,11 +81,11 @@ const ArticleList = () => {
               Sledeća
             </button>
           </div>
-          <div className="ArticleList__all-link">
+          {/* <div className="ArticleList__all-link">
             <Link to="/posts/" className="ArticleList__all-link-button">
               Prikaži sve članke
             </Link>
-          </div>
+          </div> */}
         </>
       )}
     </div>
