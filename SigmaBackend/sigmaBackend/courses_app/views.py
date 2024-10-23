@@ -24,28 +24,46 @@ class PostPagination(PageNumberPagination):
     page_size_query_param = 'page_size'
     max_page_size = 100
 
+# courses_app/views.py
+from rest_framework.pagination import PageNumberPagination
+from rest_framework.decorators import api_view, permission_classes
+from rest_framework.permissions import IsAuthenticatedOrReadOnly
+from rest_framework.response import Response
+from .models import Post
+from .serializers import PostSerializer
+
+class PostPagination(PageNumberPagination):
+    page_size = 10
+    page_size_query_param = 'page_size'
+    max_page_size = 100
+
 @api_view(['GET', 'POST'])
 @permission_classes([IsAuthenticatedOrReadOnly])
 def post_list_create(request):
     if request.method == 'GET':
         posts = Post.objects.all().order_by('-published_date')
-        paginator = PostPagination()
-        page = paginator.paginate_queryset(posts, request)
         
         # Ako postoji 'exclude' parametar, isključi taj članak
         exclude_id = request.query_params.get('exclude', None)
         if exclude_id:
-            page = page.exclude(id=exclude_id)
-            paginator.page_size = int(request.query_params.get('page_size', 10))
-
+            try:
+                exclude_id = int(exclude_id)
+                posts = posts.exclude(id=exclude_id)
+            except ValueError:
+                return Response({'error': 'Invalid exclude parameter'}, status=400)
+        
+        paginator = PostPagination()
+        page = paginator.paginate_queryset(posts, request)
         serializer = PostSerializer(page, many=True)
         return paginator.get_paginated_response(serializer.data)
+    
     elif request.method == 'POST':
         serializer = PostSerializer(data=request.data)
         if serializer.is_valid():
             serializer.save(author=request.user.profile)
             return Response(serializer.data, status=201)
         return Response(serializer.errors, status=400)
+
 
 
 
