@@ -15,7 +15,7 @@ const ArticleList = () => {
   const fetchPosts = async (page) => {
     setLoading(true);
     try {
-      const response = await axios.get(`${API_URL}/api/posts/`, {
+      const response = await axios.get(`${API_URL}/posts/`, {
         params: { page: page },
       });
       setPosts(response.data.results);

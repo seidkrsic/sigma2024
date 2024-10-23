@@ -19,7 +19,7 @@ const ArticleDetail = () => {
     const fetchPost = async () => {
       setLoading(true);
       try {
-        const response = await axios.get(`${API_URL}/api/posts/${slug}/`);
+        const response = await axios.get(`${API_URL}/posts/${slug}/`);
         setPost(response.data);
         setError('');
       } catch (err) {
@@ -37,7 +37,7 @@ const ArticleDetail = () => {
       const fetchRecommended = async () => {
         setLoadingRecommendations(true);
         try {
-          const response = await axios.get(`${API_URL}/api/posts/`, {
+          const response = await axios.get(`${API_URL}/posts/`, {
             params: { ordering: '-published_date', exclude: post.id, page_size: 2 },
           });
           setRecommendedPosts(response.data.results);
