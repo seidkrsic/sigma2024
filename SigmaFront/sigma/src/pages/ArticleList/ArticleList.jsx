@@ -26,7 +26,7 @@ const ArticleList = () => {
   return (
     <div className="ArticleList__container">
       {posts.map(post => (
-        <Link to={`/articles/${post.slug}/`} key={post.id} className="ArticleList__card">
+        <Link to={`/posts/${post.slug}/`} key={post.id} className="ArticleList__card">
           {post.main_image && (
             <img src={post.main_image} alt={post.title} className="ArticleList__image" />
           )}
