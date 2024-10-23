@@ -16,9 +16,10 @@ const ArticleDetail = () => {
   const [loading, setLoading] = useState(true);
   const [loadingRecommendations, setLoadingRecommendations] = useState(true);
   const [errorRecommendations, setErrorRecommendations] = useState('');
-
+  useScrollToTop(); 
+  
   useEffect(() => {
-    useScrollToTop(); 
+
     const fetchPost = async () => {
       setLoading(true);
       try {

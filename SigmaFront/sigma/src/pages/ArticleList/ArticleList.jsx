@@ -32,10 +32,12 @@ const ArticleList = () => {
   };
 
   useEffect(() => {
-    useScrollToTop(); 
+  
     fetchPosts(currentPage);
   }, [currentPage]);
 
+  useScrollToTop();  
+  
   const handleNext = () => {
     if (currentPage < totalPages) {
       fetchPosts(currentPage + 1);

@@ -32,9 +32,11 @@ const ProblemList = () => {
   };
   
   useEffect(() => {
-    useScrollToTop(); 
+   
     fetchProblems();
   }, []);
+
+  useScrollToTop(); 
 
   const handleNextPage = () => {
     if (currentPage < totalPages) {

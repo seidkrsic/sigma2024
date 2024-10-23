@@ -28,10 +28,12 @@ const ProblemOfTheWeek = () => {
         setLoading(false);
       }
     };
-    useScrollToTop(); 
+
     checkAuthentication();
     fetchProblem();
-  }, []);
+  }, []); 
+
+  useScrollToTop(); 
 
   if (loading) {
     return (
