@@ -41,7 +41,6 @@ const ArticleDetail = () => {
           const response = await axios.get(`${API_URL}/posts/`, {
             params: { ordering: '-published_date', exclude: post.id, page_size: 2 },
           });
-          console.log('Recommended Posts:', response.data); // Debugging linija
           setRecommendedPosts(response.data.results);
           setErrorRecommendations('');
         } catch (err) {
