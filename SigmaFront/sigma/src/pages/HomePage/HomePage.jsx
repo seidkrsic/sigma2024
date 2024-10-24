@@ -45,7 +45,18 @@ const HomePage = () => {
             </p>
           </div>
         </div>
-      </WavyDiv>
+      </WavyDiv> 
+
+
+      <section className="HomePage__latest-articles">
+        <h2 className="HomePage__section-title">Najnoviji Članci</h2>
+        <ArticleList limit={3} showPagination={false} />
+        <div className="HomePage__view-all">
+          <Link to="/posts" className="HomePage__view-all-button">
+            Prikaži sve članke
+          </Link>
+        </div>
+      </section>
 
         {/* <section className='HomePage__section-info'> 
                 <div className='HomePage__section-info__left'>

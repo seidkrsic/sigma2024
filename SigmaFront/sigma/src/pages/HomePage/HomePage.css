@@ -508,3 +508,56 @@
     } 
 
 }
+
+
+/* HomePage.css */
+
+/* ----------------------------------------
+   Opšti Stilovi za Home Page
+---------------------------------------- */
+
+/* ...postojeći stilovi... */
+
+/* Sekcija Najnovijih Članaka */
+.HomePage__latest-articles {
+    background-color: white; /* Bijela pozadina */
+    padding: 2rem 0;
+    text-align: center;
+  }
+  
+  .HomePage__latest-articles .HomePage__section-title {
+    font-size: 2rem;
+    color: #06588e; /* Boja koja se slaže sa dizajnom sajta */
+    margin-bottom: 1.5rem;
+  }
+  
+  .HomePage__view-all {
+    margin-top: 2rem;
+  }
+  
+  .HomePage__view-all-button {
+    background-color: rgb(255, 142, 0);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .HomePage__view-all-button:hover {
+    background-color: rgb(244, 138, 7);
+    transform: translateY(-3px);
+  }
+  
+  /* Responsive Stilovi za Sekciju Najnovijih Članaka */
+  @media (max-width: 768px) {
+    .HomePage__latest-articles .HomePage__section-title {
+      font-size: 1.75rem;
+    }
+  
+    .HomePage__view-all-button {
+      padding: 0.5rem 1rem;
+    }
+  }
+  
