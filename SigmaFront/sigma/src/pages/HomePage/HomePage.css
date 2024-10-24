@@ -1,5 +1,9 @@
 /* HomePage.css */
 
+/* ----------------------------------------
+   Opšti Stilovi za Home Page
+---------------------------------------- */
+
 /* HomePage__container-main */ 
 .HomePage__container-main { 
     width: 100%;
@@ -83,6 +87,96 @@
 .HomePage__container-right img:hover {
     transform: scale(1.05); /* Dodan hover efekat za interaktivnost */
 }
+
+/* ----------------------------------------
+   Stilovi za Sekciju "Problem Nedjelje"
+---------------------------------------- */
+
+/* Problem_of_the_Week__container */
+.Problem_of_the_Week__container { 
+    display: flex;
+    width: 80%;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2rem;
+    align-items: center;
+    /* Uklonjeno: border-radius */
+    background-color: #06588e; /* Tamnoplava pozadina koja se slaže sa WavyDiv */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}   
+
+.Problem_of_the_Week__container .Problem_of_the_Week__link-container:nth-of-type(1) { 
+    border-right: 1.2px solid white;
+    /* Uklonjeno: border-radius */
+}
+
+.Problem_of_the_Week__link-container { 
+    display: flex;
+    width: 45%; /* Smanjena širina za bolji raspored */
+    justify-content: center;
+    flex-direction: column;
+    margin: 0 1rem; /* Smanjen margin */
+    /* Uklonjeno: border-radius */
+    background-color: rgba(255, 255, 255, 0.1); /* Poluprozirna pozadina */
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+} 
+
+/* Slika u Problem_of_the_Week__link-container */
+.Problem_of_the_Week__link-container img {
+    width: 220px;
+    height: auto;
+    margin-bottom: 1rem;
+    /* Uklonjeno: border-radius */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Dugmad */
+#problem_of_the_week__problem-btn, 
+#problem_of_the_week__archive-btn { 
+    background-color: rgb(255, 142, 0);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    margin: 0.5rem auto;
+    min-width: 30%;
+    width: 80%; /* Prilagođeno širine */
+    display: inline-block;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-align: center;
+}
+
+#problem_of_the_week__archive-btn { 
+    background-color: transparent;
+    color: white;
+    border: 2px solid white;
+}
+
+#problem_of_the_week__problem-btn:hover, 
+#problem_of_the_week__archive-btn:hover { 
+    background-color: rgb(244, 138, 7);
+    transform: translateY(-3px);
+}
+
+#problem_of_the_week__archive-btn:hover { 
+    background-color: white;
+    color: #06588e;
+}
+
+/* Opis */
+.Problem_of_the_Week__link-container p {
+    margin-top: 1rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: justify;
+    color: #f0f0f0; /* Svetlija boja za kontrast */
+}
+
+/* ----------------------------------------
+   Ostali Stilovi (Bez Promjena)
+---------------------------------------- */
 
 /* HomePage__section-info */ 
 .HomePage__section-info { 
@@ -256,88 +350,6 @@
     border: 1px solid #1a3a5b;
 }  
 
-/* Problem_of_the_Week__container */
-.Problem_of_the_Week__container { 
-    display: flex;
-    width: 80%;
-    flex-direction: row;
-    justify-content: space-between;
-    padding: 2rem;
-    align-items: center;
-    /* Dodato: Uklonjeno border-radius */
-    background-color: #06588e; /* Tamnoplava pozadina koja se slaže sa WavyDiv */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-}   
-
-.Problem_of_the_Week__container .Problem_of_the_Week__link-container:nth-of-type(1) { 
-    border-right: 1.2px solid white;
-    /* Uklonjeno border-radius */
-}
-
-.Problem_of_the_Week__link-container { 
-    display: flex;
-    width: 45%; /* Smanjena širina za bolji raspored */
-    justify-content: center;
-    flex-direction: column;
-    margin: 0 1rem; /* Smanjen margin */
-    /* Uklonjeno border-radius */
-    background-color: rgba(255, 255, 255, 0.1); /* Poluprozirna pozadina */
-    padding: 1.5rem;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-} 
-
-/* Slika u Problem_of_the_Week__link-container */
-.Problem_of_the_Week__link-container img {
-    width: 220px;
-    height: auto;
-    margin-bottom: 1rem;
-    /* Uklonjeno border-radius */
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
-}
-
-/* Dugmad */
-#problem_of_the_week__problem-btn, 
-#problem_of_the_week__archive-btn { 
-    background-color: rgb(255, 142, 0);
-    color: white;
-    padding: 0.75rem 1.5rem;
-    margin: 0.5rem auto;
-    min-width: 30%;
-    width: 80%; /* Prilagođeno širine */
-    display: inline-block;
-    text-decoration: none;
-    font-weight: bold;
-    text-transform: uppercase;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    text-align: center;
-}
-
-#problem_of_the_week__archive-btn { 
-    background-color: transparent;
-    color: white;
-    border: 2px solid white;
-}
-
-#problem_of_the_week__problem-btn:hover, 
-#problem_of_the_week__archive-btn:hover { 
-    background-color: rgb(244, 138, 7);
-    transform: translateY(-3px);
-}
-
-#problem_of_the_week__archive-btn:hover { 
-    background-color: white;
-    color: #06588e;
-}
-
-/* Opis */
-.Problem_of_the_Week__link-container p {
-    margin-top: 1rem;
-    font-size: 1rem;
-    line-height: 1.6;
-    text-align: justify;
-    color: #f0f0f0; /* Svetlija boja za kontrast */
-}
-
 /* Responsive Stilovi */
 @media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) {
 
@@ -425,7 +437,6 @@
         width: 70% !important;
         left: 10px !important;
         color: #1a3a5b;
-
     } 
     .HomePage__section-video__left p { 
         font-size: 14.3px !important;
@@ -445,7 +456,6 @@
         margin: 3rem auto;
         margin-top: 3rem; 
         margin-bottom: 2rem;
-
     } 
 
     .HomePage__section-video__right iframe { 
