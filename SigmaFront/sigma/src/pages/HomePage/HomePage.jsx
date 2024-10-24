@@ -29,23 +29,24 @@ const HomePage = () => {
             
         </div> 
 
-        <WavyDiv title="Problem Nedjelje">
-            <div className='Problem_of_the_Week__container'>
-                <div className='Problem_of_the_Week__link-container'>
-                    <img src={slika1} alt="" />
-                    <Link id="problem_of_the_week__problem-btn" to={"/problem-of-the-week"}>Vidi Problem</Link>
-                    <Link id='problem_of_the_week__archive-btn' to={"/problems"}>Arhiva Problema</Link>
-                </div>
-                <div className='Problem_of_the_Week__link-container'>
-                    <p>Svake sedmice objavljujemo novi problem koji se sastoji iz više djelova, a koji je povezan s praznikom, godišnjim dobom, posebnim događajem ili nekom zanimljivom STEM ili matematičkom temom... potpuno besplatno!  
-Rješenje za svaki "Problem nedjelje" objavljuje se ovdje naredne sedmice. Ulogovani korisnici mogu da se takmiče i šalju svoja rješenja zadataka. Ukoliko se nađu među prva tri na mjesečnoj listi, osvojiće nagradu. Takođe, vodi se i vječna lista najboljih takmičara!</p>
-                </div>
-            </div>
-            
+        
+      <WavyDiv title="Problem Nedjelje">
+        <div className='Problem_of_the_Week__container'>
+          <div className='Problem_of_the_Week__link-container'>
+            <img src={slika1} alt="Problem Nedjelje" />
+            <Link id="problem_of_the_week__problem-btn" to={"/problem-of-the-week"}>Vidi Problem</Link>
+            <Link id='problem_of_the_week__archive-btn' to={"/problems"}>Arhiva Problema</Link>
+          </div>
+          <div className='Problem_of_the_Week__link-container'>
+            <p>
+              Svake sedmice objavljujemo novi problem koji se sastoji iz više djelova, a koji je povezan s praznikom, godišnjim dobom, posebnim događajem ili nekom zanimljivom STEM ili matematičkom temom... potpuno besplatno!  
+              Rješenje za svaki "Problem nedjelje" objavljuje se ovdje naredne sedmice. Ulogovani korisnici mogu da se takmiče i šalju svoja rješenja zadataka. Ukoliko se nađu među prva tri na mjesečnoj listi, osvojiće nagradu. Takođe, vodi se i vječna lista najboljih takmičara!
+            </p>
+          </div>
+        </div>
+      </WavyDiv>
 
-        </WavyDiv>
-
-        <section className='HomePage__section-info'> 
+        {/* <section className='HomePage__section-info'> 
                 <div className='HomePage__section-info__left'>
                     <h2>IZAZIVAMO I MOTIVIŠEMO UČENIKE</h2>
                     <p>Naši rigorozni časovi matematike i fizike su mnogo više od pripreme za testove ili takmičenja, oni inspirišu učenike da dostignu svoj puni potencijal.
@@ -58,7 +59,7 @@ Rješenje za svaki "Problem nedjelje" objavljuje se ovdje naredne sedmice. Ulogo
                     <p>Na Akademiji Sigma ponosimo se našim timom stručnjaka i entuzijasta, koji uključuje priznate profesore matematike, bivše takmičare i stručnjake iz oblasti obrazovanja. </p>
                     <Link onClick={()=> { setActiveIndex(2)}} to={"/informacije"}>Predavači</Link>
                 </div>
-        </section>  
+        </section>   */}
 
 
         {/* <section className='HomePage__section-video'> 
