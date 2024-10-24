@@ -81,13 +81,13 @@
 
 /* Stilizacija linkova u tabeli */
 .problem-list-table td a.problem-link {
-  color: var(--primary-color);
+  color: var(--primary-color) !important;
   text-decoration: none;
   transition: color 0.3s;
 }
 
 .problem-list-table td a.problem-link:hover {
-  color: var(--primary-hover);
+  color: var(--primary-hover) !important;
 }
 
 /* Stil za poruke kada rešenje nije dostupno */
