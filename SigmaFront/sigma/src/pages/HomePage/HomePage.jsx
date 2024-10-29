@@ -1,7 +1,7 @@
 import {React, useContext} from 'react'
 import "./HomePage.css"  
 import { Link } from 'react-router-dom'
-import glavnaSlika from "../../images/glavnaSlika1.jpg" 
+import glavnaSlika from "../../images/glavnaSlika1.png"  
 import AuthContext from '../../components/AuthContext/AuthContext'
 import useScrollToTop from '../../components/useScrollToTop/useScrollToTop'
 import WavyDiv from '../../components/WavyDiv/WavyDiv'
