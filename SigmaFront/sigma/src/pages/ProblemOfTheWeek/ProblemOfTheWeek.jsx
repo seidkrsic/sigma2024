@@ -65,7 +65,7 @@ const ProblemOfTheWeek = () => {
               rel="noopener noreferrer"
               className='ProblemOfTheWeek__link'
             >
-              {problem.title}
+              {problem.title + ".pdf"}
             </a>
           </div>
         ) : (

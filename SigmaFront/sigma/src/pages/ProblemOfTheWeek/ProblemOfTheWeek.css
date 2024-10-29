@@ -68,14 +68,11 @@
 .ProblemOfTheWeek__link {
   display: inline-block;
   padding: 10px 20px;
-  color: #1a3a5b;
-  text-decoration: none;
+  color: rgb(255, 142, 0);
+  text-decoration: underline;
   transition: background-color 0.3s ease;
 }
 
-.ProblemOfTheWeek__link:hover {
-  background-color: #13314f;
-}
 
 /* Sekcija za rješenje */
 .ProblemOfTheWeek__solution-section {
