@@ -1,0 +1,59 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&display=swap');
+
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  font-family: 'Baloo 2', cursive;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 100%;
+
+} 
+
+
+
+
+
+
+
+
+code {
+  font-family: 'Baloo 2', cursive;
+  
+} 
+
+
+* { 
+  margin: 0;
+  box-sizing: border-box;
+  padding: 0;
+  font-family: 'Baloo 2', cursive;
+  /* border: 1px solid black; */
+  /* color: black; */
+} 
+
+.scroll-container { 
+  width: 100%;
+}
+
+
+@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) { 
+  body, html {
+    height: 100%;
+    overflow: hidden; /* Prevent scrolling */
+    -webkit-overflow-scrolling: touch; /* For smooth scrolling on iOS */
+  }  
+
+
+  
+  .scroll-container {
+    height: 100%;
+    overflow-y: auto; /* Dozvoli vertikalno skrolovanje unutar kontejnera */
+    -webkit-overflow-scrolling: touch; /* Za glatko skrolovanje na iOS-u */
+  } 
+}

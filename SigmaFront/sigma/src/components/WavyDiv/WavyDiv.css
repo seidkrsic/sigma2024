@@ -1,0 +1,159 @@
+/* WavyDiv.css */
+
+.wavy-div {
+  position: relative;
+  width: 100%;
+  background-color: #06588e;
+  color: white;
+  text-align: center;
+  padding: 4rem 2rem 2rem 2rem;
+  box-sizing: border-box;
+  overflow: hidden;
+  margin: 20px auto;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.wavy-div__title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+.wavy-div__content {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.Problem_of_the_Week__container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  gap: 2rem;
+}
+
+.Problem_of_the_Week__link-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 45%;
+  background-color: rgba(255, 255, 255, 0.1);
+  padding: 1.5rem;
+
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.Problem_of_the_Week__link-container img {
+  width: 220px;
+  height: auto;
+  margin-bottom: 1rem;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+#problem_of_the_week__problem-btn, 
+#problem_of_the_week__archive-btn { 
+  background-color: rgb(255, 142, 0);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  margin: 0.5rem 0;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  width: 80%;
+  text-align: center;
+  display: inline-block;
+}
+
+#problem_of_the_week__archive-btn { 
+  background-color: transparent;
+  color: white;
+  /* border: 2px solid white; */
+  text-decoration: underline;
+  margin: 0;
+}
+ 
+#problem_of_the_week__archive-btn:hover { 
+  background-color: rgb(244, 138, 7);
+  transform: translateY(-3px);
+}
+
+#problem_of_the_week__archive-btn:hover { 
+  background-color: transparent;
+  color:white;
+}
+
+.Problem_of_the_Week__link-container p {
+  margin-top: 1rem;
+  font-size: 1rem;
+  line-height: 1.6;
+  text-align: justify;
+  color: #f0f0f0;
+}
+
+/* Wavy SVG */
+.wavy-div__svg { 
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100px;
+}
+
+/* Responsivni Stilovi */
+@media (max-width: 768px) {
+  .wavy-div {
+      padding: 3rem 1rem 1rem 1rem;
+      border: none;
+  }
+
+  .wavy-div__title {
+      font-size: 2rem;
+      margin-bottom: 0;
+  }
+
+  .wavy-div__content {
+      flex-direction: column;
+      align-items: center;
+      border: none;
+  }
+
+  .Problem_of_the_Week__container {
+      flex-direction: column;
+      width: 100%;
+      box-shadow: none;
+  }
+
+  .Problem_of_the_Week__link-container {
+      width: 90%;
+  }
+
+  #problem_of_the_week__problem-btn, 
+  #problem_of_the_week__archive-btn { 
+      width: 100%;
+      
+  }
+
+  .Problem_of_the_Week__link-container1 #problem_of_the_week__archive-btn { 
+    position: relative !important;  
+    bottom: 20px !important;
+    font-size: 16px;
+    color:rgb(255, 142, 0);
+    margin: 0;
+  }
+
+  .Problem_of_the_Week__link-container p {
+      font-size: 0.9rem;
+  }
+
+  .wavy-div__svg { 
+      height: 80px;
+  }
+}

@@ -1,0 +1,85 @@
+.MenuItem__container { 
+    display: flex; 
+    height: 100%;
+    width: 30%; 
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    position: relative;
+}
+
+.MenuItem__container a { 
+    display: flex;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    height: 100% !important;
+    margin: 0;
+    min-width: fit-content !important;
+    text-decoration: none; /* Dodavanje da se osigura da nema podvlačenja */
+    color: black;
+} 
+
+.MenuItem__container a:hover {
+    color: rgb(255, 142, 0, 1);
+
+
+}
+
+.SubMenu {
+    display: none;
+    position: absolute;
+    left: 0;
+    top: 100%;
+    border-radius: 0 0 20px 20px;
+    background-color: #003F7D; /* Promjena boje pozadine za bolji kontrast */
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+    min-width: 193.2px;
+    color: white;
+    /* background-color: white; */
+}
+
+.SubMenu.open {
+    display: block;
+}
+
+.SubMenuItem {
+    padding: 10px 0px;
+    white-space: nowrap;
+    width: 100%;
+    text-decoration: none;
+    /* color: #003F7D; */
+    color: white !important;
+    text-transform: lowercase;
+    display: block; /* Dodavanje display block za bolje stilizovanje */
+}
+
+.SubMenuItem:hover:last-child { 
+    border-radius: 0 0 20px 20px;
+}
+
+.SubMenuItem:hover {
+    /* background-color: rgb(255, 142, 0, 1) !important; */
+    /* color: rgb(255, 142, 0) !important; */
+    background-color: #145fa9 !important;
+}
+
+
+.active { 
+    color: rgb(255, 142, 0) !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 5rem !important;
+} 
+
+
+@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) { 
+
+    .MenuItem__container { 
+        display: none;
+    }
+
+
+
+}   

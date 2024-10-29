@@ -1,0 +1,35 @@
+.PageList__container { 
+    display: flex; 
+    width: 100%;
+    height: fit-content;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: center; 
+    border: 1px solid gainsboro;
+    border-top: none;
+    padding: .5rem 0;
+    position: relative; 
+    text-decoration: none;
+    text-transform: uppercase;
+    background-color: white;
+    color: black;
+
+}
+
+.PageList__container:hover { 
+    background-color: #e0effd;
+}
+ 
+
+.activePageList {  
+    background-color: #1a3a5b !important;
+    transition: all ease-in .2s;
+    color: white;
+}
+
+
+@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) { 
+    .PageList__container:hover { 
+        background-color: white;
+    }
+}

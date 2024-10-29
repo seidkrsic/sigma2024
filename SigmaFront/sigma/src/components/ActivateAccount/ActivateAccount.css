@@ -1,0 +1,17 @@
+.ActivateAccount { 
+    display: flex; 
+    min-height: 60vh; 
+    margin: auto; 
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+} 
+
+
+.green { 
+    color: black !important;
+}
+
+.red { 
+    color: darkred !important;
+}

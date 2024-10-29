@@ -1,0 +1,245 @@
+/* ProblemList.css */
+
+/* Učitavanje Google Fontova */
+@import url('https://fonts.googleapis.com/css2?family=Baloo+2&family=Poppins:wght@400;600&display=swap');
+
+/* Definicija CSS varijabli za boje */
+:root {
+  --primary-color: rgb(244, 138, 7);
+  --primary-hover: rgb(198, 112, 6);
+  --secondary-color: #f0f0f0;
+  --text-color: #333333;
+  --link-color: var(--primary-color);
+  --link-hover-color: var(--primary-hover);
+  --button-text-color: #ffffff;
+  --button-background: #1a3a5b; /* Boja paginacionih dugmadi */
+  --button-hover-background: #13314f; /* Tamnija nijansa za hover */
+  --table-header-background: var(--secondary-color);
+  --border-color: #ddd;
+}
+
+/* Osnovni stilovi za kontejner */
+.ProblemList__container {
+  width: 90%;
+  margin: 0 auto;
+  padding: 2rem 0;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Naslov */
+.ProblemList__title { 
+  margin: 1rem 0;
+  font-size: 2em;
+  text-transform: uppercase;
+  font-family: 'Baloo 2', cursive;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+/* Stilizacija tabele */
+.problem-list-table {
+  width: 100%;
+  margin: 1rem auto;
+  border-collapse: collapse;
+  font-family: 'Poppins', sans-serif;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.problem-list-table thead {
+  background-color: var(--table-header-background);
+}
+
+.problem-list-table th, 
+.problem-list-table td {
+  padding: 12px 15px;
+  border: 1px solid var(--border-color);
+  text-align: left;
+  font-size: 1em;
+}
+
+/* Stilizacija zaglavlja tabele */
+.problem-list-table th {
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--text-color);
+}
+
+/* Stilizacija redova tabele */
+.problem-list-table tbody tr {
+  transition: background-color 0.3s;
+}
+
+.problem-list-table tbody tr:nth-child(even) {
+  background-color: #fafafa;
+}
+
+.problem-list-table tbody tr:hover {
+  background-color: rgba(244, 138, 7, 0.1);
+}
+
+/* Stilizacija linkova u tabeli */
+.problem-list-table td a.problem-link {
+  color: var(--primary-color) !important;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.problem-list-table td a.problem-link:hover {
+  color: var(--primary-hover) !important;
+}
+
+/* Stil za poruke kada rešenje nije dostupno */
+.no-solution {
+  color: #888;
+  font-style: italic;
+}
+
+/* Stilovi za učitavanje */
+.ProblemList__loading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 0;
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-color);
+}
+
+/* Spinner */
+.spinner {
+  border: 8px solid #f3f3f3;
+  border-top: 8px solid var(--primary-color);
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+  animation: spin 1s linear infinite;
+  margin-bottom: 1rem;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Stilovi za greške i bez problema */
+.ProblemList__error, 
+.ProblemList__no-problem {
+  text-align: center;
+  padding: 2rem;
+  background-color: #fff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  font-family: 'Poppins', sans-serif;
+  color: var(--text-color);
+  margin: 1rem auto;
+  max-width: 800px;
+}
+
+/* Stilovi za paginaciju */
+.pagination-buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  flex-wrap: wrap;
+}
+
+.pagination-button {
+  border: none;
+  background-color: var(--button-background); /* #1a3a5b */
+  color: var(--button-text-color); /* Bijeli tekst */
+  padding: 6px 12px; /* Smanjena veličina */
+  margin: 5px;
+  font-size: 0.9em; /* Smanjena veličina fonta */
+  cursor: pointer;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+.pagination-button:hover {
+  background-color: var(--button-hover-background); /* #13314f */
+}
+
+.pagination-button.active {
+  background-color: var(--button-background);
+  color: var(--button-text-color);
+}
+
+.pagination-dots {
+  display: inline-block;
+  width: 30px;
+  text-align: center;
+  font-size: 1em;
+  color: var(--text-color);
+}
+
+/* Onemogućena dugmad */
+.pagination-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* Responsivni dizajn */
+@media (max-width: 768px) {
+  .problem-list-table th, 
+  .problem-list-table td {
+    padding: 8px 10px;
+    font-size: 0.9em;
+  }
+
+  .ProblemList__title {
+    font-size: 1.5em;
+  }
+
+  .pagination-button {
+    padding: 6px 10px;
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  .problem-list-table thead {
+    display: none;
+  }
+
+  .problem-list-table, 
+  .problem-list-table tbody, 
+  .problem-list-table tr, 
+  .problem-list-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .problem-list-table tr {
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+  }
+
+  .problem-list-table td {
+    text-align: right;
+    padding-left: 50%;
+    position: relative;
+  }
+
+  .problem-list-table td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 15px;
+    width: calc(50% - 30px);
+    padding-right: 10px;
+    white-space: nowrap;
+    text-align: left;
+    font-weight: 600;
+    color: var(--text-color);
+  }
+
+  .pagination-buttons {
+    flex-direction: column;
+  }
+
+  .pagination-button {
+    width: 100%;
+    max-width: 200px;
+  }
+}

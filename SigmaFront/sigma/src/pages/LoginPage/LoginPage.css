@@ -1,0 +1,159 @@
+/* LoginPage.css */
+
+/* Učitavanje Google Fontova */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Definicija CSS varijabli za boje */
+:root {
+  --primary-color: #1a3a5b; /* Glavna boja za dugmad i linkove */
+  --primary-hover: #13314f; /* Tamnija nijansa za hover */
+  --secondary-color: #f0f0f0; /* Sekundarna boja za pozadinu */
+  --text-color: #333333; /* Boja teksta */
+  --link-color: #1a3a5b; /* Boja linkova */
+  --link-hover-color: #13314f; /* Boja linkova na hover */
+  --button-text-color: #ffffff; /* Boja teksta na dugmadima */
+  --button-background: #1a3a5b; /* Pozadina dugmadi */
+  --button-hover-background: #13314f; /* Pozadina dugmadi na hover */
+  --border-color: #ddd; /* Boja okvira */
+  --error-color: #ff8e00; /* Boja za poruke o grešci */
+}
+
+/* Osnovni stilovi za kontejner */
+.LoginPage__container { 
+  display: flex; 
+  width: 100%;
+  min-height: 60vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--secondary-color);
+  padding: 2rem 1rem;
+}
+
+/* Stilizacija forme */
+.LoginPage__form { 
+  margin: auto;
+  display: flex;
+  width: 100%;
+  max-width: 400px;
+  flex-direction: column;
+  background-color: #ffffff;
+  padding: 2rem;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Stilizacija input kontejnera */
+.LoginPage__input-container { 
+  margin: 0.5rem 0;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Stilizacija input polja */
+.LoginPage__input-container input { 
+  height: 40px;
+  width: 100%;
+  border: 1px solid var(--border-color);
+  /* Uklonjen border-radius */
+  /* border-radius: 3px; */
+  padding: 0.5rem;
+  color: gray;
+  font-size: 16px;
+  transition: border-color 0.3s ease;
+}
+
+.LoginPage__input-container input:focus {
+  border-color: var(--primary-color);
+  outline: none;
+}
+
+/* Stil za poruke o grešci */
+.LoginPage__error-message {
+  color: var(--error-color);
+  text-align: center;
+  margin: 0.5rem 0;
+  font-weight: bold;
+}
+
+/* Stilizacija dugmadi */
+.LoginPage__button { 
+  padding: 0.5rem 0;
+  width: 100%;
+  margin: 1rem 0;
+  color: var(--button-text-color);
+  text-transform: uppercase;
+  background-color: var(--button-background);
+  font-size: 16px;
+  /* Uklonjen border-radius */
+  /* border-radius: 3px; */
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: background-color 0.3s ease;
+}
+
+.LoginPage__button:hover {
+  background-color: var(--button-hover-background);
+}
+
+/* Stil za tekst ispod forme */
+.LoginPage__switch-text { 
+  color: black;
+  width: 100%; 
+  margin: 0 auto;
+  text-align: center;
+  font-size: 14px;
+}
+
+.LoginPage__switch-form { 
+  cursor: pointer;
+  color: var(--button-background);
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+.LoginPage__switch-form:hover {
+  color: var(--button-hover-background);
+}
+
+/* Stil za linkove */
+.LoginPage__link { 
+  text-transform: capitalize; 
+  color: var(--link-color);
+  width: 100%; 
+  margin: 0.5rem 0;
+  text-align: center;
+  font-size: 14px;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.LoginPage__link:hover {
+  color: var(--link-hover-color);
+}
+
+/* Responsivni dizajn */
+@media (max-width: 600px) {
+  .LoginPage__form { 
+    padding: 1.5rem;
+  }
+
+  .LoginPage__button { 
+    font-size: 14px;
+    padding: 0.5rem 0;
+  }
+
+  .LoginPage__input-container input { 
+    font-size: 14px;
+  }
+
+  .LoginPage__switch-text {
+    font-size: 13px;
+  }
+
+  .LoginPage__link {
+    font-size: 13px;
+  }
+}

@@ -1,0 +1,176 @@
+/* ArticleDetail.css */
+
+/* Učitavanje Google Fontova */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+/* Definicija CSS varijabli za boje */
+:root {
+  --primary-color: #1a3a5b; /* Glavna boja za dugmad i linkove */
+  --primary-hover: #13314f; /* Tamnija nijansa za hover */
+  --secondary-color: #f0f0f0; /* Sekundarna boja za pozadinu */
+  --text-color: #333333; /* Boja teksta */
+  --link-color: #1a3a5b; /* Boja linkova */
+  --link-hover-color: #13314f; /* Boja linkova na hover */
+  --button-text-color: #ffffff; /* Boja teksta na dugmadima */
+  --button-background: #1a3a5b; /* Pozadina dugmadi */
+  --button-hover-background: #13314f; /* Pozadina dugmadi na hover */
+  --error-color: #ff8e00; /* Boja za poruke o grešci */
+  --success-color: #28a745; /* Boja za poruke o uspehu */
+  --border-color: #ddd; /* Boja okvira */
+  --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --card-hover-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Osnovni stilovi za kontejner */
+.ArticleDetail__container { 
+  display: flex;
+  flex-direction: column; 
+  align-items: center;
+  padding: 2rem 1rem;
+  background-color: var(--secondary-color);
+  font-family: 'Poppins', sans-serif;
+}
+
+/* Stilizacija naslova */
+.ArticleDetail__title { 
+  font-size: 2rem;
+  color: var(--primary-color);
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+/* Stilizacija slike */
+.ArticleDetail__image { 
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  margin-bottom: 1.5rem;
+  border: 1px solid var(--border-color);
+}
+
+/* Stilizacija sadržaja */
+.ArticleDetail__content { 
+  width: 100%;
+  max-width: 800px;
+  font-size: 1rem;
+  color: var(--text-color);
+  line-height: 1.6;
+}
+
+/* Stil za poruke */
+.ArticleDetail__error, .ArticleDetail__loading {
+  font-size: 1.2rem;
+  color: var(--error-color);
+  text-align: center;
+  padding: 2rem;
+}
+
+/* Preporučeni Članak */
+.ArticleDetail__recommended {
+  width: 100%;
+  max-width: 800px;
+  margin-top: 3rem;
+}
+
+.ArticleDetail__recommended-title {
+  font-size: 1.5rem;
+  color: var(--primary-color);
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.ArticleDetail__recommended-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.ArticleDetail__recommended-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 250px;
+  background-color: #ffffff;
+  text-decoration: none;
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  padding: 1rem;
+  box-shadow: var(--card-shadow);
+  transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+
+.ArticleDetail__recommended-card:hover { 
+  box-shadow: var(--card-hover-shadow);
+  transform: translateY(-5px);
+}
+
+.ArticleDetail__recommended-image { 
+  width: 100%;
+  height: 150px;
+  object-fit: cover;
+  margin-bottom: 1rem;
+  border: 1px solid var(--border-color);
+}
+
+.ArticleDetail__recommended-title { 
+  font-size: 1.2rem;
+  color: var(--primary-color);
+  text-align: center;
+}
+
+/* Link ka svim člancima */
+.ArticleDetail__all-link {
+  margin-top: 2rem;
+}
+
+.ArticleDetail__all-link-button {
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 3px;
+  transition: background-color 0.3s ease;
+}
+
+.ArticleDetail__all-link-button:hover {
+  background-color: var(--primary-hover);
+}
+
+/* Responsivni dizajn */
+@media (max-width: 768px) {
+  .ArticleDetail__title { 
+    font-size: 1.5rem;
+  }
+
+  .ArticleDetail__image { 
+    max-width: 100%;
+  }
+
+  .ArticleDetail__content { 
+    font-size: 0.9rem;
+    padding: 0 1rem;
+  }
+
+  .ArticleDetail__recommended-card {
+    width: 45%;
+  }
+}
+
+@media (max-width: 480px) {
+  .ArticleDetail__title { 
+    font-size: 1.2rem;
+  }
+
+  .ArticleDetail__content { 
+    font-size: 0.8rem;
+  }
+
+  .ArticleDetail__recommended-card {
+    width: 90%;
+  }
+
+  .ArticleDetail__recommended-image { 
+    height: 120px;
+  }
+}

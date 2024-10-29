@@ -1,0 +1,630 @@
+/* HomePage.css */
+
+/* ----------------------------------------
+   Opšti Stilovi za Home Page
+---------------------------------------- */
+
+/* HomePage__container-main */ 
+.HomePage__container-main { 
+    width: 100%;
+    /* margin-top: 100px; */
+}
+
+/* HomePage__container */ 
+.HomePage__container { 
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    width: 80%;
+    margin: 0 auto;
+    padding: 2rem 0;
+    height: 80vh;
+}
+
+/* HomePage__container-left */ 
+.HomePage__container-left { 
+    display: flex;
+    flex-direction: column; 
+    align-items: flex-start;
+    justify-content: center;
+    width: 50%;
+    /* Uklonjeno: height: 70vh; */
+    margin: 0;
+}
+
+.HomePage__container-left h1 { 
+    margin: 0 0 1rem 0;
+    font-size: 2.5rem; /* Smanjen font size za bolju čitljivost */
+    color: #06588e; /* Boja koja se slaže sa bojama sajta */
+    line-height: 1.2;
+}
+
+.HomePage__container-left p { 
+    margin: 1rem 0;
+    line-height: 1.6;
+    letter-spacing: 0.5px; 
+    font-size: 1rem;
+    font-weight: 300;
+    color: #333; /* Tamnija boja za bolju čitljivost */
+}
+
+.HomePage__container-left a { 
+    border: none; /* Uklonjeno: border */
+    background-color: rgb(255, 142, 0);
+    padding: 0.75rem 1.5rem;
+    width: fit-content;
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.HomePage__container-left a:hover { 
+    background-color: rgb(244, 138, 7);
+    transform: translateY(-3px);
+}
+
+/* HomePage__container-right */ 
+.HomePage__container-right { 
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Uklonjeno: height: 90vh; */
+}
+
+.HomePage__container-right img { 
+    width: 100%;
+    max-width: 400px; /* Maksimalna širina slike */
+    height: auto;
+    opacity: 0.9;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.HomePage__container-right img:hover {
+    transform: scale(1.05); /* Dodan hover efekat za interaktivnost */
+}
+
+/* ----------------------------------------
+   Stilovi za Sekciju "Problem Nedjelje"
+---------------------------------------- */
+
+/* Problem_of_the_Week__container */
+.Problem_of_the_Week__container { 
+    display: flex;
+    width: 80%;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 2rem;
+    align-items: center;
+
+    background-color: #06588e; 
+    /* box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); */
+}   
+
+
+
+.Problem_of_the_Week__link-container { 
+    display: flex;
+    width: 45%; 
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+    margin: 0rem; /* Smanjen margin */
+    /* Uklonjeno: border-radius */
+    background-color: rgba(255, 255, 255, 0.1); 
+    padding: 1.5rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+} 
+
+/* Slika u Problem_of_the_Week__link-container */
+.Problem_of_the_Week__link-container img {
+    width: 220px;
+    height: auto;
+    margin-bottom: 1rem;
+    /* Uklonjeno: border-radius */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+} 
+
+
+.Problem_of_the_Week__link-container1 { 
+    display: flex;
+    width: 45%; 
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin: 0 1rem; 
+    scale: 1.3;
+
+} 
+
+/* Slika u Problem_of_the_Week__link-container */
+.Problem_of_the_Week__link-container1 img {
+    width: 220px;
+    height: auto;
+    margin: 1rem auto;
+
+}
+
+
+/* Dugmad */
+#problem_of_the_week__problem-btn { 
+    /* background-color: rgb(255, 142, 0); */
+    color: white;
+    padding: 0.75rem 1.5rem;
+    margin: 0.5rem auto;
+    min-width: 30%;
+    width: 100% !important; /* Prilagođeno širine */
+    display: inline-block;
+    text-decoration: underline;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-align: center;
+}
+
+#problem_of_the_week__archive-btn { 
+    text-decoration: underline;
+    color: white;
+    position: relative; 
+    bottom: 30px;
+    padding: 0.75rem 1.5rem;
+    margin: 0.5rem auto;
+    min-width: 30%;
+    width: 80%; /* Prilagođeno širine */
+    display: inline-block;
+    text-decoration: underline;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    text-align: center;
+
+}
+
+#problem_of_the_week__problem-btn:hover, 
+#problem_of_the_week__archive-btn:hover { 
+    background-color: rgb(244, 138, 7);
+    transform: translateY(-3px);
+}
+
+#problem_of_the_week__archive-btn:hover { 
+    background-color: white;
+    color: #06588e;
+}
+
+/* Opis */
+.Problem_of_the_Week__link-container p {
+    margin-top: 1rem;
+    font-size: 1rem;
+    line-height: 1.6;
+    text-align: justify;
+    color: #f0f0f0; /* Svetlija boja za kontrast */
+}
+
+/* ----------------------------------------
+   Ostali Stilovi (Bez Promjena)
+---------------------------------------- */
+
+/* HomePage__section-info */ 
+.HomePage__section-info { 
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap;
+    width: 100% !important; 
+    height: 60vh; 
+    margin: 0 auto; 
+    justify-content: center;
+    background-color: white;
+    color: white;
+}
+
+.HomePage__section-info__left { 
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%; 
+    background-color: #1a3a5b;
+} 
+
+.HomePage__section-info__right { 
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100%; 
+    background-color: rgb(6, 88, 142, 1);
+}
+
+.HomePage__section-info__left p { 
+    color: white;
+    margin: 1rem auto;
+    width: 70%;
+    text-align: center;
+}
+
+.HomePage__section-info__right p { 
+    color: white;
+    margin: 1rem auto;
+    width: 70%;
+    text-align: center;
+} 
+
+.HomePage__section-info__left h2, .HomePage__section-info__right h2 { 
+    color: white;
+    margin: 1rem auto;
+    width: 70%;
+    text-align: center;
+}
+
+.HomePage__section-info__right a, .HomePage__section-info__left a { 
+    color: white;
+    border: 1px solid rgb(255, 142, 0);
+    background-color: rgb(255, 142, 0);
+    padding: 1rem;
+    margin: 1rem auto;
+    width: 20%;
+    display: flex;
+    text-decoration: none;
+    font-weight: bold;
+    justify-content: center;
+}
+
+.HomePage__section-info__right a:hover, .HomePage__section-info__left a:hover { 
+    transition: all ease-out .4s;
+    background-color: rgb(244, 138, 7);
+    border: 1px solid rgb(244, 138, 7);
+}
+
+/* HomePage__section-video */ 
+.HomePage__section-video { 
+    display: flex;
+    flex-direction: row; 
+    flex-wrap: wrap;
+    width: 100%; 
+    height: 80vh; 
+    margin: 0 auto; 
+    justify-content: center;
+    /* background-color: rgb(255, 142, 0, .2); */
+} 
+
+.HomePage__section-video__left { 
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 70%; 
+    color: white;
+    /* background-color: rgb(6, 88, 142, .3); */
+    /* background-color: rgb(255, 142, 0, 0.4); */
+    background-color: #e0effd;
+    /* Uklonjeno: border-radius */
+    margin: auto;
+}  
+
+.HomePage__section-video__left p { 
+    width: 80%;
+    color: black;
+    line-height: 25px;
+    text-align: center;
+}
+
+.HomePage__section-video__left h1 { 
+    width: 80%;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: black;
+}
+
+.HomePage__section-video__right { 
+    width: 40%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    /* background-color: #145fa9; */
+} 
+
+.HomePage__section-video__right iframe { 
+    margin: auto; 
+    display: flex; 
+    height: 40%;
+    width: 80%;
+    border: none;
+} 
+
+
+/* HomePage__section-question */ 
+.HomePage__section-question { 
+    display: flex;
+    width: 100%; 
+    height: 50vh; 
+    background-color: #e0effd;
+    flex-direction: column; 
+    justify-content: center;
+    align-items: center;
+} 
+
+.HomePage__section-question h2, .HomePage__section-question p { 
+    margin: 1rem auto;
+} 
+
+
+.HomePage__section-question a { 
+    color: white;
+    border: 1px solid white;
+    background-color: rgb(255, 142, 0);
+    padding: 1rem;
+    margin: 1rem auto;
+    width: 20%;
+    display: flex;
+    text-decoration: none;
+    font-weight: bold;
+    justify-content: center;
+    background-color: white; 
+    color: #003F7D;
+} 
+
+
+.HomePage__section-question a:hover { 
+    transition: all ease-out .3s;
+    background-color: #1a3a5b;
+    color: white; 
+    border: 1px solid #1a3a5b;
+}  
+
+/* Responsive Stilovi */
+@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) {
+
+    .Problem_of_the_Week__link-container1 img { 
+        width: 220px;
+        height: 220px;
+        margin: 0;
+    }
+
+    .HomePage__container-main { 
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .HomePage__container { 
+        flex-direction: column-reverse;
+        width: 100%;
+        /* margin: 2rem 0; */
+        height: fit-content;
+    } 
+
+    .HomePage__container-left { 
+        width: 90%;
+        margin: 0 auto; 
+        text-align: center;
+        height: fit-content;
+        padding: .5rem;
+    } 
+
+    .HomePage__container-left a { 
+        width: 60%;
+        margin: 1rem auto;
+   
+    } 
+
+    .HomePage__container-right { 
+        width: 100%;
+        margin: 0rem;
+        height: fit-content;
+        min-height: none;
+    } 
+
+    .HomePage__container-right img { 
+        width: 90%;
+        /* height: 60vh; */
+        max-height: 50vh;
+        margin: .5rem auto;
+    } 
+
+    .HomePage__section-info { 
+        height: fit-content;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .HomePage__section-info__left { 
+        min-height: 50vh;
+        height: fit-content;
+        width: 100%;
+    }   
+    .HomePage__section-info__right { 
+        min-height: 50vh;
+        height: fit-content;
+        width: 100%;
+    }  
+
+    .HomePage__section-info a { 
+        width: 50%;
+        padding: .7rem;
+    }
+    
+    .HomePage__section-video { 
+        height: fit-content;
+        flex-direction: column;
+        margin: 2rem 0 !important;
+    }
+
+    .HomePage__section-video__left { 
+        width: 90%; 
+        /* margin: 2rem auto !important; */
+        height: 40vh;
+        /* Uklonjeno: border-radius */
+        background-color: #e0effd;
+    }  
+
+    .HomePage__section-video__left h1 { 
+        font-size: 15px !important;
+        position: relative; 
+        font-weight: bold;
+        text-transform: uppercase;
+        top: 0px;
+        width: 70% !important;
+        left: 10px !important;
+        color: #1a3a5b;
+    } 
+    .HomePage__section-video__left p { 
+        font-size: 14.3px !important;
+        font-weight: 400;
+        position: relative; 
+        width: 70%;
+        color: #1a3a5b;
+        top: 0px;
+        left: 10px;
+        line-height: 17px;
+        text-align: center;
+    }
+
+    .HomePage__section-video__right { 
+        width: 90%; 
+        height: 400px;
+        margin: 3rem auto;
+        margin-top: 3rem; 
+        margin-bottom: 2rem;
+    } 
+
+    .HomePage__section-video__right iframe { 
+        width: 100%;
+        height: 80%; 
+        border: none;
+      
+    } 
+
+    .HomePage__section-question { 
+        height: fit-content;
+        min-height: 50vh;
+        width: 100%;
+        margin: 0;
+        text-align: center;
+    } 
+
+    .HomePage__section-question a { 
+        width: 90%;
+        margin: 1rem auto;
+   
+    }  
+
+    .HomePage__container-left h1 {  
+        font-size: 30px !important;
+        margin: .5rem auto;
+    }
+
+    /* Problem_of_the_Week__container */
+    .Problem_of_the_Week__container { 
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: flex-start;
+        margin: auto;
+        align-items: center;
+        
+    }   
+    
+    .Problem_of_the_Week__container .Problem_of_the_Week__link-container:nth-of-type(1) { 
+        border-bottom: none;
+        border-right: none;
+        width: 100%;
+        padding-bottom: 2rem;
+    } 
+    
+    .Problem_of_the_Week__link-container { 
+        display: flex;
+        width: 100% !important;
+        max-width: none !important;
+        justify-content: center;
+        flex-direction: column;
+        margin: 1rem 0rem;
+    }  
+
+    .Problem_of_the_Week__link-container p { 
+        width: 100% !important;
+    }
+
+
+    .Problem_of_the_Week__link-container1 { 
+        display: flex;
+        width: 90%; 
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        margin: 0 1rem; /* Smanjen margin */
+    } 
+
+    .Problem_of_the_Week__link-container1 #pro
+   
+    /* Slika u Problem_of_the_Week__link-container */
+    .Problem_of_the_Week__link-container1 img {
+        width: 220px;
+        height: auto;
+        margin: 1rem auto;
+    
+    }
+
+}
+
+
+/* HomePage.css */
+
+/* ----------------------------------------
+   Opšti Stilovi za Home Page
+---------------------------------------- */
+
+/* ...postojeći stilovi... */
+
+/* Sekcija Najnovijih Članaka */
+.HomePage__latest-articles {
+    background-color: white; /* Bijela pozadina */
+    padding: 2rem 0;
+    text-align: center;
+  }
+  
+  .HomePage__latest-articles .HomePage__section-title {
+    font-size: 2rem;
+    color: #06588e; /* Boja koja se slaže sa dizajnom sajta */
+    margin-bottom: 1.5rem;
+  }
+  
+  .HomePage__view-all {
+    margin-top: 2rem;
+  }
+  
+  .HomePage__view-all-button {
+    background-color: rgb(255, 142, 0);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .HomePage__view-all-button:hover {
+    background-color: rgb(244, 138, 7);
+    transform: translateY(-3px);
+  }
+  
+  /* Responsive Stilovi za Sekciju Najnovijih Članaka */
+  @media (max-width: 768px) {
+    .HomePage__latest-articles .HomePage__section-title {
+      font-size: 1.75rem;
+    }
+  
+    .HomePage__view-all-button {
+      padding: 0.5rem 1rem;
+    }
+  }
+  

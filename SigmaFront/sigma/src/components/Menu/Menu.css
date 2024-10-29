@@ -1,0 +1,27 @@
+
+
+.Menu__container { 
+    display: flex; 
+    align-items: center;
+    width: 100%;
+    height: 50%;
+    justify-content: flex-end;
+    position: sticky;
+    top: 0;
+    transition: all 0.3s ease-in-out;
+} 
+
+
+
+.menu-active { 
+    height: 3rem !important;  
+    /* top: 0 !important;   */
+    transition: all ease-in-out 0.3s;
+
+} 
+
+@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) { 
+    .Menu__container { 
+        display: none;
+    }
+}

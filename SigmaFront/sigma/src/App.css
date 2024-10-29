@@ -1,0 +1,96 @@
+.App { 
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 0;
+    align-items: center;
+    justify-content: flex-start;
+} 
+
+
+
+@media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) {
+
+    /* settings for all text on mobile screen */
+    p { 
+        font-size: 15px !important;
+        width: 90%;
+        margin: 0.5rem auto !important;
+    }  
+
+    button { 
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    
+    a { 
+        font-size: 15px !important;
+        text-transform: uppercase;
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    } 
+
+    h1 { 
+        font-size: 25px !important;
+        margin: 0rem auto;
+        width: 90% !important;
+
+    }
+
+    h2, h3 { 
+        font-size: 20px !important;
+        width: 90%;
+        margin: 0.5rem auto !important;
+    }
+    
+
+    .HomePage__container { 
+        flex-direction: column;
+    } 
+
+    a:active,
+    button:active,
+    svg:active, 
+    svg
+        {
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    } 
+
+    .a:focus, button:focus, svg:focus {
+        outline: none !important;
+    } 
+
+    .noSelect {
+        -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        -khtml-user-select: none;
+        -moz-user-select: none;
+        -ms-user-select: none;
+        user-select: none;
+    }
+    .noSelect:focus {
+        outline: none !important;
+    } 
+    
+
+    
+
+
+}
