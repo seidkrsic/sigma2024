@@ -54,7 +54,7 @@
 .problem-list-table th, 
 .problem-list-table td {
   padding: 12px 15px;
-  border: 1px solid var(--border-color);
+  /* border: 1px solid var(--border-color); */
   text-align: left;
   font-size: 1em;
 }
@@ -67,8 +67,15 @@
 }
 
 /* Stilizacija redova tabele */
+
+.problem-list-table thead tr {
+  /* transition: background-color 0.3s; */
+  border-bottom: 1px solid gainsboro;
+}
+
 .problem-list-table tbody tr {
   transition: background-color 0.3s;
+  border-bottom: 1px solid gainsboro;
 }
 
 .problem-list-table tbody tr:nth-child(even) {
@@ -81,13 +88,13 @@
 
 /* Stilizacija linkova u tabeli */
 .problem-list-table td a.problem-link {
-  color: var(--primary-color) !important;
+  color: rgb(244, 138, 7) !important;
   text-decoration: none;
   transition: color 0.3s;
 }
 
 .problem-list-table td a.problem-link:hover {
-  color: var(--primary-hover) !important;
+  color: rgb(244, 138, 0) !important;
 }
 
 /* Stil za poruke kada rešenje nije dostupno */
