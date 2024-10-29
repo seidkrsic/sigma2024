@@ -82,12 +82,10 @@
     height: auto;
     opacity: 0.9;
     object-fit: cover;
+    scale: 1.55 !important; 
     transition: transform 0.3s ease;
 }
 
-.HomePage__container-right img:hover {
-    transform: scale(1.05); /* Dodan hover efekat za interaktivnost */
-}
 
 /* ----------------------------------------
    Stilovi za Sekciju "Problem Nedjelje"
@@ -127,7 +125,7 @@
     width: 220px;
     height: auto;
     margin-bottom: 1rem;
-    /* Uklonjeno: border-radius */
+  
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
 } 
 
@@ -429,6 +427,7 @@
         /* height: 60vh; */
         max-height: 50vh;
         margin: .5rem auto;
+        scale: 1 !important;
     } 
 
     .HomePage__section-info { 
