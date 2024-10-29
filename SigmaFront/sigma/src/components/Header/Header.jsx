@@ -14,7 +14,7 @@ const Header = () => {
 
     const menuItems = [
         {
-          name: 'Informacije',
+          name: 'O nama',
           path: '/informacije', 
           // subMenu: [
           //   { name: 'Pregled', path: '/informacije/pregled' },
@@ -23,8 +23,8 @@ const Header = () => {
           // ]
         },
         {
-          name: 'Kursevi',
-          path: '/kursevi', 
+          name: 'Blog',
+          path: '/posts', 
           // subMenu: [
           //   { name: 'Pregled', path: '/kursevi/pregled' },
           //   { name: 'Detalji', path: '/kursevi/detalji' },

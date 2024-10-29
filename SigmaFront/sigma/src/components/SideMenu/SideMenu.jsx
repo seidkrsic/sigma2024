@@ -9,9 +9,9 @@ const SideMenu = ({ isOpen, toggleMenu }) => {
     <div className={`side-menu ${isOpen ? 'open' : ''}`}>
       <ul>
 
-        <div className='tapered-line'></div>
+        {/* <div className='tapered-line'></div> */}
         
-        <Link id="special__link" to="/informacije" onClick={toggleMenu}>Informacije</Link>
+        <Link id="special__link" to="/informacije" onClick={toggleMenu}>O nama</Link>
        
         <div className='tapered-line'></div>
         
@@ -19,7 +19,7 @@ const SideMenu = ({ isOpen, toggleMenu }) => {
         
         <div className='tapered-line'></div>   */} 
 
-        <Link id="special__link" to="/posts" onClick={toggleMenu}>Matematički Članci</Link>
+        <Link id="special__link" to="/posts" onClick={toggleMenu}>Blog</Link>
         
         <div className='tapered-line'></div> 
 
@@ -33,7 +33,7 @@ const SideMenu = ({ isOpen, toggleMenu }) => {
 
         <Link id="special__link" to="/rankings" onClick={toggleMenu}>Lista Najboljih</Link>
         
-        <div className='tapered-line'></div> 
+        {/* <div className='tapered-line'></div>  */}
         
         <img className='side-menu__img' src={sigma2} alt="" />
         <p id='side-menu__text'>Sigma Academy</p>
