@@ -54,22 +54,27 @@
 
 /* Stil za problem file link */
 .ProblemOfTheWeek__problem-file p {
-  margin-bottom: 10px;
+  /* margin-bottom: 10px; */
+} 
+
+.ProblemOfTheWeek__problem-file { 
+  display: flex;
+  flex-direction: row; 
+  align-items: center;
+  justify-content: center; 
+
 }
 
 .ProblemOfTheWeek__link {
   display: inline-block;
   padding: 10px 20px;
-  background-color: var(--primary-color); /* #1a3a5b */
-  color: var(--button-text-color); /* Bijeli tekst */
+  color: #1a3a5b;
   text-decoration: none;
-  /* Uklonjen border-radius */
-  /* border-radius: 6px; */
   transition: background-color 0.3s ease;
 }
 
 .ProblemOfTheWeek__link:hover {
-  background-color: var(--primary-hover); /* #13314f */
+  background-color: #13314f;
 }
 
 /* Sekcija za rješenje */
