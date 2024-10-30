@@ -52,10 +52,7 @@
   margin-bottom: 30px;
 }
 
-/* Stil za problem file link */
-.ProblemOfTheWeek__problem-file p {
-  /* margin-bottom: 10px; */
-} 
+
 
 .ProblemOfTheWeek__problem-file { 
   display: flex;

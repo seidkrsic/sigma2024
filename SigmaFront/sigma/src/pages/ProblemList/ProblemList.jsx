@@ -30,6 +30,11 @@ const ProblemList = () => {
         setLoading(false);
       });
 
+      document.querySelector(".scroll-container").scrollTo(0, 0);
+    setTimeout(() => {
+        document.querySelector(".scroll-container").scrollTo(0, 0);
+      }, 100);
+
   };
   
   useEffect(() => {
@@ -43,13 +48,21 @@ const ProblemList = () => {
     if (currentPage < totalPages) {
       fetchProblems(currentPage + 1);
     }
-
+    document.querySelector(".scroll-container").scrollTo(0, 0);
+    setTimeout(() => {
+        document.querySelector(".scroll-container").scrollTo(0, 0);
+      }, 100);
+  
   };
   
   const handlePrevPage = () => {
     if (currentPage > 1) {
       fetchProblems(currentPage - 1);
     }
+    document.querySelector(".scroll-container").scrollTo(0, 0);
+    setTimeout(() => {
+        document.querySelector(".scroll-container").scrollTo(0, 0);
+      }, 100);
 
   };
 
