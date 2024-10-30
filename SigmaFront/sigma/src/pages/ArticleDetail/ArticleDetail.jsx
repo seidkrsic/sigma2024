@@ -16,6 +16,8 @@ const ArticleDetail = () => {
   const [loading, setLoading] = useState(true);
   const [loadingRecommendations, setLoadingRecommendations] = useState(true);
   const [errorRecommendations, setErrorRecommendations] = useState('');
+  
+  
   useScrollToTop(); 
   
   useEffect(() => {
@@ -27,7 +29,7 @@ const ArticleDetail = () => {
         setPost(response.data);
         setError('');
       } catch (err) {
-        console.error(err);
+
         setError('Članak nije pronađen ili je došlo do greške.');
       }
       setLoading(false);
@@ -47,13 +49,17 @@ const ArticleDetail = () => {
           setRecommendedPosts(response.data.results);
           setErrorRecommendations('');
         } catch (err) {
-          console.error(err);
+          
           setErrorRecommendations('Došlo je do greške prilikom učitavanja preporučenih članaka.');
         }
         setLoadingRecommendations(false);
       };
 
       fetchRecommended();
+      document.querySelector(".scroll-container").scrollTo(0, 0);
+      setTimeout(() => {
+        document.querySelector(".scroll-container").scrollTo(0, 0);
+      }, 100);
     }
   }, [post]);
 

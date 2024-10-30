@@ -19,6 +19,10 @@ const RankingsComponent = () => {
 
   useEffect(() => {
     fetchRankings();
+    document.querySelector(".scroll-container").scrollTo(0, 0);
+    setTimeout(() => {
+        document.querySelector(".scroll-container").scrollTo(0, 0);
+      }, 100);
   }, []);
 
   useScrollToTop();
@@ -49,10 +53,18 @@ const RankingsComponent = () => {
 
   const handleViewAll = (category) => {
     setExpandedCategory(category);
+    document.querySelector(".scroll-container").scrollTo(0, 0);
+    setTimeout(() => {
+        document.querySelector(".scroll-container").scrollTo(0, 0);
+      }, 100);
   };
 
   const handleBack = () => {
     setExpandedCategory(null);
+    document.querySelector(".scroll-container").scrollTo(0, 0);
+    setTimeout(() => {
+        document.querySelector(".scroll-container").scrollTo(0, 0);
+      }, 100);
 
   };
 

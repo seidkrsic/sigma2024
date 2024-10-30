@@ -42,26 +42,51 @@ const ArticleList = ({ limit = null, showPagination = true }) => {
 
   useEffect(() => {
     fetchPosts(currentPage);
+    document.querySelector(".scroll-container").scrollTo(0, 0);
+    setTimeout(() => {
+        document.querySelector(".scroll-container").scrollTo(0, 0);
+      }, 100);
   }, [currentPage]);
 
   useScrollToTop();  
 
-  const handleNext = () => {
+  const handleNextPage = () => {
     if (currentPage < totalPages) {
-      setCurrentPage(currentPage + 1);
-    }
-
-  };
-
-  const handlePrevious = () => {
-    if (currentPage > 1) {
-      setCurrentPage(currentPage - 1);
+      fetchProblems(currentPage + 1);
     }
     document.querySelector(".scroll-container").scrollTo(0, 0);
     setTimeout(() => {
         document.querySelector(".scroll-container").scrollTo(0, 0);
       }, 100);
+  
   };
+  
+  const handlePrevPage = () => {
+    if (currentPage > 1) {
+      fetchProblems(currentPage - 1);
+    }
+    document.querySelector(".scroll-container").scrollTo(0, 0);
+    setTimeout(() => {
+        document.querySelector(".scroll-container").scrollTo(0, 0);
+      }, 100);
+
+  };
+
+  const pagesToShow = [];
+
+  if (totalPages <= 3) {
+    for (let i = 1; i <= totalPages; i++) {
+      pagesToShow.push(i);
+    }
+  } else {
+    if (currentPage === 1) {
+      pagesToShow.push(1, 2, '...', totalPages);
+    } else if (currentPage === totalPages) {
+      pagesToShow.push(1, '...', totalPages - 1, totalPages);
+    } else {
+      pagesToShow.push(1, '...', currentPage, '...', totalPages);
+    }
+  }
 
   return (
     <div className="ArticleList__container">
@@ -81,25 +106,33 @@ const ArticleList = ({ limit = null, showPagination = true }) => {
             ))}
           </div>
           {showPagination && !limit && (
-            <div className="ArticleList__pagination">
-              <button
-                onClick={handlePrevious}
-                disabled={currentPage === 1}
-                className="ArticleList__button"
-              >
+            <div className="pagination-buttons">
+            {currentPage > 1 && (
+              <button onClick={handlePrevPage} className="pagination-button">
                 Prethodna
               </button>
-              <span className="ArticleList__page-info">
-                Stranica {currentPage} od {totalPages}
-              </span>
-              <button
-                onClick={handleNext}
-                disabled={currentPage === totalPages}
-                className="ArticleList__button"
-              >
+            )}
+
+            {pagesToShow.map((page, index) => (
+              page === '...' ? (
+                <span key={index} className="pagination-dots">...</span>
+              ) : (
+                <button
+                  key={page}
+                  onClick={() => fetchProblems(page)}
+                  className={`pagination-button ${page === currentPage ? 'active' : ''}`}
+                >
+                  {page}
+                </button>
+              )
+            ))}
+
+            {currentPage < totalPages && (
+              <button onClick={handleNextPage} className="pagination-button">
                 Sledeća
               </button>
-            </div>
+            )}
+          </div>
           )}
         </>
       )}
