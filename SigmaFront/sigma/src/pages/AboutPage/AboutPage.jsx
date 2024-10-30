@@ -23,17 +23,17 @@ const AboutPage = () => {
       path: '/informacije/osnivaci',
     },
     {
-      name: 'Predavači',
+      name: 'Moderatori',
       path: '/informacije/predavaci',
     },
     {
       name: 'Naši Prijatelji',
       path: '/informacije/prijatelji',
     }, 
-    {
-      name: 'Kontakt',
-      path: '/informacije/kontakt',
-    }
+    // {
+    //   name: 'Kontakt',
+    //   path: '/informacije/kontakt',
+    // }
   ]; 
 
   const slides = [
@@ -90,7 +90,7 @@ const AboutPage = () => {
 
   return (
     <div className='AboutPage__container1'>
-      <OrangeHeader text={"Kursevi"} link_url={"/kursevi"} />
+      <OrangeHeader text={"Blog"} link_url={"/posts"} />
       <div className='AboutPage__container'>
     
       
@@ -243,17 +243,17 @@ const AboutPage = () => {
 
                   <div className='AboutPage__InstructorCard-circleContainer'>
                       <img className='AboutPage__InstructorCard-imgsquare' src={slides[0].logo} alt="" />
-                      <h3>{slides[0].name}</h3>
+                      {/* <h3>{slides[0].name}</h3> */}
                   </div>
 
                   <div className='AboutPage__InstructorCard-circleContainer'>
                       <img className='AboutPage__InstructorCard-imgsquare' src={slides[1].logo} alt="" />
-                      <h3>{slides[1].name}</h3>
+                      {/* <h3>{slides[1].name}</h3> */}
                   </div> 
 
                   <div className='AboutPage__InstructorCard-circleContainer'>
                       <img className='AboutPage__InstructorCard-imgsquare' src={slides[2].logo} alt="" />
-                      <h3>{slides[0].name}</h3>
+                      {/* <h3>{slides[0].name}</h3> */}
                   </div> 
               </div>
             </div>
