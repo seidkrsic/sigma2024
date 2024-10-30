@@ -86,7 +86,7 @@ const Header = () => {
 
             
             <div className={ scrolled ? 'Header__container-right Help_menu-active' : 'Header__container-right' }>
-                <Link onClick={ user && logout } className={ !scrolled ? 'Header__loginBtn' : "Header__loginBtn btn-active" } to={"/login"}>{ user ? "Logout" : "Login"}</Link> 
+                <Link onClick={ user && logout } className={ !scrolled ? 'Header__loginBtn' : "Header__loginBtn btn-active" } to={"/login"}>{ user ? "Odjava" : "Prijava"}</Link> 
                 <Menu menuItems={menuItems} />
             </div>
            

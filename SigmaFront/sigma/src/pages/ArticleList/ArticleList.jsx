@@ -119,7 +119,7 @@ const ArticleList = ({ limit = null, showPagination = true }) => {
               ) : (
                 <button
                   key={page}
-                  onClick={() => fetchProblems(page)}
+                  onClick={() => fetchPosts(page)}
                   className={`pagination-button ${page === currentPage ? 'active' : ''}`}
                 >
                   {page}
