@@ -24,10 +24,7 @@ const RankingsComponent = () => {
   useScrollToTop();
 
   const fetchRankings = async () => {
-    document.querySelector(".scroll-container").scrollTo(0, 0);
-    setTimeout(() => {
-        document.querySelector(".scroll-container").scrollTo(0, 0);
-      }, 100);
+
     setLoading(true);
     setError(null);
     try {
@@ -52,18 +49,11 @@ const RankingsComponent = () => {
 
   const handleViewAll = (category) => {
     setExpandedCategory(category);
-    document.querySelector(".scroll-container").scrollTo(0, 0);
-    setTimeout(() => {
-        document.querySelector(".scroll-container").scrollTo(0, 0);
-      }, 100);
   };
 
   const handleBack = () => {
     setExpandedCategory(null);
-    document.querySelector(".scroll-container").scrollTo(0, 0);
-    setTimeout(() => {
-        document.querySelector(".scroll-container").scrollTo(0, 0);
-      }, 100);
+
   };
 
   const renderRankings = (users) => {
@@ -91,10 +81,6 @@ const RankingsComponent = () => {
 
     const isExpanded = expandedCategory === categoryKey;
     const displayUsers = isExpanded ? users : users.slice(0, 3);
-    document.querySelector(".scroll-container").scrollTo(0, 0);
-    setTimeout(() => {
-        document.querySelector(".scroll-container").scrollTo(0, 0);
-      }, 100);
 
     return (
       <div className="category" key={categoryKey}>

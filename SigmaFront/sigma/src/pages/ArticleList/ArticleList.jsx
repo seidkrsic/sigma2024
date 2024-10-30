@@ -38,10 +38,6 @@ const ArticleList = ({ limit = null, showPagination = true }) => {
     }
     setLoading(false);
 
-    document.querySelector(".scroll-container").scrollTo(0, 0);
-    setTimeout(() => {
-        document.querySelector(".scroll-container").scrollTo(0, 0);
-      }, 100);
   };
 
   useEffect(() => {
@@ -54,10 +50,7 @@ const ArticleList = ({ limit = null, showPagination = true }) => {
     if (currentPage < totalPages) {
       setCurrentPage(currentPage + 1);
     }
-    document.querySelector(".scroll-container").scrollTo(0, 0);
-    setTimeout(() => {
-        document.querySelector(".scroll-container").scrollTo(0, 0);
-      }, 100);
+
   };
 
   const handlePrevious = () => {
