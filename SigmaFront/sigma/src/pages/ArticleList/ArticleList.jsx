@@ -52,7 +52,7 @@ const ArticleList = ({ limit = null, showPagination = true }) => {
 
   const handleNextPage = () => {
     if (currentPage < totalPages) {
-      fetchProblems(currentPage + 1);
+      fetchPosts(currentPage + 1);
     }
     document.querySelector(".scroll-container").scrollTo(0, 0);
     setTimeout(() => {
@@ -63,7 +63,7 @@ const ArticleList = ({ limit = null, showPagination = true }) => {
   
   const handlePrevPage = () => {
     if (currentPage > 1) {
-      fetchProblems(currentPage - 1);
+      fetchPosts(currentPage - 1);
     }
     document.querySelector(".scroll-container").scrollTo(0, 0);
     setTimeout(() => {
