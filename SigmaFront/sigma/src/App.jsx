@@ -1,7 +1,6 @@
 
 import { useContext, useEffect } from 'react';
 import './App.css';
-import BlogPage from './pages/BlogPage/BlogPage';
 import HomePage from './pages/HomePage/HomePage';
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import AuthContext from './components/AuthContext/AuthContext';
