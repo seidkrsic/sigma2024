@@ -3,6 +3,7 @@ import React from 'react';
 import './SideMenu.css';
 import { Link } from 'react-router-dom';
 import sigma2 from "../../images/sigma_2.png" 
+import { useEffect } from 'react';
 
 const SideMenu = ({ isOpen, toggleMenu }) => {
 
