@@ -36,51 +36,52 @@
   text-align: center;
 }
 
-/* Stilizacija tabele */
-.table-responsive {
-  overflow-x: auto;
+/* Stilizacija tabela */
+.problem-tables {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
-.problem-list-table {
+.problem-table {
   width: 100%;
   border-collapse: collapse;
   font-family: 'Poppins', sans-serif;
 }
 
-.problem-list-table thead {
+.problem-table thead {
   background-color: var(--table-header-background);
 }
 
-.problem-list-table th,
-.problem-list-table td {
+.problem-table th,
+.problem-table td {
   padding: 12px 15px;
   border: 1px solid var(--border-color);
   text-align: left;
   font-size: 1em;
 }
 
-.problem-list-table th {
+.problem-table th {
   font-weight: 600;
   text-transform: uppercase;
   color: var(--text-color);
 }
 
-.problem-list-table tbody tr:nth-child(even) {
-  background-color: #fafafa;
-}
-
-.problem-list-table tbody tr:hover {
+.problem-table tbody tr:hover {
   background-color: rgba(244, 138, 7, 0.1);
 }
 
+/* Uklonjen border-radius */
+/* Obrisali smo sve deklaracije koje postavljaju border-radius */
+
 /* Stilizacija linkova u tabeli */
-.problem-list-table td a.problem-link {
+.problem-table td a.problem-link {
   color: var(--link-color);
   text-decoration: none;
   transition: color 0.3s;
 }
 
-.problem-list-table td a.problem-link:hover {
+.problem-table td a.problem-link:hover {
   color: var(--link-hover-color);
 }
 
@@ -121,46 +122,15 @@
 
 /* Responsivni dizajn */
 @media (max-width: 768px) {
-  .problem-list-table thead {
-    display: none;
+  /* Nema potrebe za posebnim prilagođavanjima, tabele će se automatski slagati jedna ispod druge */
+  /* Možemo smanjiti fontove i padding ako je potrebno */
+  .problem-table th,
+  .problem-table td {
+    padding: 8px 10px;
+    font-size: 0.9em;
   }
 
-  .problem-list-table, 
-  .problem-list-table tbody, 
-  .problem-list-table tr, 
-  .problem-list-table td {
-    display: block;
-    width: 100%;
-  }
-
-  .problem-list-table tr {
-    margin-bottom: 15px;
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    overflow: hidden;
-  }
-
-  .problem-list-table td {
-    text-align: left;
-    padding: 10px;
-    position: relative;
-  }
-
-  .problem-list-table td::before {
-    content: attr(data-label);
-    font-weight: bold;
-    display: block;
-    margin-bottom: 5px;
-    color: var(--text-color);
-  }
-
-  .pagination-buttons {
-    flex-direction: column;
-  }
-
-  .pagination-button {
-    width: 100%;
-    max-width: 200px;
-    margin-bottom: 10px;
+  .ProblemList__title {
+    font-size: 1.5em;
   }
 }

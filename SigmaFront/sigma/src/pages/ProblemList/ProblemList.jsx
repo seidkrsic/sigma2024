@@ -60,27 +60,27 @@ const ProblemList = () => {
         </div>
       ) : (
         <>
-          <div className="table-responsive">
-            <table className="problem-list-table">
-              <thead>
-                <tr>
-                  <th>Datum objave</th>
-                  <th>Naziv</th>
-                  <th>Postavka</th>
-                  <th>Rješenje</th>
-                </tr>
-              </thead>
-              <tbody>
-                {problems.map(problem => (
-                  <tr key={problem.id}>
-                    <td data-label="Datum objave">{new Date(problem.published_date).toLocaleDateString()}</td>
-                    <td data-label="Naziv">{problem.title}</td>
-                    <td data-label="Postavka">
+          <div className="problem-tables">
+            {problems.map(problem => (
+              <table key={problem.id} className="problem-table">
+                <thead>
+                  <tr>
+                    <th>Datum objave</th>
+                    <th>Naziv</th>
+                    <th>Postavka</th>
+                    <th>Rješenje</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>{new Date(problem.published_date).toLocaleDateString()}</td>
+                    <td>{problem.title}</td>
+                    <td>
                       <a href={problem.problem_file_url} rel="noopener noreferrer" className="problem-link" target="_blank">
                         Preuzmi problem
                       </a>
                     </td>
-                    <td data-label="Rješenje">
+                    <td>
                       {problem.solution_file_url ? (
                         <a href={problem.solution_file_url} rel="noopener noreferrer" className="problem-link" target="_blank">
                           Preuzmi rješenje
@@ -90,9 +90,9 @@ const ProblemList = () => {
                       )}
                     </td>
                   </tr>
-                ))}
-              </tbody>
-            </table>
+                </tbody>
+              </table>
+            ))}
           </div>
           <div className="pagination-buttons">
             {currentPage > 1 && (
