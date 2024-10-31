@@ -167,7 +167,7 @@
 
 #problem_of_the_week__archive-btn { 
     text-decoration: underline;
-    color: white;
+    color: white !important;
     position: relative; 
     bottom: 30px;
     padding: 0.75rem 1.5rem;
@@ -177,7 +177,7 @@
     display: inline-block;
     text-decoration: underline;
     font-weight: bold;
-    text-transform: uppercase;
+    text-transform: lowercase;
     transition: background-color 0.3s ease, transform 0.3s ease;
     text-align: center;
 
@@ -378,6 +378,10 @@
     border: 1px solid #1a3a5b;
 }  
 
+.Problem_of_the_Week__link-container p { 
+    text-align: center;
+}
+
 /* Responsive Stilovi */
 @media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) {
 
@@ -549,6 +553,7 @@
 
     .Problem_of_the_Week__link-container p { 
         width: 100% !important;
+        text-align: center;
     }
 
 
@@ -561,7 +566,7 @@
         margin: 0 1rem; /* Smanjen margin */
     } 
 
-    .Problem_of_the_Week__link-container1 #pro
+    
    
     /* Slika u Problem_of_the_Week__link-container */
     .Problem_of_the_Week__link-container1 img {
@@ -572,9 +577,10 @@
     }
 
     #problem_of_the_week__archive-btn { 
-        color: white;
+        color: white !important;
+        text-transform: lowercase;
     }
-
+    
 }
 
 
