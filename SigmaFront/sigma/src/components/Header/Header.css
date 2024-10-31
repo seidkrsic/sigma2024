@@ -239,3 +239,50 @@
 
 }
 
+
+
+/* Header.css */
+
+/* ... vaš postojeći CSS kod ... */
+
+/* Stil za ikonu korisnika */
+.Header__user-menu {
+    position: relative;
+    display: inline-block;
+    cursor: pointer;
+    margin-right: 15px;
+  }
+  
+  .Header__user-icon {
+    font-size: 1.8em;
+    color: #1a3a5b; /* Ili boja koja se uklapa u vaš dizajn */
+  }
+  
+  .Header__user-dropdown {
+    position: absolute;
+    right: 0;
+    top: 100%;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    min-width: 150px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+  }
+  
+  .Header__user-dropdown a {
+    display: block;
+    padding: 10px;
+    color: #333333;
+    text-decoration: none;
+    font-size: 0.9em;
+  }
+  
+  .Header__user-dropdown a:hover {
+    background-color: #f0f0f0;
+  }
+  
+  /* Ako želite da prilagodite stil u zavisnosti od toga da li je header skrolovan */
+  .header-Active .Header__user-icon {
+    color: #f48a07;
+  }
+  

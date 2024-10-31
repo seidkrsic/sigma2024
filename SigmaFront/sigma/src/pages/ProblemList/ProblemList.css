@@ -170,10 +170,10 @@
 @media (max-width: 480px) {
   .problem-list-table {
     width: 100%;
-    table-layout: fixed; /* Fiksni raspored tabele */
+    table-layout: fixed;
   }
 
-  .problem-list-table th, 
+  .problem-list-table th,
   .problem-list-table td {
     padding: 8px 5px;
     font-size: 0.85em;
@@ -187,11 +187,12 @@
   }
 
   .problem-list-table th {
-    white-space: nowrap;
+    white-space: normal; /* Promenili smo sa nowrap na normal */
+    text-align: left; /* Poravnanje teksta levo */
   }
 
   .problem-list-table td {
-    white-space: normal;
-    height: fit-content; /* Visina se prilagođava sadržaju */
+    height: fit-content;
   }
 }
+
