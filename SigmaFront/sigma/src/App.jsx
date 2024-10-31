@@ -18,6 +18,7 @@ import ProblemOfTheWeek from './pages/ProblemOfTheWeek/ProblemOfTheWeek';
 import ArticleDetail from './pages/ArticleDetail/ArticleDetail';
 import ArticleList from './pages/ArticleList/ArticleList';
 import RankingsComponent from './components/RankingsComponent/RankingsComponent';
+import ProfileUpdate from './components/ProfileUpdate/ProfileUpdate';
 
 
 function App() {
@@ -70,7 +71,7 @@ function App() {
             <Route path="/posts" element={<ArticleList />} />
             <Route path="/posts/:slug" element={<ArticleDetail />} />
             <Route path="/rankings" element={<RankingsComponent />} />
-
+            <Route path="/profile" element={<ProfileUpdate />} />
           </Routes>
 
           <Footer /> 

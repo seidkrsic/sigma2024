@@ -259,6 +259,35 @@ const getAllTimeRankings = async () => {
 };
 
 
+const updateUserProfile = async (profileData) => {
+  const token = getToken();
+  if (!token) {
+    throw new Error('Morate biti ulogovani da biste ažurirali profil.');
+  }
+
+  try {
+    const formData = new FormData();
+    if (profileData.name) {
+      formData.append('name', profileData.name);
+    }
+    if (profileData.profile_picture) {
+      formData.append('profile_picture', profileData.profile_picture);
+    }
+
+    const response = await axios.put(`${API_URL}/profile/`, formData, {
+      headers: {
+        Authorization: `Bearer ${token}`,
+        'Content-Type': 'multipart/form-data',
+      },
+    });
+
+    return response.data;
+  } catch (error) {
+    throw error;
+  }
+};
+
+
 
 
 export default {
@@ -277,4 +306,5 @@ export default {
   getWeeklyRankings, 
   getAllTimeRankings, 
   getMonthlyRankings,
+  updateUserProfile,
 };
