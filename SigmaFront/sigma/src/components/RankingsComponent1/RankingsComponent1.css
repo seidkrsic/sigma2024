@@ -1,0 +1,192 @@
+/* src/components/RankingsComponent/RankingsComponent.css */
+
+.rankings-container {
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background-color: #ffffff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.category {
+    margin-bottom: 40px;
+}
+
+.category-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.category-header h2 {
+    font-size: 24px;
+    color: #1a3a5b; /* Specifikovana boja za naslove */
+    margin: 0;
+}
+
+.view-all-button,
+.back-button {
+    padding: 6px 12px;
+    background-color: #1a3a5b; /* Boja dugmeta */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.view-all-button:hover,
+.back-button:hover {
+    background-color: #15304a; /* Tamnija nijansa na hover */
+}
+
+.ranking-item {
+    display: flex;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.rank {
+    width: 40px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    color: #333;
+}
+
+.user-info {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.profile-picture {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 100%;
+    margin-right: 15px;
+    border: 2px solid rgb(255, 142, 0); /* Specifikovana boja oko slike */
+}
+
+.name {
+    font-size: 18px;
+    color: #555;
+}
+
+.points {
+    width: 100px;
+    text-align: right;
+    font-size: 18px;
+    font-weight: bold;
+    color: #333;
+}
+
+.expanded-ranking h2 {
+    font-size: 28px;
+    color: #1a3a5b; /* Boja naslova */
+    margin-bottom: 20px;
+}
+
+.back-button {
+    margin-bottom: 20px;
+    padding: 10px 25px;
+    background-color: #1a3a5b; /* Boja dugmeta */
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+}
+
+.back-button:hover {
+    background-color: #15304a;
+}
+
+.loading,
+.error,
+.no-data {
+    text-align: center;
+    font-size: 18px;
+    color: #555;
+    padding: 20px 0;
+}
+
+/* Mobile Styles */
+@media (max-width: 768px) {
+    .rankings-container {
+        padding: 10px;
+        margin: 20px auto;
+    }
+
+    .category-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .category-header h2 {
+        font-size: 20px;
+        color: #1a3a5b;
+        margin-bottom: 10px;
+    }
+
+    .view-all-button,
+    .back-button {
+        padding: 5px 10px;
+        font-size: 12px;
+        margin-top: 5px;
+    }
+
+    .ranking-item {
+        flex-direction: row;
+        align-items: center;
+        padding: 10px 0;
+        justify-content: space-between;
+    }
+
+    .rank {
+        width: 30px;
+        font-size: 16px;
+        margin-right: 10px;
+        color: #1a3a5b; /* Dodata boja za rang */
+    }
+
+    .user-info {
+        display: flex;
+        align-items: center;
+        flex: 1;
+        margin-right: 10px;
+    }
+
+    .profile-picture {
+        width: 40px;
+        height: 40px;
+        margin-right: 10px;
+        border: 2px solid rgb(255, 142, 0);
+    }
+
+    .name {
+        font-size: 16px;
+        color: #1a3a5b;
+    }
+
+    .points {
+        width: 80px;
+        text-align: right;
+        font-size: 16px;
+        color: #1a3a5b;
+    }
+
+    .expanded-ranking h2 {
+        font-size: 24px;
+        color: #1a3a5b;
+        margin-bottom: 15px;
+    }
+
+    .back-button {
+        padding: 8px 20px;
+        font-size: 12px;
+    }
+}
