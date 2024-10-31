@@ -12,8 +12,8 @@
   --link-color: var(--primary-color);
   --link-hover-color: var(--primary-hover);
   --button-text-color: #ffffff;
-  --button-background: #1a3a5b; /* Boja paginacionih dugmadi */
-  --button-hover-background: #13314f; /* Tamnija nijansa za hover */
+  --button-background: #1a3a5b;
+  --button-hover-background: #13314f;
   --table-header-background: var(--secondary-color);
   --border-color: #ddd;
 }
@@ -24,11 +24,10 @@
   margin: 0 auto;
   padding: 2rem 0;
   font-family: 'Poppins', sans-serif;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 /* Naslov */
-.ProblemList__title { 
+.ProblemList__title {
   margin: 1rem 0;
   font-size: 2em;
   text-transform: uppercase;
@@ -38,44 +37,32 @@
 }
 
 /* Stilizacija tabele */
+.table-responsive {
+  overflow-x: auto;
+}
+
 .problem-list-table {
   width: 100%;
-  margin: 1rem auto;
   border-collapse: collapse;
   font-family: 'Poppins', sans-serif;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  overflow: hidden;
 }
 
 .problem-list-table thead {
   background-color: var(--table-header-background);
 }
 
-.problem-list-table th, 
+.problem-list-table th,
 .problem-list-table td {
   padding: 12px 15px;
-  /* border: 1px solid var(--border-color); */
+  border: 1px solid var(--border-color);
   text-align: left;
   font-size: 1em;
 }
 
-/* Stilizacija zaglavlja tabele */
 .problem-list-table th {
   font-weight: 600;
   text-transform: uppercase;
   color: var(--text-color);
-}
-
-/* Stilizacija redova tabele */
-
-.problem-list-table thead tr {
-  /* transition: background-color 0.3s; */
-  border-bottom: 1px solid gainsboro;
-}
-
-.problem-list-table tbody tr {
-  transition: background-color 0.3s;
-  border-bottom: 1px solid gainsboro;
 }
 
 .problem-list-table tbody tr:nth-child(even) {
@@ -88,13 +75,13 @@
 
 /* Stilizacija linkova u tabeli */
 .problem-list-table td a.problem-link {
-  color: rgb(244, 138, 7) !important;
+  color: var(--link-color);
   text-decoration: none;
   transition: color 0.3s;
 }
 
 .problem-list-table td a.problem-link:hover {
-  color: rgb(244, 138, 0) !important;
+  color: var(--link-hover-color);
 }
 
 /* Stil za poruke kada rešenje nije dostupno */
@@ -103,109 +90,37 @@
   font-style: italic;
 }
 
-/* Stilovi za učitavanje */
-.ProblemList__loading {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem 0;
-  font-family: 'Poppins', sans-serif;
-  color: var(--text-color);
-}
-
-/* Spinner */
-.spinner {
-  border: 8px solid #f3f3f3;
-  border-top: 8px solid var(--primary-color);
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  animation: spin 1s linear infinite;
-  margin-bottom: 1rem;
-}
-
-@keyframes spin {
-  0% { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
-}
-
-/* Stilovi za greške i bez problema */
-.ProblemList__error, 
-.ProblemList__no-problem {
-  text-align: center;
-  padding: 2rem;
-  background-color: #fff;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
-  font-family: 'Poppins', sans-serif;
-  color: var(--text-color);
-  margin: 1rem auto;
-  max-width: 800px;
-}
-
 /* Stilovi za paginaciju */
 .pagination-buttons {
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 20px;
-  flex-wrap: wrap;
 }
 
 .pagination-button {
   border: none;
-  background-color: var(--button-background); /* #1a3a5b */
-  color: var(--button-text-color); /* Bijeli tekst */
-  padding: 6px 12px; /* Smanjena veličina */
-  margin: 5px;
-  font-size: 0.9em; /* Smanjena veličina fonta */
+  background-color: var(--button-background);
+  color: var(--button-text-color);
+  padding: 8px 12px;
+  margin: 0 5px;
+  font-size: 0.9em;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
+  transition: background-color 0.3s;
 }
 
 .pagination-button:hover {
-  background-color: var(--button-hover-background); /* #13314f */
+  background-color: var(--button-hover-background);
 }
 
-.pagination-button.active {
-  background-color: var(--button-background);
-  color: var(--button-text-color);
-}
-
-.pagination-dots {
-  display: inline-block;
-  width: 30px;
-  text-align: center;
+.current-page {
+  margin: 0 10px;
   font-size: 1em;
   color: var(--text-color);
 }
 
-/* Onemogućena dugmad */
-.pagination-button:disabled {
-  background-color: #ccc;
-  cursor: not-allowed;
-}
-
 /* Responsivni dizajn */
 @media (max-width: 768px) {
-  .problem-list-table th, 
-  .problem-list-table td {
-    padding: 8px 10px;
-    font-size: 0.9em;
-  }
-
-  .ProblemList__title {
-    font-size: 1.5em;
-    margin: auto;
-  }
-
-  .pagination-button {
-    padding: 6px 10px;
-    font-size: 0.9em;
-  }
-}
-
-@media (max-width: 480px) {
   .problem-list-table thead {
     display: none;
   }
@@ -220,25 +135,22 @@
 
   .problem-list-table tr {
     margin-bottom: 15px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
     overflow: hidden;
   }
 
   .problem-list-table td {
-    text-align: right;
-    padding-left: 50%;
+    text-align: left;
+    padding: 10px;
     position: relative;
   }
 
   .problem-list-table td::before {
     content: attr(data-label);
-    position: absolute;
-    left: 15px;
-    width: calc(50% - 30px);
-    padding-right: 10px;
-    white-space: nowrap;
-    text-align: left;
-    font-weight: 600;
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
     color: var(--text-color);
   }
 
@@ -249,104 +161,6 @@
   .pagination-button {
     width: 100%;
     max-width: 200px;
+    margin-bottom: 10px;
   }
-}
-
-
-/* Default Desktop Styles */
-.ProblemList__container {
-  padding: 20px;
-}
-
-.problem-list-table {
-  width: 100%;
-  border-collapse: collapse;
-}
-
-.problem-list-table th, .problem-list-table td {
-  padding: 15px;
-  text-align: left;
-  border-bottom: 1px solid #ddd;
-}
-
-.problem-list-table th {
-  background-color: #f8f8f8;
-  font-weight: bold;
-}
-
-.problem-list-table .problem-link {
-  color: #007acc;
-  text-decoration: none;
-}
-
-.problem-list-table .no-solution {
-  color: #999;
-}
-
-/* Mobile View (Card Layout) */
-@media (max-width: 768px) {
-  .problem-list-table,
-  .problem-list-table thead,
-  .problem-list-table tbody,
-  .problem-list-table th,
-  .problem-list-table td,
-  .problem-list-table tr {
-    display: block;
-    width: 100%;
-  }
-
-  .problem-list-table tr {
-    margin-bottom: 20px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 15px;
-  }
-
-  .problem-list-table td {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 0;
-    border: none;
-  }
-
-  .problem-list-table td:before {
-    content: attr(data-label);
-    font-weight: bold;
-    color: #333;
-  }
-
-  .problem-list-table th {
-    display: none; /* Hide table headers */
-  }
-
-  .problem-link {
-    font-weight: bold;
-    color: #007acc;
-  }
-}
-
-/* Additional Styling for Pagination */
-.pagination-buttons {
-  display: flex;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.pagination-button {
-  padding: 10px 20px;
-  margin: 0 5px;
-  background-color: #007acc;
-  color: #fff;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.pagination-button.active {
-  background-color: #005b99;
-}
-
-.pagination-dots {
-  padding: 10px 20px;
-  color: #999;
 }
