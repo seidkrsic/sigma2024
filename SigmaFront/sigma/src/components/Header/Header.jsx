@@ -97,7 +97,7 @@ const Header = () => {
               {isUserMenuOpen && (
                 <div className='Header__user-dropdown'>
                   <Link to='/profile' onClick={() => setIsUserMenuOpen(false)}>
-                    Izmeni profil
+                    Izmijeni profil
                   </Link>
                   <a
                     href='#'

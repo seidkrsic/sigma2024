@@ -5,6 +5,18 @@ import { Link } from 'react-router-dom';
 import sigma2 from "../../images/sigma_2.png" 
 
 const SideMenu = ({ isOpen, toggleMenu }) => {
+
+  useEffect(() => {
+    if (isOpen) {
+      document.body.classList.add('menu-open');
+    } else {
+      document.body.classList.remove('menu-open');
+    }
+  }, [isOpen]);
+  
+
+
+
   return (
     <div className={`side-menu ${isOpen ? 'open' : ''}`}>
       <ul>

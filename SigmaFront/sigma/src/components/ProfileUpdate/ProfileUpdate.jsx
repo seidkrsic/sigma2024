@@ -57,10 +57,9 @@ const ProfileUpdate = () => {
 
     try {
       await api.updateUserProfile(profileData);
-      alert('Profil uspešno ažuriran!');
+      alert('Profil uspješno ažuriran!');
       // Opciono: Osvežite stranicu ili preusmerite korisnika
     } catch (error) {
-      console.error('Error updating profile:', error);
       alert('Došlo je do greške pri ažuriranju profila.');
     } finally {
       setLoading(false);
@@ -96,7 +95,7 @@ const ProfileUpdate = () => {
           </div>
         )}
         <button type="submit" className="update-button" disabled={loading}>
-          {loading ? 'Sačekajte...' : 'Sačuvaj promene'}
+          {loading ? 'Sačekajte...' : 'Sačuvaj promjene'}
         </button>
       </form>
     </div>

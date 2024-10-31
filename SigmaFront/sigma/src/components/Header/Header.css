@@ -251,6 +251,10 @@
     display: inline-block;
     cursor: pointer;
     margin-right: 15px;
+    height: 100%;
+    margin: auto !important;
+    align-items: center;
+    display: flex;
   }
   
   .Header__user-icon {

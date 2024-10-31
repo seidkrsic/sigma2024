@@ -114,3 +114,12 @@
     text-transform: uppercase;
     font-weight: bold;
   }
+
+
+  /* SideMenu.css */
+
+/* ... vaš postojeći CSS kod ... */
+
+body.menu-open {
+  overflow: hidden;
+}
