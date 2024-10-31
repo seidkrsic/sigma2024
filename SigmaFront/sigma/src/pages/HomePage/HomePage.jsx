@@ -8,7 +8,7 @@ import WavyDiv from '../../components/WavyDiv/WavyDiv'
 import slika1 from "../../images/SeidPic.png" 
 import ArticleList from '../ArticleList/ArticleList'
 import ImageSlider from '../../components/ImageSlider/ImageSlider'
-import RankigsComponent from "../../components/RankingsComponent"
+import RankigsComponent from "../../components/RankingsComponent/RankingsComponent"
 const HomePage = () => {
 
     const {setActiveIndex} = useContext(AuthContext);
