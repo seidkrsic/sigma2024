@@ -65,6 +65,8 @@ const HomePage = () => {
       <section className="HomePage__latest-articles">
         <h2 className="HomePage__section-title">Najbolji mladi matematičari</h2>
         <RankigsComponent />
+        <Link id="problem_of_the_week__problem-btn" to="/rankings">Vidi više</Link>
+
       </section>
 
       <section className="HomePage__latest-articles">
