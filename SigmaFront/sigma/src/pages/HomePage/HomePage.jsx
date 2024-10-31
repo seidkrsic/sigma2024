@@ -37,9 +37,9 @@ const HomePage = () => {
         <div className='Problem_of_the_Week__container'>
           <div className='Problem_of_the_Week__link-container1'>
 
-            <Link id='problem_of_the_week__archive-btn' to="/problems">Arhiva Problema</Link>
             <img src={slika1} alt="Problem Nedjelje" />
-            
+            <Link id='problem_of_the_week__archive-btn' to="/problems">Arhiva Problema</Link>
+
           </div>
           <div className='Problem_of_the_Week__link-container'>
             <p>
