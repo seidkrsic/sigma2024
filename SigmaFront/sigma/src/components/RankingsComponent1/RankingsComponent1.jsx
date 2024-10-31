@@ -5,7 +5,7 @@ import api from '../../services/api.jsx';
 import slika1 from "../../images/user1.png"; // Default korisnička slika
 
 import './RankingsComponent1.css';
-import useScrollToTop from '../useScrollToTop/useScrollToTop.jsx';
+
 
 const RankingsComponent1 = () => {
   const [rankings, setRankings] = useState({
@@ -21,7 +21,7 @@ const RankingsComponent1 = () => {
     fetchRankings();
   }, []);
 
-  useScrollToTop();
+
 
   const fetchRankings = async () => {
 

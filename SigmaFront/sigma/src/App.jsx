@@ -17,7 +17,7 @@ import ProblemList from './pages/ProblemList/ProblemList';
 import ProblemOfTheWeek from './pages/ProblemOfTheWeek/ProblemOfTheWeek';
 import ArticleDetail from './pages/ArticleDetail/ArticleDetail';
 import ArticleList from './pages/ArticleList/ArticleList';
-import RankingsComponent1 from './components/RankingsComponent/RankingsComponent';
+import RankingsComponent from './components/RankingsComponent/RankingsComponent';
 import ProfileUpdate from './components/ProfileUpdate/ProfileUpdate';
 
 
@@ -70,7 +70,7 @@ function App() {
             <Route path="/problem-of-the-week" element={<ProblemOfTheWeek />} />
             <Route path="/posts" element={<ArticleList />} />
             <Route path="/posts/:slug" element={<ArticleDetail />} />
-            <Route path="/rankings" element={<RankingsComponent1 />} />
+            <Route path="/rankings" element={<RankingsComponent />} />
             <Route path="/profile" element={<ProfileUpdate />} />
           </Routes>
 
