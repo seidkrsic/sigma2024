@@ -198,7 +198,7 @@
     margin-top: 1rem;
     font-size: 1rem;
     line-height: 1.6;
-    text-align: center;
+    text-align: center !important;
     color: #f0f0f0; /* Svetlija boja za kontrast */
 }
 
