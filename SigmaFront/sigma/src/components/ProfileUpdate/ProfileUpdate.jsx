@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import api from '../../api'; // Putanja do vašeg api.js fajla
+import api from '../../services/api.jsx'; // Putanja do vašeg api.js fajla
 import './ProfileUpdate.css'; // Kreiraćemo ovaj CSS fajl za stilizaciju
 
 const ProfileUpdate = () => {
