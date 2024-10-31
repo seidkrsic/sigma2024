@@ -92,6 +92,8 @@
     align-items: center;
     text-decoration: none; 
     color: rgb(6, 88, 142);
+    width: 100%;
+    justify-content: center;
 
 }
 
@@ -137,6 +139,7 @@
 
 .Header__loginBtn { 
     height: 50% !important;
+    width: fit-content !important;
 }
 
 .btn-active { 
@@ -147,6 +150,8 @@
     transition-delay: .3s;
 
 } 
+
+
 
 @media only screen and (max-device-width: 812px) and (-webkit-min-device-pixel-ratio: 2) { 
 
