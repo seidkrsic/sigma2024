@@ -8,7 +8,7 @@ import WavyDiv from '../../components/WavyDiv/WavyDiv'
 import slika1 from "../../images/SeidPic.png" 
 import ArticleList from '../ArticleList/ArticleList'
 import ImageSlider from '../../components/ImageSlider/ImageSlider'
-import RankigsComponent1 from "../../components/RankingsComponent/RankingsComponent"
+import RankingsComponent1 from '../../components/RankingsComponent1/RankingsComponent1'
 
 
 const HomePage = () => {
@@ -66,7 +66,7 @@ const HomePage = () => {
 
       <section className="HomePage__latest-articles">
         <h2 className="HomePage__section-title">Najbolji mladi matematičari</h2>
-        <RankigsComponent1 /> 
+        <RankingsComponent1 /> 
       </section>
 
       <section className="HomePage__latest-articles">
