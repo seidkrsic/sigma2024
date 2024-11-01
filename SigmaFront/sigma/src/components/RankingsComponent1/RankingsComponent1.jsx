@@ -76,7 +76,34 @@ const RankingsComponent1 = () => {
     ));
   };
 
+  const renderCategory = (title, users, categoryKey) => {
 
+    const isExpanded = expandedCategory === categoryKey;
+    const displayUsers = isExpanded ? users : users.slice(0, 3);
+
+    return (
+      <div className="category" key={categoryKey}>
+        <div className="category-header">
+          <h2>{title}</h2>
+        </div>
+        {renderRankings(displayUsers)}
+      </div>
+    );
+  };
+
+  const getCategoryTitle = (categoryKey) => {
+
+    switch (categoryKey) {
+      case 'weekly':
+        return 'Top 3 Nedelje';
+      case 'monthly':
+        return 'Top 3 Mjeseca';
+      case 'allTime':
+        return 'Najbolji Takmičari';
+      default:
+        return '';
+    }
+  };
 
   if (loading) {
     return <div className="loading">Učitavanje rangiranja...</div>;
@@ -91,12 +118,6 @@ const RankingsComponent1 = () => {
         <div className="expanded-ranking">
           <h2>{getCategoryTitle(expandedCategory).replace('Top 3', 'Ranglista')}</h2>
           {renderRankings(rankings[expandedCategory])}
-          <button
-              className="view-all-button"
-              onClick={() => handleViewAll(categoryKey)}
-            >
-              detaljnije
-            </button>
         </div>
     </div>
   );
