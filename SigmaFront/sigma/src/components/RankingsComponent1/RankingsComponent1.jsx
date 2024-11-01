@@ -3,9 +3,7 @@
 import React, { useState, useEffect } from 'react';
 import api from '../../services/api.jsx'; 
 import slika1 from "../../images/user1.png"; // Default korisnička slika
-
 import './RankingsComponent1.css';
-
 
 const RankingsComponent1 = () => {
   const [rankings, setRankings] = useState({
@@ -20,8 +18,6 @@ const RankingsComponent1 = () => {
   useEffect(() => {
     fetchRankings();
   }, []);
-
-
 
   const fetchRankings = async () => {
 
@@ -40,6 +36,7 @@ const RankingsComponent1 = () => {
         allTime: allTimeData,
       });
     } catch (error) {
+      console.error('Greška pri učitavanju rangiranja:', error);
       setError('Nije moguće učitati rangiranja. Pokušajte ponovo kasnije.');
     } finally {
       setLoading(false);
@@ -84,7 +81,7 @@ const RankingsComponent1 = () => {
     return (
       <div className="category" key={categoryKey}>
         <div className="category-header">
-          <h2>{title}</h2>
+          <h2>{title}</h2> 
         </div>
         {renderRankings(displayUsers)}
       </div>
@@ -115,10 +112,11 @@ const RankingsComponent1 = () => {
 
   return (
     <div className="rankings-container">
-        <div className="expanded-ranking">
-          <h2>{getCategoryTitle(expandedCategory).replace('Top 3', 'Ranglista')}</h2>
-          {renderRankings(rankings[expandedCategory])}
+      {['weekly', 'monthly', 'allTime'].map((categoryKey) => (
+        <div key={categoryKey}>
+          {renderCategory(getCategoryTitle(categoryKey), rankings[categoryKey], categoryKey)}
         </div>
+      ))}
     </div>
   );
 };
