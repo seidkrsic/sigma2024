@@ -117,6 +117,12 @@ const RankingsComponent1 = () => {
           {renderCategory(getCategoryTitle(categoryKey), rankings[categoryKey], categoryKey)}
         </div>
       ))}
+      <a
+        className="back-button"
+        href='/rankings'
+      >
+        detaljnije
+      </a>
     </div>
   );
 };
