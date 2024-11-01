@@ -2,6 +2,7 @@
 
 import React, { useState, useEffect } from 'react';
 import api from '../../services/api.jsx'; 
+import { Link } from 'react-router-dom';
 import slika1 from "../../images/user1.png"; // Default korisnička slika
 import './RankingsComponent1.css';
 
@@ -117,12 +118,12 @@ const RankingsComponent1 = () => {
           {renderCategory(getCategoryTitle(categoryKey), rankings[categoryKey], categoryKey)}
         </div>
       ))}
-      <a
+      <Link
         className="back-button"
-        href='/rankings'
+        to='/rankings'
       >
         detaljnije
-      </a>
+      </Link>
     </div>
   );
 };
