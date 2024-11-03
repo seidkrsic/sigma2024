@@ -63,7 +63,14 @@ const ArticleDetail = () => {
     }
   }, [post]);
 
-  if (loading) return <div className="ArticleDetail__loading">Učitavanje...</div>;
+  if (loading) {
+    return (
+      <div className="ProblemOfTheWeek__loading">
+        <div className="spinner"></div>
+        <p>Učitavanje...</p>
+      </div>
+    );
+  }
   if (error) return <div className="ArticleDetail__error">{error}</div>;
 
   return (

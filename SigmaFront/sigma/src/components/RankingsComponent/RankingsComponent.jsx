@@ -135,7 +135,12 @@ const RankingsComponent = () => {
   };
 
   if (loading) {
-    return <div className="loading">Učitavanje rangiranja...</div>;
+    return (
+      <div className="ProblemOfTheWeek__loading">
+        <div className="spinner"></div>
+        <p>Učitavanje...</p>
+      </div>
+    );
   }
 
   if (error) {

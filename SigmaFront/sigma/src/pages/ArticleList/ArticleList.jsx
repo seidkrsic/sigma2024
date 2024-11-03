@@ -92,7 +92,12 @@ const ArticleList = ({ limit = null, showPagination = true }) => {
     <div className="ArticleList__container">
       {error && <div className="ArticleList__error">{error}</div>}
       {loading ? (
-        <div className="ArticleList__loading">Učitavanje...</div>
+        
+          <div className="ProblemOfTheWeek__loading">
+            <div className="spinner"></div>
+            <p>Učitavanje...</p>
+          </div>
+          
       ) : (
         <>
           <div className={`ArticleList__grid ${limit ? 'ArticleList__grid--limited' : ''}`}>
