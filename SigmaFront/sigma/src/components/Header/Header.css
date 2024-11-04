@@ -260,6 +260,8 @@
     margin: auto !important;
     align-items: center;
     display: flex;
+    width: 100%;
+    justify-content: flex-end;
   }
   
   .Header__user-icon {
@@ -290,8 +292,5 @@
     background-color: #f0f0f0;
   }
   
-  /* Ako želite da prilagodite stil u zavisnosti od toga da li je header skrolovan */
-  .header-Active .Header__user-icon {
-    color: #f48a07;
-  }
+ 
   
