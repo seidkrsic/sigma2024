@@ -21,9 +21,9 @@ const ProblemOfTheWeek = () => {
     const fetchProblem = async () => {
       try {
         const data = await api.getCurrentProblem();
+        console.log('Podaci dobijeni sa API-ja:', data);
         setProblem(data.problem); // Assuming the problem is under 'problem' key
         setSessionId(data.session_id); // Store the session_id returned from backend
-        console.log("SESSION_ID", data.sessionId)  
       } catch (error) {
         setError('Trenutno nema aktivnog problema.');
       } finally {
