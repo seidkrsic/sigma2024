@@ -200,7 +200,7 @@ const getCurrentProblem = async () => {
   }
 }; 
 
-const submitSolution = async (problemId, submittedSolution) => {
+const submitSolution = async (problemId, submittedSolution, timeTaken) => {
   const token = localStorage.getItem('access_token');
   if (!token) {
     throw new Error('Morate biti ulogovani da biste poslali rešenje.');
