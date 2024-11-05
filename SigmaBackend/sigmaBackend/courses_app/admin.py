@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Course, Problem, Solution, Post 
+from .models import Course, Problem, Solution, Post, ProblemSession
 from django_ckeditor_5.widgets import CKEditor5Widget
 from django import forms 
 
@@ -7,6 +7,7 @@ from django import forms
 admin.site.register(Problem)
 admin.site.register(Solution)
 admin.site.register(Post) 
+admin.site.register(ProblemSession) 
 
 class CourseAdminForm(forms.ModelForm):
     class Meta:

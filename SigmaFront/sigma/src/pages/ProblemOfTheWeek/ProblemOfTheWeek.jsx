@@ -23,6 +23,7 @@ const ProblemOfTheWeek = () => {
         const data = await api.getCurrentProblem();
         setProblem(data.problem); // Assuming the problem is under 'problem' key
         setSessionId(data.session_id); // Store the session_id returned from backend
+        console.log("SESSION_ID", data.sessionId)  
       } catch (error) {
         setError('Trenutno nema aktivnog problema.');
       } finally {
