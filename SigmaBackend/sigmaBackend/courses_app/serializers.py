@@ -65,9 +65,9 @@ class SolutionSerializer(serializers.ModelSerializer):
         model = Solution
         fields = [
             'id', 'profile', 'problem', 'submitted_solution',
-            'submission_date', 'is_correct', 'solution_file_url'
+            'submission_date', 'is_correct', 'solution_file_url', "time_taken"
         ]
-        read_only_fields = ['profile', 'submission_date', 'is_correct', 'solution_file_url']
+        read_only_fields = ['profile', 'submission_date', 'is_correct', 'solution_file_url', "time_taken"]
 
     def get_solution_file_url(self, obj):
         request = self.context.get('request')
