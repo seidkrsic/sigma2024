@@ -218,7 +218,7 @@ def submit_solution(request):
 
     # Pronalazak sesije
     try:
-        session = ProblemSession.objects.get(id=session_id, profile=profile, problem=problem, is_active=True)
+        session = ProblemSession.objects.get(id=int(session_id), profile=profile, problem=problem, is_active=True)
     except ProblemSession.DoesNotExist:
         return Response({'detail': 'Sesija nije pronađena ili je već iskorišćena.'}, status=status.HTTP_400_BAD_REQUEST)
 
