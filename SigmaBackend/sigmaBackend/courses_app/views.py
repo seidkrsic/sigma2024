@@ -266,13 +266,33 @@ def submit_solution(request):
 
 
 
+# views.py
+
+from .models import ProblemSession
+
 @api_view(['GET'])
 @permission_classes([AllowAny])
 def current_problem(request):
     problem = Problem.objects.filter(is_active=True).order_by('-published_date').first()
     if problem:
+        # If the user is authenticated, create or retrieve the session
+        session_id = None
+        if request.user.is_authenticated:
+            profile = request.user.profile
+            session, created = ProblemSession.objects.get_or_create(
+                profile=profile,
+                problem=problem,
+                defaults={'is_active': True}
+            )
+            session_id = session.id
+        else:
+            session_id = None
+
         serializer = ProblemSerializer(problem, context={'request': request})
-        return Response(serializer.data)
+        return Response({
+            'problem': serializer.data,
+            'session_id': session_id
+        })
     else:
         return Response({'detail': 'Trenutno nema aktivnog problema.'}, status=404)
 

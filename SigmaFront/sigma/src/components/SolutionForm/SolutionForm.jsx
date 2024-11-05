@@ -3,23 +3,20 @@ import React, { useState } from 'react';
 import api from '../../services/api.jsx';
 import "./SolutionForm.css";
 
-const SolutionForm = ({ problemId, startTime }) => {
+const SolutionForm = ({ problemId, sessionId }) => {
   const [submittedSolution, setSubmittedSolution] = useState('');
   const [message, setMessage] = useState('');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!startTime) {
-      setMessage('Morate prvo otvoriti problem da biste poslali rešenje.');
+    if (!sessionId) {
+      setMessage('Došlo je do greške. Pokušajte ponovo učitati stranicu.');
       return;
     }
 
     try {
-      const endTime = new Date();
-      const timeTaken = Math.floor((endTime - startTime) / 1000); // Vreme u sekundama
-
-      const data = await api.submitSolution(problemId, parseInt(submittedSolution, 10), timeTaken);
+      const data = await api.submitSolution(problemId, parseInt(submittedSolution, 10), sessionId);
       if (data.is_correct) {
         setMessage('Čestitamo! Vaše rešenje je tačno.');
       } else {

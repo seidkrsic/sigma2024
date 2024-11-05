@@ -200,7 +200,9 @@ const getCurrentProblem = async () => {
   }
 }; 
 
-const submitSolution = async (problemId, submittedSolution, timeTaken) => {
+
+// api.jsx
+const submitSolution = async (problemId, submittedSolution, sessionId) => {
   const token = localStorage.getItem('access_token');
   if (!token) {
     throw new Error('Morate biti ulogovani da biste poslali rešenje.');
@@ -212,7 +214,7 @@ const submitSolution = async (problemId, submittedSolution, timeTaken) => {
       {
         problem: problemId,
         submitted_solution: submittedSolution,
-        time_taken: timeTaken,
+        session_id: sessionId, // Include session_id
       },
       {
         headers: {
@@ -230,6 +232,8 @@ const submitSolution = async (problemId, submittedSolution, timeTaken) => {
     }
   }
 };
+
+
 
 
 const getWeeklyRankings = async () => {

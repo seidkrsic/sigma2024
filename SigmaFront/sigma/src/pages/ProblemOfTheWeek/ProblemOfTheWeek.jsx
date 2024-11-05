@@ -10,7 +10,7 @@ const ProblemOfTheWeek = () => {
   const [loading, setLoading] = useState(true);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [error, setError] = useState('');
-  const [startTime, setStartTime] = useState(null);
+  const [sessionId, setSessionId] = useState(null); // Added to store session_id
 
   useEffect(() => {
     const checkAuthentication = () => {
@@ -21,8 +21,8 @@ const ProblemOfTheWeek = () => {
     const fetchProblem = async () => {
       try {
         const data = await api.getCurrentProblem();
-        setProblem(data);
-        // Uklonjeno postavljanje startTime ovdje
+        setProblem(data.problem); // Assuming the problem is under 'problem' key
+        setSessionId(data.session_id); // Store the session_id returned from backend
       } catch (error) {
         setError('Trenutno nema aktivnog problema.');
       } finally {
@@ -64,7 +64,6 @@ const ProblemOfTheWeek = () => {
               href={problem.problem_file_url}
               rel="noopener noreferrer"
               className='ProblemOfTheWeek__link'
-              onClick={() => setStartTime(new Date())} // Postavljamo startTime kada korisnik klikne na link
             >
               {problem.title + ".pdf"}
             </a>
@@ -75,7 +74,7 @@ const ProblemOfTheWeek = () => {
       </div>
       <div className='ProblemOfTheWeek__solution-section'>
         {isAuthenticated ? (
-          <SolutionForm problemId={problem.id} startTime={startTime} />
+          <SolutionForm problemId={problem.id} sessionId={sessionId} />
         ) : (
           <p>
             Morate biti <a href="/login" className='ProblemOfTheWeek__login-link'>ulogovani</a> da biste poslali rešenje.
