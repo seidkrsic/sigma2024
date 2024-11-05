@@ -281,7 +281,7 @@ def current_problem(request):
             session, created = ProblemSession.objects.get_or_create(
                 profile=profile,
                 problem=problem,
-                defaults={'is_active': True}
+                is_active=True,
             )
             session_id = session.id
         serializer = ProblemSerializer(problem, context={'request': request})

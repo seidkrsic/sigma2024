@@ -67,6 +67,8 @@ class Solution(models.Model):
     submission_date = models.DateTimeField(auto_now_add=True)
     is_correct = models.BooleanField(default=False)
     points_awarded = models.IntegerField(default=0)  # New field
+    time_taken = models.FloatField(null=True, blank=True)  # Novo polje
+
 
 
     def __str__(self):
