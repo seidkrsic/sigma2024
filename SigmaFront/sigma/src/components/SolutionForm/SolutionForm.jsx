@@ -17,6 +17,7 @@ const SolutionForm = ({ problemId, sessionId }) => {
 
     try {
       const data = await api.submitSolution(problemId, parseInt(submittedSolution, 10), sessionId);
+      console.log(data);
       if (data.is_correct) {
         setMessage('Čestitamo! Vaše rešenje je tačno.');
       } else {
