@@ -56,8 +56,10 @@ def get_rankings(time_period, request):
         'profile__name',
         'profile__profile_picture'
     ).annotate(
-        total_points=Sum('points_awarded')
-    ).order_by('-total_points')
+        total_points=Sum('points_awarded'),
+        total_time=Sum('time_taken')
+    ).order_by('-total_points', 'total_time')  
+
 
     serializer = RankingSerializer(rankings, many=True, context={'request': request})
     return serializer.data
