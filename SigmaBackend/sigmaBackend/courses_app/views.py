@@ -9,7 +9,7 @@ from .models import Problem
 from .serializers import ProblemSerializer, RankingSerializer
 from rest_framework.permissions import IsAuthenticated
 from .models import Problem, Solution
-from .models import Post
+from .models import Post, ProblemSession 
 from .serializers import PostSerializer
 from django.shortcuts import get_object_or_404
 from django.http import FileResponse, Http404
@@ -196,43 +196,58 @@ def submit_solution(request):
     profile = request.user.profile
     problem_id = request.data.get('problem')
     submitted_solution = request.data.get('submitted_solution')
+    session_id = request.data.get('session_id')  # Novo polje
 
-    if not problem_id or submitted_solution is None:
-        return Response({'detail': 'Problem ID i rešenje su obavezni.'}, status=status.HTTP_400_BAD_REQUEST)
+    if not problem_id or submitted_solution is None or session_id is None:
+        return Response({'detail': 'Problem ID, rešenje i session ID su obavezni.'}, status=status.HTTP_400_BAD_REQUEST)
 
     try:
         problem = Problem.objects.get(id=problem_id)
     except Problem.DoesNotExist:
         return Response({'detail': 'Problem ne postoji.'}, status=status.HTTP_400_BAD_REQUEST)
 
-    # Check if the user has already submitted a solution for this problem
+    # Provera da li je korisnik već poslao rešenje za ovaj problem
     if Solution.objects.filter(profile=profile, problem=problem).exists():
         return Response({'detail': 'Već ste poslali rešenje za ovaj problem.'}, status=status.HTTP_400_BAD_REQUEST)
 
-    # Ensure the submitted solution is an integer
+    # Provera da je rešenje integer
     try:
         submitted_solution = int(submitted_solution)
     except ValueError:
         return Response({'detail': 'Rešenje mora biti broj.'}, status=status.HTTP_400_BAD_REQUEST)
 
-    # Check if the solution is correct
+    # Pronalazak sesije
+    try:
+        session = ProblemSession.objects.get(id=session_id, profile=profile, problem=problem, is_active=True)
+    except ProblemSession.DoesNotExist:
+        return Response({'detail': 'Sesija nije pronađena ili je već iskorišćena.'}, status=status.HTTP_400_BAD_REQUEST)
+
+    # Izračunavanje vremena
+    time_taken = (timezone.now() - session.start_time).total_seconds()
+
+    # Obeleži sesiju kao neaktivnu
+    session.is_active = False
+    session.save()
+
+    # Provera tačnosti rešenja
     is_correct = False
     points_awarded = 0
     if problem.solution is not None:
         is_correct = (submitted_solution == problem.solution)
         if is_correct:
-            points_awarded = problem.points 
+            points_awarded = problem.points
 
-    # Create the Solution instance
+    # Kreiranje instance Solution
     solution = Solution.objects.create(
         profile=profile,
         problem=problem,
         submitted_solution=submitted_solution,
         is_correct=is_correct,
-        points_awarded=points_awarded
+        points_awarded=points_awarded,
+        time_taken=time_taken
     )
 
-    # Update the user's total points if the solution is correct
+    # Ažuriranje ukupnih poena korisnika ako je rešenje tačno
     if is_correct:
         profile.total_points += points_awarded
         profile.save()
@@ -250,6 +265,7 @@ def submit_solution(request):
 
 
 
+
 @api_view(['GET'])
 @permission_classes([AllowAny])
 def current_problem(request):
@@ -259,9 +275,6 @@ def current_problem(request):
         return Response(serializer.data)
     else:
         return Response({'detail': 'Trenutno nema aktivnog problema.'}, status=404)
-
-
-
 
 
 @api_view(['GET'])

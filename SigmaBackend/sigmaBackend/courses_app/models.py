@@ -71,7 +71,19 @@ class Solution(models.Model):
 
     def __str__(self):
         return f'Rešenje od {self.profile.user.username} za {self.problem.title}'
-    
+
+
+
+
+class ProblemSession(models.Model):
+    profile = models.ForeignKey(Profile, on_delete=models.CASCADE)
+    problem = models.ForeignKey(Problem, on_delete=models.CASCADE)
+    start_time = models.DateTimeField(auto_now_add=True)
+    is_active = models.BooleanField(default=True)
+
+    def __str__(self):
+        return f'Sesija od {self.profile.user.username} za {self.problem.title}'
+
 
 
 

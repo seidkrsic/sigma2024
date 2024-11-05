@@ -5,12 +5,12 @@ import api from '../../services/api.jsx';
 import "./ProblemOfTheWeek.css";
 import useScrollToTop from '../../components/useScrollToTop/useScrollToTop.jsx';
 
-
 const ProblemOfTheWeek = () => {
   const [problem, setProblem] = useState(null);
   const [loading, setLoading] = useState(true);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [error, setError] = useState('');
+  const [startTime, setStartTime] = useState(null);
 
   useEffect(() => {
     const checkAuthentication = () => {
@@ -22,6 +22,7 @@ const ProblemOfTheWeek = () => {
       try {
         const data = await api.getCurrentProblem();
         setProblem(data);
+        // Uklonjeno postavljanje startTime ovdje
       } catch (error) {
         setError('Trenutno nema aktivnog problema.');
       } finally {
@@ -31,9 +32,9 @@ const ProblemOfTheWeek = () => {
 
     checkAuthentication();
     fetchProblem();
-  }, []); 
+  }, []);
 
-  useScrollToTop(); 
+  useScrollToTop();
 
   if (loading) {
     return (
@@ -59,11 +60,11 @@ const ProblemOfTheWeek = () => {
         {problem.problem_file_url ? (
           <div className='ProblemOfTheWeek__problem-file'>
             <p>Pogledajte problem ovdje:</p>
-            <a 
-              href={problem.problem_file_url} 
-              target="_blank" 
+            <a
+              href={problem.problem_file_url}
               rel="noopener noreferrer"
               className='ProblemOfTheWeek__link'
+              onClick={() => setStartTime(new Date())} // Postavljamo startTime kada korisnik klikne na link
             >
               {problem.title + ".pdf"}
             </a>
@@ -74,7 +75,7 @@ const ProblemOfTheWeek = () => {
       </div>
       <div className='ProblemOfTheWeek__solution-section'>
         {isAuthenticated ? (
-          <SolutionForm problemId={problem.id} />
+          <SolutionForm problemId={problem.id} startTime={startTime} />
         ) : (
           <p>
             Morate biti <a href="/login" className='ProblemOfTheWeek__login-link'>ulogovani</a> da biste poslali rešenje.

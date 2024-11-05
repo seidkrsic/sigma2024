@@ -212,6 +212,7 @@ const submitSolution = async (problemId, submittedSolution) => {
       {
         problem: problemId,
         submitted_solution: submittedSolution,
+        time_taken: timeTaken,
       },
       {
         headers: {

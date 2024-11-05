@@ -14,6 +14,7 @@ class RankingSerializer(serializers.Serializer):
     name = serializers.CharField(source='profile__name')
     profile_picture = serializers.SerializerMethodField()
     total_points = serializers.IntegerField()
+    total_time = serializers.FloatField()  # Novo polje
 
     def get_profile_picture(self, obj):
         request = self.context.get('request')
@@ -21,6 +22,7 @@ class RankingSerializer(serializers.Serializer):
         if profile_picture:
             return request.build_absolute_uri(settings.MEDIA_URL + profile_picture)
         return None
+
 
 class PostSerializer(serializers.ModelSerializer):
     author = serializers.ReadOnlyField(source='author.user.username')
