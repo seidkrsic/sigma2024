@@ -192,12 +192,13 @@ const resendActivationEmail = async (email) => {
 
 
 const getCurrentProblem = async () => {
-  try {
-    const response = await axios.get(`${API_URL}/problem-of-the-week/`);
-    return response.data;
-  } catch (error) {
-    throw error;
-  }
+  const token = localStorage.getItem('access_token');
+  const response = await axios.get(`${API_URL}/problem-of-the-week/`, {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+  return response.data;
 }; 
 
 
