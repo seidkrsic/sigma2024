@@ -88,7 +88,7 @@ const Header = () => {
 
         <div className={scrolled ? 'Header__container-right Help_menu-active' : 'Header__container-right'}>
           {user ? (
-            <div className='Header__user-menu'>
+            <div className={ scrolled ? "Header__user-menu logo-not-active" : 'Header__user-menu'}>
               <FontAwesomeIcon
                 icon={faUserCircle}
                 className={ scrolled ? "Header__user-icon logo-not-active" : 'Header__user-icon'}
