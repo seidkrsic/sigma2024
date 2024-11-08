@@ -68,6 +68,10 @@ const ProblemOfTheWeek = () => {
     return <div className="ProblemOfTheWeek__error"><p>{error}</p></div>;
   } 
 
+  if (sessionId === null) {
+    return <div className="ProblemOfTheWeek__error"><p>Došlo je do greške. Pokušajte ponovo učitati stranicu.</p></div>;
+  } 
+
 
   if (!problem) {
     return <div className="ProblemOfTheWeek__no-problem"><p>Trenutno nema aktivnog problema.</p></div>;
