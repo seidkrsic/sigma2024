@@ -66,6 +66,10 @@ const ProblemOfTheWeek = () => {
 
   if (error) {
     return <div className="ProblemOfTheWeek__error"><p>{error}</p></div>;
+  } 
+
+  if (!sessionId) {
+    return <div className="ProblemOfTheWeek__error"><p>Morate otvoriti problem prije nego pošaljete vaše rješenje.</p></div>;
   }
 
   if (!problem) {

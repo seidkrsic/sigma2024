@@ -22,7 +22,7 @@ const HomePage = () => {
         <div className='HomePage__container'>
             <div className='HomePage__container-left'>
                 <h1 className='HomePage__headingSize'>Treniramo umove za izazove budućnosti!</h1>
-                <p>"Naša Matematička Akademija za srednjoškolce koristi inovativne metode podučavanja kako bi učenicima pružila vještine potrebne za rješavanje kompleksnih matematičkih problema. Kroz našu virtualnu platformu, omogućavamo pristup kvalitetnom obrazovanju, uz podršku iskusnih instruktora. Naši učenici su pripremljeni da postanu lideri u oblasti matematike i nauke, spremni da se suoče s izazovima budućnosti."</p>
+                <p>Vjerujemo da je matematika više od brojki i formula — ona je ključ za razumijevanje svijeta oko nas. Naša platforma je osmišljena da pruži pristupačne i zanimljive sadržaje koji će inspirisati novu generaciju matematičara, naučnika i inženjera.</p>
                 <Link to="/informacije">Detaljnije</Link>
             </div>
 
