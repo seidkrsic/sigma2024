@@ -22,7 +22,7 @@ const Header = () => {
   ];
 
   const { setScrolled } = useContext(AuthContext);
-  const { user, logout } = useContext(AuthContext);
+  const { user, handleLogout } = useContext(AuthContext);
   let { scrolled } = useContext(AuthContext);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
@@ -103,7 +103,7 @@ const Header = () => {
                     href='#'
                     onClick={(e) => {
                       e.preventDefault();
-                      logout();
+                      handleLogout() 
                       setIsUserMenuOpen(false);
                     }}
                   >
