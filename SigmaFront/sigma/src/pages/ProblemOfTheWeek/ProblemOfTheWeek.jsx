@@ -10,7 +10,7 @@ const ProblemOfTheWeek = () => {
   const [loading, setLoading] = useState(true);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [error, setError] = useState('');
-  const [sessionId, setSessionId] = useState(null); // Added to store session_id
+  const [sessionId, setSessionId] = useState(null); 
 
   useEffect(() => {
     const checkAuthentication = () => {
