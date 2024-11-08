@@ -52,6 +52,12 @@
   margin-bottom: 30px;
 }
 
+.ProblemOfTheWeekParagraph { 
+  display: flex;
+  min-height: 50vh;
+  justify-content: center;
+  align-items: center;
+}
 
 
 .ProblemOfTheWeek__problem-file { 

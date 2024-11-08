@@ -53,7 +53,7 @@ const ProblemOfTheWeek = () => {
   if (!isAuthenticated) {
     return (
       <div className="ProblemOfTheWeek__not-authenticated">
-        <p>
+        <p className="ProblemOfTheWeekParagraph">
           Morate biti{' '}
           <a href="/login" className='ProblemOfTheWeek__login-link'>
             ulogovani
