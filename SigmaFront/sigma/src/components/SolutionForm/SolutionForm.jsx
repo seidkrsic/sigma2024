@@ -10,7 +10,7 @@ const SolutionForm = ({ problemId, sessionId }) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    if (!sessionId) {
+    if (sessionId === null) {
       setMessage('Došlo je do greške. Pokušajte ponovo učitati stranicu.');
       return;
     }
