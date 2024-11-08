@@ -8,31 +8,36 @@ import useScrollToTop from '../../components/useScrollToTop/useScrollToTop.jsx';
 const ProblemOfTheWeek = () => {
   const [problem, setProblem] = useState(null);
   const [loading, setLoading] = useState(true);
-  const [isAuthenticated, setIsAuthenticated] = useState(false);
+  const [isAuthenticated, setIsAuthenticated] = useState(null);
   const [error, setError] = useState('');
-  const [sessionId, setSessionId] = useState(null); 
+  const [sessionId, setSessionId] = useState(null);
 
   useEffect(() => {
-    const checkAuthentication = () => {
-      const token = localStorage.getItem('access_token');
-      setIsAuthenticated(!!token);
-    };
-
-    const fetchProblem = async () => {
-      try {
-        const data = await api.getCurrentProblem();
-        setProblem(data.problem); 
-        setSessionId(data.session_id);
-      } catch (error) {
-        setError('Trenutno nema aktivnog problema.');
-      } finally {
-        setLoading(false);
-      }
-    };
-
-    checkAuthentication();
-    fetchProblem();
+    const token = localStorage.getItem('access_token');
+    setIsAuthenticated(!!token);
   }, []);
+
+  useEffect(() => {
+    if (isAuthenticated === null) {
+      return;
+    }
+    if (isAuthenticated) {
+      const fetchProblem = async () => {
+        try {
+          const data = await api.getCurrentProblem();
+          setProblem(data.problem);
+          setSessionId(data.session_id);
+        } catch (error) {
+          setError('Trenutno nema aktivnog problema.');
+        } finally {
+          setLoading(false);
+        }
+      };
+      fetchProblem();
+    } else {
+      setLoading(false);
+    }
+  }, [isAuthenticated]);
 
   useScrollToTop();
 
@@ -41,6 +46,20 @@ const ProblemOfTheWeek = () => {
       <div className="ProblemOfTheWeek__loading">
         <div className="spinner"></div>
         <p>Učitavanje...</p>
+      </div>
+    );
+  }
+
+  if (!isAuthenticated) {
+    return (
+      <div className="ProblemOfTheWeek__not-authenticated">
+        <p>
+          Morate biti{' '}
+          <a href="/login" className='ProblemOfTheWeek__login-link'>
+            ulogovani
+          </a>{' '}
+          da biste videli ovaj sadržaj.
+        </p>
       </div>
     );
   }
@@ -73,13 +92,7 @@ const ProblemOfTheWeek = () => {
         )}
       </div>
       <div className='ProblemOfTheWeek__solution-section'>
-        {isAuthenticated ? (
-          <SolutionForm problemId={problem.id} sessionId={sessionId} />
-        ) : (
-          <p>
-            Morate biti <a href="/login" className='ProblemOfTheWeek__login-link'>ulogovani</a> da biste poslali rešenje.
-          </p>
-        )}
+        <SolutionForm problemId={problem.id} sessionId={sessionId} />
       </div>
     </div>
   );
