@@ -91,7 +91,7 @@ const Header = () => {
             <div className='Header__user-menu'>
               <FontAwesomeIcon
                 icon={faUserCircle}
-                className='Header__user-icon'
+                className={ scrolled ? "Header__user-icon logo-not-active" : 'Header__user-icon'}
                 onClick={toggleUserMenu}
               />
               {isUserMenuOpen && (

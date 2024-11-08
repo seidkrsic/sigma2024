@@ -128,7 +128,14 @@
     /* top: 0 !important;   */
     transition: all ease-in-out 0.3s;
     transition-delay: .3s;
-} 
+}  
+
+
+.logo-not-active { 
+    height: 0 !important; 
+    transition: all ease-in-out 0.3s;
+    transition-delay: .3s;
+}
 
 .Help_menu-active { 
     /* height: 3rem !important;   */

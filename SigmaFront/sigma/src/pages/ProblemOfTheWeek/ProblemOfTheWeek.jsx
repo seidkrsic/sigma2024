@@ -54,10 +54,10 @@ const ProblemOfTheWeek = () => {
     return (
       <div className="ProblemOfTheWeek__not-authenticated">
         <p className="ProblemOfTheWeekParagraph">
-          Morate biti{' '}
+          Morate biti {' '}
           <a href="/login" className='ProblemOfTheWeek__login-link'>
             ulogovani
-          </a>{' '}
+          </a> {' '}
           da biste videli ovaj sadržaj.
         </p>
       </div>
