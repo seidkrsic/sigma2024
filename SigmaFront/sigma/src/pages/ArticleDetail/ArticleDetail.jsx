@@ -1,12 +1,12 @@
 // ArticleDetail.jsx
-import React, { useEffect, useState, useRef } from 'react';
+import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import { useParams, Link } from 'react-router-dom';
+import MathJax from 'react-mathjax2';
 import './ArticleDetail.css';
 import { API_URL } from '../../services/api.jsx';
 import useScrollToTop from '../../components/useScrollToTop/useScrollToTop.jsx';
 import DOMPurify from 'dompurify';
-import MathJax from 'react-mathjax';
 
 const ArticleDetail = () => {
   const { slug } = useParams();
@@ -16,8 +16,6 @@ const ArticleDetail = () => {
   const [loading, setLoading] = useState(true);
   const [loadingRecommendations, setLoadingRecommendations] = useState(true);
   const [errorRecommendations, setErrorRecommendations] = useState('');
-
-  const contentRef = useRef(null);
 
   useScrollToTop();
 
@@ -54,17 +52,10 @@ const ArticleDetail = () => {
       };
 
       fetchRecommended();
-      // Scroll to top
-      document.querySelector(".scroll-container")?.scrollTo(0, 0);
+      document.querySelector(".scroll-container").scrollTo(0, 0);
       setTimeout(() => {
-        document.querySelector(".scroll-container")?.scrollTo(0, 0);
+        document.querySelector(".scroll-container").scrollTo(0, 0);
       }, 100);
-    }
-  }, [post]);
-
-  useEffect(() => {
-    if (post && window.MathJax) {
-      window.MathJax.typesetPromise([contentRef.current]);
     }
   }, [post]);
 
@@ -90,12 +81,9 @@ const ArticleDetail = () => {
         <img src={post.main_image} alt={post.title} className="ArticleDetail__image" />
       )}
       <div className="ArticleDetail__content">
-        <MathJax.Provider>
-          <div
-            ref={contentRef}
-            dangerouslySetInnerHTML={createMarkup(post.content)}
-          />
-        </MathJax.Provider>
+        <MathJax.Context input='tex'>
+          <div dangerouslySetInnerHTML={createMarkup(post.content)} />
+        </MathJax.Context>
       </div>
 
       {/* Preporučeni Članak */}
