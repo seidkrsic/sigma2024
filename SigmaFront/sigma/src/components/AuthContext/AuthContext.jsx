@@ -33,6 +33,7 @@ export const AuthProvider = ({ children }) => {
       setUser(userData); // Postavljamo podatke korisnika
       setIsAuthenticated(true);
       localStorage.setItem('user', JSON.stringify(userData)); // Čuvamo podatke korisnika u localStorage
+      window.location = "/"
     } catch (error) {
       throw error;
     }
