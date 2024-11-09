@@ -89,10 +89,14 @@ class ProblemSession(models.Model):
 
 
 
+# models.py
+
+from django_ckeditor_5.fields import CKEditor5Field
+
 class Post(models.Model):
     title = models.CharField(max_length=200)
     author = models.ForeignKey(Profile, on_delete=models.CASCADE)
-    content = models.TextField()
+    content = CKEditor5Field('Content', config_name='extends')
     main_image = models.ImageField(upload_to='blog_images/', null=True, blank=True)
     created_date = models.DateTimeField(default=timezone.now)
     published_date = models.DateTimeField(blank=True, null=True)
@@ -104,5 +108,6 @@ class Post(models.Model):
 
     def __str__(self):
         return self.title
+
 
 

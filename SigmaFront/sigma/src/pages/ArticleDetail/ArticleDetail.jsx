@@ -6,7 +6,7 @@ import MathJax from 'react-mathjax2';
 import './ArticleDetail.css';
 import { API_URL } from '../../services/api.jsx';
 import useScrollToTop from '../../components/useScrollToTop/useScrollToTop.jsx';
-
+import DOMPurify from 'dompurify';
 
 const ArticleDetail = () => {
   const { slug } = useParams();
@@ -16,12 +16,10 @@ const ArticleDetail = () => {
   const [loading, setLoading] = useState(true);
   const [loadingRecommendations, setLoadingRecommendations] = useState(true);
   const [errorRecommendations, setErrorRecommendations] = useState('');
-  
-  
-  useScrollToTop(); 
-  
-  useEffect(() => {
 
+  useScrollToTop();
+
+  useEffect(() => {
     const fetchPost = async () => {
       setLoading(true);
       try {
@@ -29,7 +27,6 @@ const ArticleDetail = () => {
         setPost(response.data);
         setError('');
       } catch (err) {
-
         setError('Članak nije pronađen ili je došlo do greške.');
       }
       setLoading(false);
@@ -49,7 +46,6 @@ const ArticleDetail = () => {
           setRecommendedPosts(response.data.results);
           setErrorRecommendations('');
         } catch (err) {
-          
           setErrorRecommendations('Došlo je do greške prilikom učitavanja preporučenih članaka.');
         }
         setLoadingRecommendations(false);
@@ -73,6 +69,11 @@ const ArticleDetail = () => {
   }
   if (error) return <div className="ArticleDetail__error">{error}</div>;
 
+  // Funkcija za sanitizaciju HTML sadržaja
+  const createMarkup = (htmlContent) => {
+    return { __html: DOMPurify.sanitize(htmlContent) };
+  };
+
   return (
     <div className="ArticleDetail__container">
       <h1 className="ArticleDetail__title">{post.title}</h1>
@@ -81,9 +82,7 @@ const ArticleDetail = () => {
       )}
       <div className="ArticleDetail__content">
         <MathJax.Context input='tex'>
-          <div>
-            <MathJax.Text text={post.content} />
-          </div>
+          <div dangerouslySetInnerHTML={createMarkup(post.content)} />
         </MathJax.Context>
       </div>
 
