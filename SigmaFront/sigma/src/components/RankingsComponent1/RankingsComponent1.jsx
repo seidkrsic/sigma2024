@@ -128,7 +128,7 @@ const RankingsComponent1 = () => {
         id="back-button-margin"
         to='/rankings'
       >
-        detaljnije
+        Detaljnije
       </Link>
     </div>
   );
