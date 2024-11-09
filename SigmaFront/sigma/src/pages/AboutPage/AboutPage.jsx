@@ -215,8 +215,7 @@ const AboutPage = () => {
                 <h1 className='AboutPage__section-heading'>Naši Moderatori</h1> 
 
                 <div className='AboutPage__InstructorCard-textContainerSpecial'>
-                    Naši iskusni i visoko kvalifikovani predavači su nekada i sami bili takmičari. Oni predaju na Sigma akademiji da bi podijelili svoju ljubav prema učenju sa sljedećom generacijom intelektualnih lidera. Pregledajte biografije naših predavača klikom na njihove slike.            </div>
-
+                Naši posvećeni i talentovani moderatori su srce Sigma akademije. Oni neumorno rade na kreiranju kvalitetnog i inspirativnog sadržaja koji obogaćuje iskustvo svih naših korisnika. Kroz svoju strast i predanost obrazovanju, naši moderatori osiguravaju da svaki posjetilac pronađe nešto vrijedno na našoj platformi. Upoznajte naše moderatore klikom na njihove slike i saznajte više o njihovom radu.
 
                 <div className='AboutPage__section-infoText2'> 
 
