@@ -154,6 +154,10 @@
     width: 100% !important;
   }
 
+  .ArticleDetail__content p { 
+    width: 100% !important; 
+  }
+
   .ArticleDetail__recommended-card {
     width: 45%;
   }

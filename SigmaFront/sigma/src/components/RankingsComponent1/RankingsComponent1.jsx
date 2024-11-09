@@ -124,7 +124,8 @@ const RankingsComponent1 = () => {
         </div>
       ))}
       <Link
-        className="back-button back-button-margin"
+        className="back-button"
+        id="back-button-margin"
         to='/rankings'
       >
         detaljnije
