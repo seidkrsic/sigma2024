@@ -41,6 +41,10 @@
     background-color: #15304a; /* Tamnija nijansa na hover */
 }
 
+.back-button-margin { 
+    margin-bottom: 1rem;
+}
+
 .ranking-item {
     display: flex;
     align-items: center;
