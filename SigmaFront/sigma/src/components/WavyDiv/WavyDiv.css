@@ -74,8 +74,9 @@
 
 #problem_of_the_week__archive-btn { 
   background-color: transparent;
-  color: white;
-  /* border: 2px solid white; */
+  margin: 0;
+  color: #ff8e00 !important;
+  text-transform: uppercase;
   text-decoration: underline;
   margin: 0;
 }
@@ -143,7 +144,7 @@
 
   .Problem_of_the_Week__link-container1 #problem_of_the_week__archive-btn { 
     position: relative !important;  
-    bottom: 20px !important;
+    bottom: 60px !important;
     font-size: 16px;
     color:rgb(255, 142, 0);
     margin: 0;

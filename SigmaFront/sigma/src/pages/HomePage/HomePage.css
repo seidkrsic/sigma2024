@@ -180,6 +180,8 @@
     text-transform: capitalize;
     transition: background-color 0.3s ease, transform 0.3s ease;
     text-align: center;
+    position: relative;
+    bottom: 80px;
 
 }
 
@@ -579,6 +581,7 @@
     #problem_of_the_week__archive-btn { 
         color: white !important;
         font-size: 13px !important;
+        
     }
     
 }
