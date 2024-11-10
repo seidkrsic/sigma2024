@@ -19,7 +19,6 @@ const Footer = () => {
             <li><Link to="/informacije">Osnivači</Link></li>
             <li><Link to="/informacije">Predavači</Link></li>
             <li><Link to="/informacije">Naši Prijatelji</Link></li>
-            <li><Link to="" onClick={() => window.location.href = `tel: +38268619730}`}>Kontakt</Link></li>
           </ul>
         </div>
 
@@ -37,6 +36,7 @@ const Footer = () => {
           <a href="https://www.instagram.com/sigma_academy_mne/" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-instagram"></i>
           </a>
+          <li><Link to="" onClick={() => window.location.href = `tel: +38268619730}`}>Kontakt</Link></li>
         </div>
       </div>
       <div className="footer-bottom">
