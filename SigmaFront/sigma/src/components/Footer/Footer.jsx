@@ -36,7 +36,7 @@ const Footer = () => {
           <a href="https://www.instagram.com/sigma_academy_mne/" target="_blank" rel="noopener noreferrer">
             <i className="fab fa-instagram"></i>
           </a>
-          <li><Link to="" onClick={() => window.location.href = `tel: +38268619730}`}>Kontakt</Link></li>
+          <Link to="" onClick={() => window.location.href = `tel: +38268619730}`}>Kontakt</Link>
         </div>
       </div>
       <div className="footer-bottom">
