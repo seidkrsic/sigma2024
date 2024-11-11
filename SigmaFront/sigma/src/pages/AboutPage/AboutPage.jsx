@@ -266,6 +266,14 @@ const AboutPage = () => {
                       <img className='AboutPage__InstructorCard-imgsquare' src={slides[2].logo} alt="" />
                       {/* <h3>{slides[0].name}</h3> */}
                   </div> 
+                  <div className='AboutPage__InstructorCard-circleContainer'>
+                      <img className='AboutPage__InstructorCard-imgsquare' src={slides[3].logo} alt="" />
+                      {/* <h3>{slides[0].name}</h3> */}
+                  </div> 
+                  <div className='AboutPage__InstructorCard-circleContainer'>
+                      <img className='AboutPage__InstructorCard-imgsquare' src={slides[4].logo} alt="" />
+                      {/* <h3>{slides[0].name}</h3> */}
+                  </div> 
               </div>
             </div>
           } 
