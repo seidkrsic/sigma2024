@@ -22,6 +22,16 @@ const ImageSlider = () => {
           logo: require('../../images/sponsor3.jpg'),
         //   link: 'https://www.sponzor3.com',
         },
+        {
+            name: 'Barber Miloš',
+            logo: require('../../images/sponsor4.JPG'),
+          //   link: 'https://www.sponzor3.com',
+          }, 
+          {
+            name: 'Art Beton',
+            logo: require('../../images/sponsor5.JPG'),
+          //   link: 'https://www.sponzor3.com',
+          },
      
       ];
 
