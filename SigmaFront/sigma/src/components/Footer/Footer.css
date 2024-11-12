@@ -37,8 +37,8 @@
   } 
 
   .footer-div { 
-    display: flex;
-    flex-direction: column;
+    display: flex !important;
+    flex-direction: column !important;
     min-height: 105px !important;
     padding: 0;
     margin: 0;
