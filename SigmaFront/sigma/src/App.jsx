@@ -19,7 +19,7 @@ import ArticleDetail from './pages/ArticleDetail/ArticleDetail';
 import ArticleList from './pages/ArticleList/ArticleList';
 import RankingsComponent from './components/RankingsComponent/RankingsComponent';
 import ProfileUpdate from './components/ProfileUpdate/ProfileUpdate';
-
+import PopUp from './components/PopUp/PopUp';
 
 function App() {
 
@@ -51,6 +51,7 @@ function App() {
 
   return (
     <div className="App">
+      <PopUp />
       <Router>
       <div className="scroll-container"> 
         <Header />
