@@ -31,11 +31,18 @@ const PopUp = () => {
           Ovdje možete pronaći:
         </p>
         <ul>
-          <li><strong>Problem Nedjelje:</strong> Svake nedjelje objavljujemo novi matematički problem za rješavanje.</li>
-          <li><strong>Blog:</strong> Čitajte zanimljive članke o matematici i nauci.</li>
-          <li><strong>Rang Liste:</strong> Takmičite se sa drugim korisnicima i pratite svoj napredak. U slučaju da dva ili takmičara imaju jednak broj poena, 
-          bolji je onaj takmičar kojem je trebalo manje vremena da riješi problem. Vrijeme za rješavanje problema kreće od momenta kada vidite problem, a završava se slanjem vašeg rješenja. </li>
+            <li><strong>Problem Nedjelje:</strong> Svake sedmice vas očekuje novi matematički izazov za rješavanje.</li>
+            <li><strong>Blog:</strong> Uživajte u našim inspirativnim člancima o matematici i nauci.</li>
+            <li><strong>Pravila Igre – Problem Nedjelje:</strong>
+                <ul>
+                <li>Poštena igra je ključna! Svaki pokušaj varanja rezultiraće diskvalifikacijom.</li>
+                <li>Ako dva ili više takmičara imaju isti broj poena, prednost ima onaj koji je problem riješio brže.</li>
+                <li>Vrijeme za rješavanje počinje od trenutka kada prvi put otvorite problem i završava se slanjem vašeg rješenja.</li> 
+                <li>Za najbolje učesnike pripremili smo nagrade koje dodjeljujemo jednom mjesečno. Redovno provjeravajte svoj email.</li>
+                </ul>
+            </li>
         </ul>
+
         <p>
           Za najbolje iskustvo, kreirajte profil i personalizujte ga dodavanjem vaše slike i imena (opcija u gornjem desnom ćošku).
         </p>

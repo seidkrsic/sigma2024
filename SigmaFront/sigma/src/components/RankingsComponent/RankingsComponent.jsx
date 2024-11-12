@@ -82,7 +82,7 @@ const RankingsComponent = () => {
             alt={user.name}
             className="profile-picture"
           />
-          <div className="name">{user.name}</div>
+          <div className="name">{user.name ? user.name : user.username }</div>
         </div>
         <div className="points">{user.total_points} poena</div>
       </div>
