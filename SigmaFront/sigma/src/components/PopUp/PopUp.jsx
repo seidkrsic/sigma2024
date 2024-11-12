@@ -33,7 +33,8 @@ const PopUp = () => {
         <ul>
           <li><strong>Problem Nedjelje:</strong> Svake nedjelje objavljujemo novi matematički problem za rješavanje.</li>
           <li><strong>Blog:</strong> Čitajte zanimljive članke o matematici i nauci.</li>
-          <li><strong>Rang Liste:</strong> Takmičite se sa drugim korisnicima i pratite svoj napredak.</li>
+          <li><strong>Rang Liste:</strong> Takmičite se sa drugim korisnicima i pratite svoj napredak. U slučaju da dva ili takmičara imaju jednak broj poena, 
+          bolji je onaj takmičar kojem je trebalo manje vremena da riješi problem. Vrijeme za rješavanje problema kreće od momenta kada vidite problem, a završava se slanjem vašeg rješenja. </li>
         </ul>
         <p>
           Za najbolje iskustvo, kreirajte profil i personalizujte ga dodavanjem vaše slike i imena (opcija u gornjem desnom ćošku).
