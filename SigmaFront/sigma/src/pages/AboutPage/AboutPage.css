@@ -149,6 +149,7 @@
     justify-content: center; 
     background-color: rebeccapurple;
     width: 250px;
+    max-width: 220px;
     max-height: 250px;
     object-fit: cover;
     object-position: top center;
