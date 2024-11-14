@@ -32,6 +32,16 @@ const ImageSlider = () => {
             logo: require('../../images/sponsor5.JPG'),
           //   link: 'https://www.sponzor3.com',
           },
+          {
+            name: 'Firenet',
+            logo: require('../../images/sponsor7.png'),
+          //   link: 'https://www.sponzor3.com',
+          },
+          {
+            name: 'Studio Abarh',
+            logo: require('../../images/sponsor6.jpg'),
+          //   link: 'https://www.sponzor3.com',
+          },
      
       ];
 

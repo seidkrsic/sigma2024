@@ -62,6 +62,16 @@ const AboutPage = () => {
       logo: require('../../images/sponsor5.JPG'),
     //   link: 'https://www.sponzor3.com',
     },
+    {
+      name: 'Firenet',
+      logo: require('../../images/sponsor7.png'),
+    //   link: 'https://www.sponzor3.com',
+    },
+    {
+      name: 'Studio Abarh',
+      logo: require('../../images/sponsor6.jpg'),
+    //   link: 'https://www.sponzor3.com',
+    },
  
   ];
 
@@ -258,7 +268,7 @@ const AboutPage = () => {
                   {/* </div> */} 
 
                   <div className='AboutPage__InstructorCard-circleContainer'>
-                      <img className='AboutPage__InstructorCard-imgsquare' src={slides[1]?.logo} alt="" />
+                      <img className='AboutPage__InstructorCard-imgsquare' src={slides[0]?.logo} alt="" />
                       {/* <h3>{slides[1].name}</h3> */}
                   </div> 
 
@@ -266,6 +276,14 @@ const AboutPage = () => {
                       <img className='AboutPage__InstructorCard-imgsquare' src={slides[2]?.logo} alt="" />
                       {/* <h3>{slides[0].name}</h3> */}
                   {/* </div>  */} 
+                  <div className='AboutPage__InstructorCard-circleContainer'>
+                      <img className='AboutPage__InstructorCard-imgsquare' src={slides[1]?.logo} alt="" />
+                      {/* <h3>{slides[0].name}</h3> */}
+                  </div> 
+                  <div className='AboutPage__InstructorCard-circleContainer'>
+                      <img className='AboutPage__InstructorCard-imgsquare' src={slides[2]?.logo} alt="" />
+                      {/* <h3>{slides[0].name}</h3> */}
+                  </div> 
                   <div className='AboutPage__InstructorCard-circleContainer'>
                       <img className='AboutPage__InstructorCard-imgsquare' src={slides[3]?.logo} alt="" />
                       {/* <h3>{slides[0].name}</h3> */}
