@@ -20,7 +20,7 @@ const handleLogout = () => {
   localStorage.removeItem('user');
 
   // Preusmeravamo na stranicu za prijavu
-  window.location.href = '/login'; // ili bilo koja druga ruta
+  window.location.href = '/'; // ili bilo koja druga ruta
 };
 
 // Funkcija za osvežavanje tokena
@@ -39,7 +39,16 @@ const refreshToken = async () => {
     instance.defaults.headers['Authorization'] = `Bearer ${access}`;
     return access;
   } catch (error) {
-    handleLogout();
+    if (error.response) {
+      // Ako server vrati 401 ili 403, osvježavajući token je nevažeći ili istekao
+      if (error.response.status === 401 || error.response.status === 403) {
+        handleLogout();
+      }
+    } else {
+      // Greška na mreži (npr. nema internet veze)
+      console.error('Greška na mreži prilikom osvježavanja tokena:', error);
+      // Ovdje možemo odlučiti da ne radimo ništa ili da obavijestimo korisnika
+    }
     throw error;
   }
 };
