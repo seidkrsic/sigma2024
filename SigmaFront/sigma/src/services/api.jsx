@@ -28,15 +28,25 @@ const refreshToken = async () => {
   const refresh_token = getRefreshToken();
   if (!refresh_token) {
     handleLogout();
-    throw new Error('Nema dostupnog osvežavajućeg tokena');
+    throw new Error('Nema dostupnog osvježavajućeg tokena');
   }
   try {
     const response = await axios.post(`${API_URL}/token/refresh/`, {
       refresh: refresh_token,
     });
-    const { access } = response.data;
+
+    // Ekstraktujemo nove tokene iz odgovora
+    const { access, refresh } = response.data;
+
+    // Ažuriramo `access_token` u localStorage
     localStorage.setItem('access_token', access);
     instance.defaults.headers['Authorization'] = `Bearer ${access}`;
+
+    // Ako je server poslao novi `refresh_token`, ažuriramo ga u localStorage
+    if (refresh) {
+      localStorage.setItem('refresh_token', refresh);
+    }
+
     return access;
   } catch (error) {
     if (error.response) {
@@ -47,11 +57,11 @@ const refreshToken = async () => {
     } else {
       // Greška na mreži (npr. nema internet veze)
       console.error('Greška na mreži prilikom osvježavanja tokena:', error);
-      // Ovdje možemo odlučiti da ne radimo ništa ili da obavijestimo korisnika
     }
     throw error;
   }
 };
+
 
 // Interceptor za zahteve - dodajemo Authorization header
 instance.interceptors.request.use(
