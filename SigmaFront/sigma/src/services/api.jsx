@@ -19,11 +19,11 @@ const handleLogout = () => {
   localStorage.removeItem('refresh_token');
   localStorage.removeItem('user');
 
-  // Preusmeravamo na stranicu za prijavu
+  // Preusmjeravamo na početnu stranicu
   window.location.href = '/'; // ili bilo koja druga ruta
 };
 
-// Funkcija za osvežavanje tokena
+// Funkcija za osvježavanje tokena
 const refreshToken = async () => {
   const refresh_token = getRefreshToken();
   if (!refresh_token) {
@@ -62,8 +62,23 @@ const refreshToken = async () => {
   }
 };
 
+// Dodajemo zastavicu i red čekanja za osvježavanje tokena
+let isRefreshing = false;
+let failedQueue = [];
 
-// Interceptor za zahteve - dodajemo Authorization header
+const processQueue = (error, token = null) => {
+  failedQueue.forEach((prom) => {
+    if (error) {
+      prom.reject(error);
+    } else {
+      prom.resolve(token);
+    }
+  });
+
+  failedQueue = [];
+};
+
+// Interceptor za zahtjeve - dodajemo Authorization header
 instance.interceptors.request.use(
   (config) => {
     const token = getToken();
@@ -75,10 +90,10 @@ instance.interceptors.request.use(
   (error) => Promise.reject(error)
 );
 
-// Interceptor za odgovore - osvežavamo token ako dobijemo 401 grešku
+// Interceptor za odgovore - osvježavamo token ako dobijemo 401 grešku
 instance.interceptors.response.use(
   (response) => response,
-  async (error) => {
+  (error) => {
     const originalRequest = error.config;
 
     if (!error.response) {
@@ -90,20 +105,49 @@ instance.interceptors.response.use(
       error.response.status === 401 &&
       !originalRequest._retry
     ) {
-      originalRequest._retry = true;
-      try {
-        await refreshToken();
-        // Ažuriramo Authorization header u originalRequest
-        originalRequest.headers['Authorization'] = `Bearer ${getToken()}`;
-        return instance(originalRequest);
-      } catch (err) {
-        return Promise.reject(err);
+      if (originalRequest.url.includes('/token/refresh/')) {
+        // Ako dobijemo 401 prilikom osvježavanja tokena, odjavljujemo korisnika
+        handleLogout();
+        return Promise.reject(error);
       }
+
+      originalRequest._retry = true;
+
+      if (isRefreshing) {
+        return new Promise(function (resolve, reject) {
+          failedQueue.push({ resolve, reject });
+        })
+          .then((token) => {
+            originalRequest.headers['Authorization'] = 'Bearer ' + token;
+            return instance(originalRequest);
+          })
+          .catch((err) => {
+            return Promise.reject(err);
+          });
+      }
+
+      isRefreshing = true;
+
+      return new Promise(function (resolve, reject) {
+        refreshToken()
+          .then((token) => {
+            originalRequest.headers['Authorization'] = 'Bearer ' + token;
+            processQueue(null, token);
+            resolve(instance(originalRequest));
+          })
+          .catch((err) => {
+            processQueue(err, null);
+            handleLogout();
+            reject(err);
+          })
+          .finally(() => {
+            isRefreshing = false;
+          });
+      });
     }
     return Promise.reject(error);
   }
 );
-
 
 // Funkcija za prijavu
 const login = async (username, password) => {
@@ -130,10 +174,10 @@ const login = async (username, password) => {
         throw new Error('Pogrešno korisničko ime ili lozinka');
       }
     } else if (error.request) {
-      // Zahtev je poslat, ali nema odgovora
+      // Zahtjev je poslat, ali nema odgovora
       throw new Error('Greška na mreži, pokušajte ponovo kasnije');
     } else {
-      // Došlo je do greške prilikom podešavanja zahteva
+      // Došlo je do greške prilikom podešavanja zahtjeva
       throw new Error('Došlo je do greške, pokušajte ponovo kasnije');
     }
   }
@@ -149,7 +193,7 @@ const getUserProfile = async () => {
   }
 };
 
-// Ostale API funkcije koriste `instance` umesto `axios`
+// Ostale API funkcije koriste `instance` umjesto `axios`
 const register = async (username, email, password) => {
   try {
     const response = await axios.post(
@@ -181,7 +225,7 @@ const register = async (username, email, password) => {
         errorMessage += `Lozinka: ${errorData.password.join(' ')} `;
       }
       if (!errorMessage) {
-        errorMessage = 'Registracija nije uspela. Pokušajte ponovo.';
+        errorMessage = 'Registracija nije uspjela. Pokušajte ponovo.';
       }
       throw new Error(errorMessage.trim());
     } else {
@@ -247,7 +291,9 @@ const resendActivationEmail = async (email) => {
   } catch (error) {
     if (error.response && error.response.data) {
       const errorData = error.response.data;
-      throw new Error(errorData.error || 'Neuspešno slanje aktivacionog emaila.');
+      throw new Error(
+        errorData.error || 'Neuspješno slanje aktivacionog emaila.'
+      );
     } else {
       throw new Error('Greška na mreži, pokušajte ponovo kasnije');
     }
@@ -259,7 +305,6 @@ const getCurrentProblem = async () => {
   return response.data;
 };
 
-
 const submitSolution = async (problemId, submittedSolution, sessionId) => {
   try {
     const response = await instance.post('/submit-solution/', {
@@ -270,7 +315,10 @@ const submitSolution = async (problemId, submittedSolution, sessionId) => {
     return response.data;
   } catch (error) {
     if (error.response && error.response.data) {
-      throw new Error(error.response.data.detail || 'Došlo je do greške pri slanju rešenja.');
+      throw new Error(
+        error.response.data.detail ||
+          'Došlo je do greške pri slanju rješenja.'
+      );
     } else {
       throw new Error('Greška na mreži, pokušajte ponovo kasnije.');
     }
