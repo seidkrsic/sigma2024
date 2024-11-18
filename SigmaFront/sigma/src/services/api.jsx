@@ -80,14 +80,21 @@ instance.interceptors.response.use(
   (response) => response,
   async (error) => {
     const originalRequest = error.config;
+
+    if (!error.response) {
+      // Greška na mreži
+      return Promise.reject(error);
+    }
+
     if (
-      error.response &&
       error.response.status === 401 &&
       !originalRequest._retry
     ) {
       originalRequest._retry = true;
       try {
         await refreshToken();
+        // Ažuriramo Authorization header u originalRequest
+        originalRequest.headers['Authorization'] = `Bearer ${getToken()}`;
         return instance(originalRequest);
       } catch (err) {
         return Promise.reject(err);
@@ -96,6 +103,7 @@ instance.interceptors.response.use(
     return Promise.reject(error);
   }
 );
+
 
 // Funkcija za prijavu
 const login = async (username, password) => {
