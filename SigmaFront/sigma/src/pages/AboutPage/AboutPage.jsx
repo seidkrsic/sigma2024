@@ -47,11 +47,11 @@ const AboutPage = () => {
       logo: require('../../images/sponsor2.png'),
     //   link: 'https://www.sponzor2.com',
     },
-    // {
-    //   name: 'Domen.me',
-    //   logo: require('../../images/sponsor3.png'),
-    // //   link: 'https://www.sponzor3.com',
-    // }, 
+    {
+      name: 'Domen.me',
+      logo: require('../../images/sponsor3.png'),
+    //   link: 'https://www.sponzor3.com',
+    }, 
     {
       name: 'Barber Miloš',
       logo: require('../../images/sponsor4.JPG'),

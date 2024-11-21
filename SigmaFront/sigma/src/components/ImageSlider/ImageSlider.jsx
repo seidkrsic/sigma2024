@@ -17,11 +17,11 @@ const ImageSlider = () => {
           logo: require('../../images/sponsor2.png'),
         //   link: 'https://www.sponzor2.com',
         },
-        // {
-        //   name: 'Sponzor 3',
-        //   logo: require('../../images/sponsor3.jpg'),
-        // //   link: 'https://www.sponzor3.com',
-        // },
+        {
+          name: 'Sponzor 3',
+          logo: require('../../images/sponsor3.jpg'),
+        //   link: 'https://www.sponzor3.com',
+        },
         {
             name: 'Barber Miloš',
             logo: require('../../images/sponsor4.JPG'),
