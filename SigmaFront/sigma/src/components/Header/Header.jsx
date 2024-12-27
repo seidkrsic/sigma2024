@@ -91,7 +91,7 @@ const Header = () => {
                 <img
                   src={user.profile_picture}
                   alt="Profilna slika"
-                  className="Header__user-image"
+                  className={scrolled ? 'Header__user-icon logo-not-active' : 'Header__user-icon'}
                   onClick={toggleUserMenu}
                 />
               ) : (
