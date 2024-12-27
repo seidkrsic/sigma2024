@@ -42,11 +42,11 @@ const AboutPage = () => {
     //   logo: require('../../images/sponsor1.jpeg'),
     // //   link: 'https://www.sponzor1.com',
     // },
-    {
-      name: 'Logate Akademija',
-      logo: require('../../images/sponsor2.png'),
-    //   link: 'https://www.sponzor2.com',
-    },
+    // {
+    //   name: 'Logate Akademija',
+    //   logo: require('../../images/sponsor2.png'),
+    // //   link: 'https://www.sponzor2.com',
+    // },
     {
       name: 'Domen.me',
       logo: require('../../images/sponsor3.png'),
@@ -289,10 +289,10 @@ const AboutPage = () => {
                       {/* <h3>{slides[0].name}</h3> */}
                   </div> 
 
-                  <div className='AboutPage__InstructorCard-circleContainer'>
+                  {/* <div className='AboutPage__InstructorCard-circleContainer'>
                       <img className='AboutPage__InstructorCard-imgsquare' src={slides[5]?.logo} alt="" />
-                      {/* <h3>{slides[0].name}</h3> */}
-                  </div> 
+                 
+                  </div>  */}
 
               </div>
             </div>

@@ -340,7 +340,7 @@
     } 
     .AboutPage__InstructorCard-circleContainer img { 
         width: 100%;
-        object-fit: contain; 
+        object-fit: cover; 
     }   
 
     .contact-map { 

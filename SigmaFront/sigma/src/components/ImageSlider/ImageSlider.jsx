@@ -12,11 +12,11 @@ const ImageSlider = () => {
         //   logo: require('../../images/sponsor1.jpeg'),
         // //   link: 'https://www.sponzor1.com',
         // },
-        {
-          name: 'Sponzor 2',
-          logo: require('../../images/sponsor2.png'),
-        //   link: 'https://www.sponzor2.com',
-        },
+        // {
+        //   name: 'Sponzor 2',
+        //   logo: require('../../images/sponsor2.png'),
+        // //   link: 'https://www.sponzor2.com',
+        // },
         {
           name: 'Sponzor 3',
           logo: require('../../images/sponsor3.jpg'),
