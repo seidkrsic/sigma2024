@@ -2,7 +2,6 @@ import React, { useContext, useState, useEffect} from 'react';
 import "./AboutPage.css";
 import PageList from '../../components/PageList/PageList';
 import AuthContext from '../../components/AuthContext/AuthContext';
-// import sigma from "../../images/sigma.png" 
 import pozadina from "../../images/pozadina1.jpg";
 import api from '../../services/api';
 import TeacherPopup from '../../components/TeacherPopup/TeacherPopup';
@@ -41,23 +40,21 @@ const AboutPage = () => {
     {
       name: 'Domen.me',
       logo: require('../../images/sponsor3.png'),
-    //   link: 'https://www.sponzor3.com',
     }, 
-    
     {
       name: 'Art Beton',
       logo: require('../../images/sponsor5.JPG'),
-    //   link: 'https://www.sponzor3.com',
+
     },
     {
       name: 'Firenet',
       logo: require('../../images/sponsor7.png'),
-    //   link: 'https://www.sponzor3.com',
+
     },
     {
       name: 'Studio Abarh',
       logo: require('../../images/sponsor6.jpg'),
-    //   link: 'https://www.sponzor3.com',
+
     },
  
   ];
@@ -170,7 +167,7 @@ const AboutPage = () => {
 
                 </div> 
 
-                {/* instructor */}
+
                 <div className='AboutPage__InstructorCard-container'>
                   <h3>Dr Anton Gjokaj</h3>
                     <div className='AboutPage__InstructorCard-textContainer'>
@@ -247,25 +244,20 @@ const AboutPage = () => {
             <div className='AboutPage__section'>
               <h1 className='AboutPage__section-heading'>Naši Prijatelji</h1> 
               <div className='AboutPage__section-infoText2'> 
-                  
-
-
                   <div className='AboutPage__InstructorCard-circleContainer'>
                       <img className='AboutPage__InstructorCard-imgsquare' src={slides[0]?.logo} alt="" />
-                      {/* <h3>{slides[1].name}</h3> */}
                   </div> 
 
                   <div className='AboutPage__InstructorCard-circleContainer'>
                       <img className='AboutPage__InstructorCard-imgsquare' src={slides[1]?.logo} alt="" />
-                      {/* <h3>{slides[0].name}</h3> */}
                   </div> 
+
                   <div className='AboutPage__InstructorCard-circleContainer'>
                       <img className='AboutPage__InstructorCard-imgsquare' src={slides[2]?.logo} alt="" />
-                      {/* <h3>{slides[0].name}</h3> */}
                   </div> 
+
                   <div className='AboutPage__InstructorCard-circleContainer'>
                       <img className='AboutPage__InstructorCard-imgsquare' src={slides[3]?.logo} alt="" />
-                      {/* <h3>{slides[0].name}</h3> */}
                   </div> 
                
 

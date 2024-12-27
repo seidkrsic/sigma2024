@@ -11,24 +11,24 @@ const ImageSlider = () => {
         {
           name: 'Sponzor 3',
           logo: require('../../images/sponsor3.png'),
-        //   link: 'https://www.sponzor3.com',
+
         },
        
-          {
-            name: 'Art Beton',
-            logo: require('../../images/sponsor5.JPG'),
-          //   link: 'https://www.sponzor3.com',
-          },
-          {
-            name: 'Firenet',
-            logo: require('../../images/sponsor7.png'),
-          //   link: 'https://www.sponzor3.com',
-          },
-          {
-            name: 'Studio Abarh',
-            logo: require('../../images/sponsor6.jpg'),
-          //   link: 'https://www.sponzor3.com',
-          },
+        {
+        name: 'Art Beton',
+        logo: require('../../images/sponsor5.JPG'),
+
+        },
+        {
+        name: 'Firenet',
+        logo: require('../../images/sponsor7.png'),
+
+        },
+        {
+        name: 'Studio Abarh',
+        logo: require('../../images/sponsor6.jpg'),
+  
+        },
      
       ];
 
