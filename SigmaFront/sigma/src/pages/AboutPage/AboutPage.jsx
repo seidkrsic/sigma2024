@@ -52,11 +52,11 @@ const AboutPage = () => {
       logo: require('../../images/sponsor3.png'),
     //   link: 'https://www.sponzor3.com',
     }, 
-    {
-      name: 'Barber Miloš',
-      logo: require('../../images/sponsor4.JPG'),
-    //   link: 'https://www.sponzor3.com',
-    }, 
+    // {
+    //   name: 'Barber Miloš',
+    //   logo: require('../../images/sponsor4.JPG'),
+    // //   link: 'https://www.sponzor3.com',
+    // }, 
     {
       name: 'Art Beton',
       logo: require('../../images/sponsor5.JPG'),
@@ -284,10 +284,10 @@ const AboutPage = () => {
                       <img className='AboutPage__InstructorCard-imgsquare' src={slides[3]?.logo} alt="" />
                       {/* <h3>{slides[0].name}</h3> */}
                   </div> 
-                  <div className='AboutPage__InstructorCard-circleContainer'>
+                  {/* <div className='AboutPage__InstructorCard-circleContainer'>
                       <img className='AboutPage__InstructorCard-imgsquare' src={slides[4]?.logo} alt="" />
-                      {/* <h3>{slides[0].name}</h3> */}
-                  </div> 
+             
+                  </div>  */}
 
                   {/* <div className='AboutPage__InstructorCard-circleContainer'>
                       <img className='AboutPage__InstructorCard-imgsquare' src={slides[5]?.logo} alt="" />
