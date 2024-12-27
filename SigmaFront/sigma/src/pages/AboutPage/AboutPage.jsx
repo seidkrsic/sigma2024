@@ -37,26 +37,13 @@ const AboutPage = () => {
   ]; 
 
   const slides = [
-    // {
-    //   name: 'CKB Banka',
-    //   logo: require('../../images/sponsor1.jpeg'),
-    // //   link: 'https://www.sponzor1.com',
-    // },
-    // {
-    //   name: 'Logate Akademija',
-    //   logo: require('../../images/sponsor2.png'),
-    // //   link: 'https://www.sponzor2.com',
-    // },
+    
     {
       name: 'Domen.me',
       logo: require('../../images/sponsor3.png'),
     //   link: 'https://www.sponzor3.com',
     }, 
-    // {
-    //   name: 'Barber Miloš',
-    //   logo: require('../../images/sponsor4.JPG'),
-    // //   link: 'https://www.sponzor3.com',
-    // }, 
+    
     {
       name: 'Art Beton',
       logo: require('../../images/sponsor5.JPG'),
@@ -262,10 +249,6 @@ const AboutPage = () => {
               <div className='AboutPage__section-infoText2'> 
                   
 
-                  {/* <div className='AboutPage__InstructorCard-circleContainer'>
-                      <img className='AboutPage__InstructorCard-imgsquare' src={slides[0]?.logo} alt="" />
-                      {/* <h3>{slides[0].name}</h3> */}
-                  {/* </div> */} 
 
                   <div className='AboutPage__InstructorCard-circleContainer'>
                       <img className='AboutPage__InstructorCard-imgsquare' src={slides[0]?.logo} alt="" />
@@ -284,15 +267,7 @@ const AboutPage = () => {
                       <img className='AboutPage__InstructorCard-imgsquare' src={slides[3]?.logo} alt="" />
                       {/* <h3>{slides[0].name}</h3> */}
                   </div> 
-                  {/* <div className='AboutPage__InstructorCard-circleContainer'>
-                      <img className='AboutPage__InstructorCard-imgsquare' src={slides[4]?.logo} alt="" />
-             
-                  </div>  */}
-
-                  {/* <div className='AboutPage__InstructorCard-circleContainer'>
-                      <img className='AboutPage__InstructorCard-imgsquare' src={slides[5]?.logo} alt="" />
-                 
-                  </div>  */}
+               
 
               </div>
             </div>
