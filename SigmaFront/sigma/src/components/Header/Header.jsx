@@ -1,4 +1,3 @@
-// Header.jsx
 import React, { useEffect, useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
 import AuthContext from '../AuthContext/AuthContext';
@@ -51,13 +50,12 @@ const Header = () => {
         setIsUserMenuOpen(false);
       }
     };
-  
+
     document.addEventListener('mousedown', handleClickOutside);
     return () => {
       document.removeEventListener('mousedown', handleClickOutside);
     };
   }, [isUserMenuOpen]);
-  
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
@@ -88,12 +86,21 @@ const Header = () => {
 
         <div className={scrolled ? 'Header__container-right Help_menu-active' : 'Header__container-right'}>
           {user ? (
-            <div className={ scrolled ? "Header__user-menu logo-not-active" : 'Header__user-menu'}>
-              <FontAwesomeIcon
-                icon={faUserCircle}
-                className={ scrolled ? "Header__user-icon logo-not-active" : 'Header__user-icon'}
-                onClick={toggleUserMenu}
-              />
+            <div className={scrolled ? 'Header__user-menu logo-not-active' : 'Header__user-menu'}>
+              {user.profile_picture ? (
+                <img
+                  src={user.profile_picture}
+                  alt="Profilna slika"
+                  className="Header__user-image"
+                  onClick={toggleUserMenu}
+                />
+              ) : (
+                <FontAwesomeIcon
+                  icon={faUserCircle}
+                  className={scrolled ? 'Header__user-icon logo-not-active' : 'Header__user-icon'}
+                  onClick={toggleUserMenu}
+                />
+              )}
               {isUserMenuOpen && (
                 <div className='Header__user-dropdown'>
                   <Link to='/profile' onClick={() => setIsUserMenuOpen(false)}>

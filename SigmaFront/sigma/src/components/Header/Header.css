@@ -156,7 +156,15 @@
     transition: all ease-in-out 0.3s;
     transition-delay: .3s;
 
-} 
+}  
+
+.Header__user-image {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    cursor: pointer;
+  }
 
 
 
