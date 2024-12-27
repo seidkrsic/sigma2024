@@ -91,13 +91,13 @@ const Header = () => {
                 <img
                   src={user.profile_picture}
                   alt="Profilna slika"
-                  className={scrolled ? 'Header__user-icon logo-not-active' : 'Header__user-icon'}
+                  className={scrolled ? 'Header__user-image logo-not-active' : 'Header__user-image'}
                   onClick={toggleUserMenu}
                 />
               ) : (
                 <FontAwesomeIcon
                   icon={faUserCircle}
-                  className={scrolled ? 'Header__user-icon logo-not-active' : 'Header__user-icon'}
+                  className={scrolled ? 'Header__user-image logo-not-active' : 'Header__user-image'}
                   onClick={toggleUserMenu}
                 />
               )}
