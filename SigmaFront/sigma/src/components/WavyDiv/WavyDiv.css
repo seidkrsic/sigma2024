@@ -53,6 +53,8 @@
 
 .Problem_of_the_Week__link-container img {
   width: 220px;
+  max-width: 220px;
+  scale: .7;
   height: auto;
   margin-bottom: 1rem;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);

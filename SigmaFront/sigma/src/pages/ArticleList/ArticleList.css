@@ -142,6 +142,7 @@
   text-align: center;
   display: block;
   margin: 0rem 0 2rem 0;
+  width: 50%;
 }
 
 /* Responsivni dizajn */
@@ -177,5 +178,9 @@
 
   .ArticleList__page-info {
     font-size: 0.9rem;
+  }
+
+  .text-align__center-blog { 
+    width: 100%;
   }
 }

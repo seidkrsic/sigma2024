@@ -150,6 +150,8 @@
 
 .text-align__center { 
   text-align: center;
+  width: 60%;
+  margin: auto;
 }
 
 /* Responsivni dizajn */
@@ -197,6 +199,11 @@
 
   .problem-list-table td {
     height: fit-content;
+  }
+
+  .text-align__center { 
+    text-align: center;
+    width: 100%;
   }
 }
 
