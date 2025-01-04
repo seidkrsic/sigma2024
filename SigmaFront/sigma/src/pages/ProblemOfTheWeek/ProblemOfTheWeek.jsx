@@ -79,7 +79,6 @@ const ProblemOfTheWeek = () => {
 
   return (
     <div className='ProblemOfTheWeek__container'>
-      <p className='text-align__center'>Problem Nedjelje je poseban izazov za sve matematičke entuzijaste! Svake sedmice objavljujemo zanimljiv zadatak koji testira vašu kreativnost, logiku i matematičke vještine. Najbrži i najprecizniji osvajaju bodove za rang listu, a najbolji imaju priliku da osvoje vrijedne nagrade! Ulogujte se i pokažite svoje znanje!</p>
       <h1 className='ProblemOfTheWeek__title'>{problem.title}</h1>
       <div className='ProblemOfTheWeek__content'>
         {problem.problem_file_url ? (

@@ -149,10 +149,12 @@ const RankingsComponent = () => {
 
   return (
     <div className="rankings-container">
+      <p className='text-align__center'>Lista najboljih takmičara ističe one koji su pokazali brzinu, tačnost i matematičku oštrinu u rješavanju problema. Pogledajte svoj rang i nastavite da se penjete ka vrhu!</p>
       {!expandedCategory ? (
         <>
           {['weekly', 'monthly', 'allTime'].map((categoryKey) => (
             <div key={categoryKey}>
+
               {renderCategory(getCategoryTitle(categoryKey), rankings[categoryKey], categoryKey)}
             </div>
           ))}

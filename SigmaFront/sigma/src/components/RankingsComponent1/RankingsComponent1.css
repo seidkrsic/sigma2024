@@ -118,6 +118,10 @@
     padding: 20px 0;
 }
 
+.text-align__center { 
+    text-align: center;
+  }
+
 /* Mobile Styles */
 @media (max-width: 768px) {
     .rankings-container {
