@@ -100,7 +100,6 @@ const ArticleList = ({ limit = null, showPagination = true }) => {
           
       ) : (
         <> 
-          <h1 className="text-align__center">Blog</h1>
           <p className='text-align__center'>Naš Blog vam pruža zanimljive matematičke priče, praktične zadatke i korisne savjete za učenike i ljubitelje matematike. Svake sedmice objavljujemo nove teme koje inspirišu i produbljuju vaše znanje. </p>
           <div className={`ArticleList__grid ${limit ? 'ArticleList__grid--limited' : ''}`}>
             {posts.map((post) => (
