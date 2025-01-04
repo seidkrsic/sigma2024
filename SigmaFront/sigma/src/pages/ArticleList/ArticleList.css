@@ -141,7 +141,7 @@
 .text-align__center-blog { 
   text-align: center;
   display: block;
-  margin: 0rem 0 2rem 0;
+  margin: 0rem 0 2rem 0 !important;
   width: 50%;
 }
 
@@ -181,6 +181,7 @@
   }
 
   .text-align__center-blog { 
-    width: 100%;
+    width: 90%;
+
   }
 }
