@@ -99,7 +99,8 @@ const ArticleList = ({ limit = null, showPagination = true }) => {
           </div>
           
       ) : (
-        <>
+        <> 
+          <p>Blog Sigma Academy pruža zanimljive matematičke priče, praktične zadatke i korisne savjete za učenike i ljubitelje matematike. Svake sedmice objavljujemo nove teme koje inspirišu i produbljuju vaše znanje. </p>
           <div className={`ArticleList__grid ${limit ? 'ArticleList__grid--limited' : ''}`}>
             {posts.map((post) => (
               <Link to={`/posts/${post.slug}/`} key={post.id} className="ArticleList__card">
