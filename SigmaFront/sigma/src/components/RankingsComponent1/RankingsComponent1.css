@@ -120,6 +120,7 @@
 
 .text-align__center { 
     text-align: center;
+    display: flex;
   }
 
 /* Mobile Styles */

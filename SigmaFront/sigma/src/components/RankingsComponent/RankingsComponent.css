@@ -112,7 +112,16 @@
     font-size: 18px;
     color: #555;
     padding: 20px 0;
+} 
+
+.hideText { 
+    display: none;
 }
+
+.text-align__center { 
+    text-align: center;
+    display: flex;
+  }
 
 /* Mobile Styles */
 @media (max-width: 768px) {
