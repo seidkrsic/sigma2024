@@ -138,8 +138,10 @@
   background-color: var(--primary-hover);
 }
 
-.text-align__center { 
+.text-align__center-blog { 
   text-align: center;
+  display: block;
+  margin: 0rem 0 2rem 0;
 }
 
 /* Responsivni dizajn */

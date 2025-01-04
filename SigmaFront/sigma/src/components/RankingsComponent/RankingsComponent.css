@@ -120,9 +120,12 @@
 
 .text-align__center { 
     text-align: center;
-    display: flex;
+    display: block;
   }
-
+ 
+.rankings-container h1 { 
+    color: #1a3a5b;
+}
 /* Mobile Styles */
 @media (max-width: 768px) {
     .rankings-container {
