@@ -146,6 +146,10 @@
 .pagination-button:disabled {
   background-color: #ccc;
   cursor: not-allowed;
+} 
+
+.text-align__center { 
+  text-align: center;
 }
 
 /* Responsivni dizajn */

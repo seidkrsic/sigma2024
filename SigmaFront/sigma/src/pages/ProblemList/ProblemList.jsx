@@ -84,6 +84,7 @@ const ProblemList = () => {
   return (
     <div className='ProblemList__container'>
       <h1 className="ProblemList__title">Arhiva Problema</h1>
+      <p className='text-align__center'>Arhiva problema sadrži sve dosadašnje izazove iz sekcije Problem Nedjelje. Pregledajte, vježbajte i usavršavajte svoje matematičke vještine u svakom trenutku!</p>
       {loading ? (
         <div className="ProblemList__loading">
           <div className="spinner"></div>

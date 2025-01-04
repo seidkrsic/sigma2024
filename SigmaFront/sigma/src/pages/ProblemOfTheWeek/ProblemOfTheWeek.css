@@ -63,6 +63,9 @@
   margin: 0 .3rem !important; 
 }
 
+.text-align__center { 
+  text-align: center;
+}
 
 .ProblemOfTheWeek__problem-file { 
   display: flex;

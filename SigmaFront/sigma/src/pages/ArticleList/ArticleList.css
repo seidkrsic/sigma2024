@@ -138,6 +138,10 @@
   background-color: var(--primary-hover);
 }
 
+.text-align__center { 
+  text-align: center;
+}
+
 /* Responsivni dizajn */
 @media (max-width: 1024px) {
   .ArticleList__card { 
