@@ -46,7 +46,7 @@ const HomePage = () => {
           <div className='Problem_of_the_Week__link-container'>
             <p>
               Svake sedmice objavljujemo novi problem koji se sastoji iz više djelova, a koji je povezan s praznikom, godišnjim dobom, posebnim događajem ili nekom zanimljivom STEM ili matematičkom temom... potpuno besplatno!  
-              Rješenje za svaki "Problem nedjelje" objavljuje se ovdje naredne sedmice. Ulogovani korisnici mogu da se takmiče i šalju svoja rješenja zadataka. Ukoliko se nađu među prva tri na mjesečnoj listi, osvojiće nagradu. Takođe, vodi se i vječna lista najboljih takmičara!
+              Rješenje za svaki "Problem nedjelje" objavljuje se ovdje naredne sedmice. 
             </p>
             <Link id="problem_of_the_week__problem-btn" to="/problem-of-the-week">Vidi Problem</Link>
           </div>

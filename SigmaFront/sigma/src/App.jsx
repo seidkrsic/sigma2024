@@ -69,7 +69,7 @@ function App() {
             <Route path="/password-reset" element={<PasswordResetRequest />} />
             <Route path="/problems" element={<ProblemList />} />
             <Route path="/problem-of-the-week" element={<ProblemOfTheWeek />} />
-            <Route path="/posts" element={<ArticleList />} />
+            <Route path="/posts" element={<ArticleList title={"Naš Blog vam pruža zanimljive matematičke priče, praktične zadatke i korisne savjete za učenike i ljubitelje matematike. Svake sedmice objavljujemo nove teme koje inspirišu i produbljuju vaše znanje. "} />} />
             <Route path="/posts/:slug" element={<ArticleDetail />} />
             <Route path="/rankings" element={<RankingsComponent />} />
             <Route path="/profile" element={<ProfileUpdate />} />

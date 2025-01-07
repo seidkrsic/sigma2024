@@ -6,7 +6,7 @@ import './ArticleList.css';
 import { API_URL } from '../../services/api.jsx'; // Uveri se da imaš API_URL definisan
 import useScrollToTop from '../../components/useScrollToTop/useScrollToTop.jsx';
 
-const ArticleList = ({ limit = null, showPagination = true }) => {
+const ArticleList = ({ limit = null, showPagination = true,  title = null }) => {
   const [posts, setPosts] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
   const [totalPages, setTotalPages] = useState(1);
@@ -100,7 +100,7 @@ const ArticleList = ({ limit = null, showPagination = true }) => {
           
       ) : (
         <> 
-          <p className='text-align__center-blog'>Naš Blog vam pruža zanimljive matematičke priče, praktične zadatke i korisne savjete za učenike i ljubitelje matematike. Svake sedmice objavljujemo nove teme koje inspirišu i produbljuju vaše znanje. </p>
+          <p className='text-align__center-blog'>{title}</p>
           <div className={`ArticleList__grid ${limit ? 'ArticleList__grid--limited' : ''}`}>
             {posts.map((post) => (
               <Link to={`/posts/${post.slug}/`} key={post.id} className="ArticleList__card">
